@@ -1,0 +1,6 @@
+{
+	"title": "Query is not an object",
+	"input": null,
+	"errorExpected": true,
+	"expected": "InsightError"
+}

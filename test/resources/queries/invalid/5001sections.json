@@ -1,0 +1,16 @@
+{
+	"title": "5001 results large",
+	"input": {
+		"WHERE": {
+			"LT": {
+				"test5000_year": 5001
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": ["test5000_year"],
+			"ORDER": "test5000_year"
+		}
+	},
+	"errorExpected": true,
+	"expected": "ResultTooLargeError"
+}
