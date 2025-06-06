@@ -1,0 +1,12 @@
+{
+	"title": "extra key",
+	"input": {
+		"BLABLA": {},
+		"WHERE": {},
+		"OPTIONS": {
+			"COLUMNS": ["sections_avg", "oneCourse_avg"]
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

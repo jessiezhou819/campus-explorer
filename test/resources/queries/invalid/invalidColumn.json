@@ -1,0 +1,11 @@
+{
+	"title": "Invalid column name",
+	"input": {
+		"WHERE": {},
+		"OPTIONS": {
+			"COLUMNS": ["sections_abc"]
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

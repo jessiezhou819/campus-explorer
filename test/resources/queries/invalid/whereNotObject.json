@@ -1,0 +1,11 @@
+{
+	"title": "where is not object",
+	"input": {
+		"WHERE": [],
+		"OPTIONS": {
+			"COLUMNS": ["sections_dept"]
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

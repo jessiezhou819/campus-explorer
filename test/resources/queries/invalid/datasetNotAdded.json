@@ -1,0 +1,11 @@
+{
+	"title": "dataset not added",
+	"input": {
+		"WHERE": {},
+		"OPTIONS": {
+			"COLUMNS": ["dne_id"]
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

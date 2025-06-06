@@ -1,0 +1,9 @@
+{
+	"title": "NOT",
+	"input": {
+		"WHERE": {},
+		"OPTIONS": {}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

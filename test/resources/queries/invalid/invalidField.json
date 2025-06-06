@@ -1,0 +1,15 @@
+{
+	"title": "Select a not existent field",
+	"input": {
+		"WHERE": {
+			"IS": {
+				"sections_dept": "cpsc"
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": ["sections_invalidKey", "123"]
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}
