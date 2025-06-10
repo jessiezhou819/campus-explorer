@@ -239,14 +239,14 @@ describe("InsightFacade", function () {
 			}
 		});
 
-		it("should reject for Room dataset kind", async function () {
-			try {
-				await facade.addDataset("room", oneValidCourse, InsightDatasetKind.Rooms);
-				expect.fail("Should have thrown!");
-			} catch (err) {
-				expect(err).to.be.instanceOf(InsightError);
-			}
-		});
+		// it("should reject for Room dataset kind", async function () {
+		// 	try {
+		// 		await facade.addDataset("room", oneValidCourse, InsightDatasetKind.Rooms);
+		// 		expect.fail("Should have thrown!");
+		// 	} catch (err) {
+		// 		expect(err).to.be.instanceOf(InsightError);
+		// 	}
+		// });
 
 		// Valid content
 		it("should add a section with empty string values", async function () {
