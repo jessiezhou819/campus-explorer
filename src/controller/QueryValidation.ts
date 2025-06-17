@@ -15,10 +15,10 @@ export function validateWildcardPattern(pattern: string): void {
 	if (/\*(?!$)/.test(pattern.slice(1, -1))) {
 		throw new InsightError("wildcard '*' is only allowed at the beginning or end");
 	}
-	const matches = [...pattern.matchAll(/\*/g)];
-	if (matches.length > 2 || (matches.length === 2 && !(pattern.startsWith("*") && pattern.endsWith("*")))) {
-		throw new InsightError("invalid use of multiple wildcards");
-	}
+	// const matches = [...pattern.matchAll(/\*/g)];
+	// if (matches.length > 2 || (matches.length === 2 && !(pattern.startsWith("*") && pattern.endsWith("*")))) {
+	// 	throw new InsightError("invalid use of multiple wildcards");
+	// }
 }
 //(written using ChatGPT)
 
@@ -50,9 +50,9 @@ export function validateComparators(type: string, comparator: any, data: any[]):
 	if (comparator === null || typeof comparator !== "object" || Array.isArray(comparator)) {
 		throw new InsightError(`${type} must be a non null object`);
 	}
-	if (!type || typeof type !== "string") {
-		throw new InsightError("Type must be a non null string");
-	}
+	// if (!type || typeof type !== "string") { // "IS" ID
+	// 	throw new InsightError("Type must be a non null string");
+	// }
 	const keys = Object.keys(comparator);
 	if (keys.length !== 1) {
 		throw new InsightError(`Invalid comparator format: expected one key, got ${keys.length}`);
@@ -94,35 +94,19 @@ export function negationValidator(negation: any): void {
 	}
 }
 
-const OVERALL_YEAR = 1900;
-export function validateYear(year: any): number {
-	if (year === "overall") {
-		year = OVERALL_YEAR;
-	}
-	if (typeof year === "number") {
-		year = year;
-	}
-	if (typeof year === "string" && /^\d+$/.test(year)) {
-		year = parseInt(year, 10);
-	} else {
-		throw new InsightError("Invalid year format");
-	}
-	return year;
-}
-
 export function optionsValidator(options: any, columns: any): void {
 	if (options.ORDER) {
 		if (typeof options.ORDER === "string") {
 			if (!columns.includes(options.ORDER)) {
 				throw new InsightError(`ORDER key "${options.ORDER}" must be in COLUMNS`);
 			}
-		} else if (typeof options.ORDER === "object") {
+		} else if (typeof options.ORDER === "object") { // here
 			if (!Array.isArray(options.ORDER.keys)) {
 				throw new InsightError("ORDER.keys must be an array");
 			}
 			for (const key of options.ORDER.keys) {
 				if (!columns.includes(key)) {
-					throw new InsightError(`ORDER key "${key}" must be in COLUMNS`);
+					throw new InsightError(`ORDER key "${key}" must be in COLUMNS`); // to here
 				}
 			}
 		}

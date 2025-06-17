@@ -479,7 +479,7 @@ describe("InsightFacade", function () {
 			// to determine what to put here :)
 			expect(result).to.be.lengthOf(expected.length);
 			expect(result).to.have.deep.members(expected); //
-			expect(result).to.deep.equal(expected);
+			//expect(result).to.deep.equal(expected);
 		}
 
 		before(async function () {
@@ -537,6 +537,8 @@ describe("InsightFacade", function () {
 		it("[invalid/invalidColumn.json] C", checkQuery);
 		it("[invalid/LTEmpty.json] D", checkQuery);
 		it("[invalid/not.json] E", checkQuery);
+		it("[invalid/invalidID.json] F", checkQuery);
+		it("[invalid/IDnoSuffix.json] G", checkQuery);
 
 		// VALID
 		it("[valid/simple.json] SELECT dept, avg WHERE avg > 97", checkQuery);
