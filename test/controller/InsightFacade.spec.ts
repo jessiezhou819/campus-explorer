@@ -478,7 +478,8 @@ describe("InsightFacade", function () {
 			// TODO: replace this failing assertion with your assertions. You will need to reason about the code in this function
 			// to determine what to put here :)
 			expect(result).to.be.lengthOf(expected.length);
-			expect(result).to.have.deep.members(expected); // expect(result).to.deep.equal(expected);
+			expect(result).to.have.deep.members(expected); //
+			expect(result).to.deep.equal(expected);
 		}
 
 		before(async function () {
