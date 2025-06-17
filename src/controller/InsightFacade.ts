@@ -80,7 +80,7 @@ export default class InsightFacade implements IInsightFacade {
 		}
 
 		const coursesFolder = courses.folder("courses");
-		const sections = await this.processSections(coursesFolder);
+		const sections: Section[] = await this.processSections(coursesFolder);
 
 		if (sections.length === 0) {
 			throw new InsightError("No valid sections found");
@@ -133,7 +133,7 @@ export default class InsightFacade implements IInsightFacade {
 		}
 		try {
 			const sectionInterface: Section = {
-				uuid: String(section.uuid ?? section.id), // Use section.id if uuid is not present
+				uuid: section.id as string,
 				id: section.Course as string,
 				title: section.Title as string,
 				instructor: section.Professor as string,
