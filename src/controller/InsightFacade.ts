@@ -133,11 +133,11 @@ export default class InsightFacade implements IInsightFacade {
 		}
 		try {
 			const sectionInterface: Section = {
-				uuid: section.id as string,
-				id: section.Course as string,
-				title: section.Title as string,
-				instructor: section.Professor as string,
-				dept: section.Subject as string,
+				uuid: String(section.id),
+				id: String(section.Course),
+				title: String(section.Title),
+				instructor: String(section.Professor),
+				dept: String(section.Subject),
 				year: section.Section === "overall" ? this.OVERALL_YEAR : Number(section.Year),
 				avg: parseFloat(section.Avg),
 				pass: parseInt(section.Pass),
