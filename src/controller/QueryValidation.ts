@@ -100,7 +100,8 @@ export function optionsValidator(options: any, columns: any): void {
 			if (!columns.includes(options.ORDER)) {
 				throw new InsightError(`ORDER key "${options.ORDER}" must be in COLUMNS`);
 			}
-		} else if (typeof options.ORDER === "object") { // here
+		} else if (typeof options.ORDER === "object") {
+			// here
 			if (!Array.isArray(options.ORDER.keys)) {
 				throw new InsightError("ORDER.keys must be an array");
 			}
