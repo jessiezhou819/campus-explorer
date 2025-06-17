@@ -347,18 +347,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "47011",
-			"sections_id": "101",
-			"sections_title": "int calc ap ph s",
-			"sections_instructor": "",
-			"sections_dept": "math",
-			"sections_year": 1900,
-			"sections_avg": 65.99,
-			"sections_pass": 1390,
-			"sections_fail": 205,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "31957",
 			"sections_id": "200",
 			"sections_title": "calculus 3",
@@ -368,6 +356,18 @@
 			"sections_avg": 65.99,
 			"sections_pass": 799,
 			"sections_fail": 98,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "47011",
+			"sections_id": "101",
+			"sections_title": "int calc ap ph s",
+			"sections_instructor": "",
+			"sections_dept": "math",
+			"sections_year": 1900,
+			"sections_avg": 65.99,
+			"sections_pass": 1390,
+			"sections_fail": 205,
 			"sections_audit": 0
 		},
 		{
@@ -419,18 +419,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "27269",
-			"sections_id": "152",
-			"sections_title": "linear systems",
-			"sections_instructor": "",
-			"sections_dept": "math",
-			"sections_year": 1900,
-			"sections_avg": 66.13,
-			"sections_pass": 626,
-			"sections_fail": 108,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "90046",
 			"sections_id": "200",
 			"sections_title": "calculus 3",
@@ -440,6 +428,18 @@
 			"sections_avg": 66.13,
 			"sections_pass": 944,
 			"sections_fail": 111,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "27269",
+			"sections_id": "152",
+			"sections_title": "linear systems",
+			"sections_instructor": "",
+			"sections_dept": "math",
+			"sections_year": 1900,
+			"sections_avg": 66.13,
+			"sections_pass": 626,
+			"sections_fail": 108,
 			"sections_audit": 0
 		},
 		{
@@ -527,18 +527,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "34273",
-			"sections_id": "121",
-			"sections_title": "gentcs ecol&evol",
-			"sections_instructor": "",
-			"sections_dept": "biol",
-			"sections_year": 1900,
-			"sections_avg": 66.69,
-			"sections_pass": 1670,
-			"sections_fail": 116,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "94728",
 			"sections_id": "101",
 			"sections_title": "bio cog psych",
@@ -548,6 +536,18 @@
 			"sections_avg": 66.69,
 			"sections_pass": 1053,
 			"sections_fail": 96,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "34273",
+			"sections_id": "121",
+			"sections_title": "gentcs ecol&evol",
+			"sections_instructor": "",
+			"sections_dept": "biol",
+			"sections_year": 1900,
+			"sections_avg": 66.69,
+			"sections_pass": 1670,
+			"sections_fail": 116,
 			"sections_audit": 0
 		},
 		{
@@ -563,18 +563,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "31924",
-			"sections_id": "100",
-			"sections_title": "df calc ap ph sc",
-			"sections_instructor": "",
-			"sections_dept": "math",
-			"sections_year": 1900,
-			"sections_avg": 66.8,
-			"sections_pass": 1044,
-			"sections_fail": 106,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "80355",
 			"sections_id": "217",
 			"sections_title": "think clr psych",
@@ -585,6 +573,18 @@
 			"sections_pass": 725,
 			"sections_fail": 67,
 			"sections_audit": 1
+		},
+		{
+			"sections_uuid": "31924",
+			"sections_id": "100",
+			"sections_title": "df calc ap ph sc",
+			"sections_instructor": "",
+			"sections_dept": "math",
+			"sections_year": 1900,
+			"sections_avg": 66.8,
+			"sections_pass": 1044,
+			"sections_fail": 106,
+			"sections_audit": 0
 		},
 		{
 			"sections_uuid": "13701",
@@ -623,18 +623,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "18041",
-			"sections_id": "121",
-			"sections_title": "eco gen evol",
-			"sections_instructor": "",
-			"sections_dept": "biol",
-			"sections_year": 1900,
-			"sections_avg": 66.88,
-			"sections_pass": 1648,
-			"sections_fail": 147,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "5138",
 			"sections_id": "102",
 			"sections_title": "df calc app lf s",
@@ -647,15 +635,15 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "3828",
-			"sections_id": "200",
-			"sections_title": "calculus 3",
+			"sections_uuid": "18041",
+			"sections_id": "121",
+			"sections_title": "eco gen evol",
 			"sections_instructor": "",
-			"sections_dept": "math",
+			"sections_dept": "biol",
 			"sections_year": 1900,
-			"sections_avg": 66.91,
-			"sections_pass": 715,
-			"sections_fail": 98,
+			"sections_avg": 66.88,
+			"sections_pass": 1648,
+			"sections_fail": 147,
 			"sections_audit": 0
 		},
 		{
@@ -671,6 +659,18 @@
 			"sections_audit": 3
 		},
 		{
+			"sections_uuid": "3828",
+			"sections_id": "200",
+			"sections_title": "calculus 3",
+			"sections_instructor": "",
+			"sections_dept": "math",
+			"sections_year": 1900,
+			"sections_avg": 66.91,
+			"sections_pass": 715,
+			"sections_fail": 98,
+			"sections_audit": 0
+		},
+		{
 			"sections_uuid": "31227",
 			"sections_id": "233",
 			"sections_title": "org chem biol sc",
@@ -680,6 +680,18 @@
 			"sections_avg": 67.02,
 			"sections_pass": 954,
 			"sections_fail": 175,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "31938",
+			"sections_id": "104",
+			"sections_title": "dff calc ap c&ss",
+			"sections_instructor": "",
+			"sections_dept": "math",
+			"sections_year": 1900,
+			"sections_avg": 67.06,
+			"sections_pass": 609,
+			"sections_fail": 82,
 			"sections_audit": 0
 		},
 		{
@@ -693,18 +705,6 @@
 			"sections_pass": 604,
 			"sections_fail": 102,
 			"sections_audit": 1
-		},
-		{
-			"sections_uuid": "31938",
-			"sections_id": "104",
-			"sections_title": "dff calc ap c&ss",
-			"sections_instructor": "",
-			"sections_dept": "math",
-			"sections_year": 1900,
-			"sections_avg": 67.06,
-			"sections_pass": 609,
-			"sections_fail": 82,
-			"sections_audit": 0
 		},
 		{
 			"sections_uuid": "27291",
@@ -731,18 +731,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "18701",
-			"sections_id": "201",
-			"sections_title": "technical commun",
-			"sections_instructor": "",
-			"sections_dept": "apsc",
-			"sections_year": 1900,
-			"sections_avg": 67.23,
-			"sections_pass": 685,
-			"sections_fail": 123,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "72957",
 			"sections_id": "152",
 			"sections_title": "linear systems",
@@ -752,6 +740,18 @@
 			"sections_avg": 67.23,
 			"sections_pass": 689,
 			"sections_fail": 77,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "18701",
+			"sections_id": "201",
+			"sections_title": "technical commun",
+			"sections_instructor": "",
+			"sections_dept": "apsc",
+			"sections_year": 1900,
+			"sections_avg": 67.23,
+			"sections_pass": 685,
+			"sections_fail": 123,
 			"sections_audit": 0
 		},
 		{
@@ -851,15 +851,15 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "47027",
-			"sections_id": "103",
-			"sections_title": "int calc ap lf s",
+			"sections_uuid": "50221",
+			"sections_id": "170",
+			"sections_title": "mechanics i",
 			"sections_instructor": "",
-			"sections_dept": "math",
+			"sections_dept": "phys",
 			"sections_year": 1900,
 			"sections_avg": 67.5,
-			"sections_pass": 632,
-			"sections_fail": 64,
+			"sections_pass": 815,
+			"sections_fail": 110,
 			"sections_audit": 0
 		},
 		{
@@ -875,15 +875,15 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "50221",
-			"sections_id": "170",
-			"sections_title": "mechanics i",
+			"sections_uuid": "47027",
+			"sections_id": "103",
+			"sections_title": "int calc ap lf s",
 			"sections_instructor": "",
-			"sections_dept": "phys",
+			"sections_dept": "math",
 			"sections_year": 1900,
 			"sections_avg": 67.5,
-			"sections_pass": 815,
-			"sections_fail": 110,
+			"sections_pass": 632,
+			"sections_fail": 64,
 			"sections_audit": 0
 		},
 		{
@@ -923,18 +923,6 @@
 			"sections_audit": 1
 		},
 		{
-			"sections_uuid": "54510",
-			"sections_id": "233",
-			"sections_title": "org chem biol sc",
-			"sections_instructor": "",
-			"sections_dept": "chem",
-			"sections_year": 1900,
-			"sections_avg": 67.7,
-			"sections_pass": 1073,
-			"sections_fail": 129,
-			"sections_audit": 1
-		},
-		{
 			"sections_uuid": "69790",
 			"sections_id": "102",
 			"sections_title": "princpl macrecon",
@@ -945,6 +933,18 @@
 			"sections_pass": 1866,
 			"sections_fail": 142,
 			"sections_audit": 2
+		},
+		{
+			"sections_uuid": "54510",
+			"sections_id": "233",
+			"sections_title": "org chem biol sc",
+			"sections_instructor": "",
+			"sections_dept": "chem",
+			"sections_year": 1900,
+			"sections_avg": 67.7,
+			"sections_pass": 1073,
+			"sections_fail": 129,
+			"sections_audit": 1
 		},
 		{
 			"sections_uuid": "90009",
@@ -971,18 +971,6 @@
 			"sections_audit": 1
 		},
 		{
-			"sections_uuid": "90024",
-			"sections_id": "152",
-			"sections_title": "linear systems",
-			"sections_instructor": "",
-			"sections_dept": "math",
-			"sections_year": 1900,
-			"sections_avg": 67.81,
-			"sections_pass": 717,
-			"sections_fail": 80,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "34061",
 			"sections_id": "221",
 			"sections_title": "matrix algebra",
@@ -991,6 +979,18 @@
 			"sections_year": 1900,
 			"sections_avg": 67.81,
 			"sections_pass": 662,
+			"sections_fail": 80,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "90024",
+			"sections_id": "152",
+			"sections_title": "linear systems",
+			"sections_instructor": "",
+			"sections_dept": "math",
+			"sections_year": 1900,
+			"sections_avg": 67.81,
+			"sections_pass": 717,
 			"sections_fail": 80,
 			"sections_audit": 0
 		},
@@ -1079,15 +1079,15 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "70080",
-			"sections_id": "154",
-			"sections_title": "chem for engr",
+			"sections_uuid": "402",
+			"sections_id": "158",
+			"sections_title": "intr phys eng ii",
 			"sections_instructor": "",
-			"sections_dept": "chem",
+			"sections_dept": "phys",
 			"sections_year": 1900,
 			"sections_avg": 67.98,
-			"sections_pass": 588,
-			"sections_fail": 62,
+			"sections_pass": 668,
+			"sections_fail": 81,
 			"sections_audit": 0
 		},
 		{
@@ -1103,15 +1103,15 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "402",
-			"sections_id": "158",
-			"sections_title": "intr phys eng ii",
+			"sections_uuid": "70080",
+			"sections_id": "154",
+			"sections_title": "chem for engr",
 			"sections_instructor": "",
-			"sections_dept": "phys",
+			"sections_dept": "chem",
 			"sections_year": 1900,
 			"sections_avg": 67.98,
-			"sections_pass": 668,
-			"sections_fail": 81,
+			"sections_pass": 588,
+			"sections_fail": 62,
 			"sections_audit": 0
 		},
 		{
@@ -1151,18 +1151,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "72980",
-			"sections_id": "200",
-			"sections_title": "calculus 3",
-			"sections_instructor": "",
-			"sections_dept": "math",
-			"sections_year": 1900,
-			"sections_avg": 68.16,
-			"sections_pass": 754,
-			"sections_fail": 100,
-			"sections_audit": 1
-		},
-		{
 			"sections_uuid": "27823",
 			"sections_id": "208",
 			"sections_title": "soc, dev, clin",
@@ -1173,6 +1161,18 @@
 			"sections_pass": 505,
 			"sections_fail": 44,
 			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "72980",
+			"sections_id": "200",
+			"sections_title": "calculus 3",
+			"sections_instructor": "",
+			"sections_dept": "math",
+			"sections_year": 1900,
+			"sections_avg": 68.16,
+			"sections_pass": 754,
+			"sections_fail": 100,
+			"sections_audit": 1
 		},
 		{
 			"sections_uuid": "27807",
@@ -1211,18 +1211,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "20542",
-			"sections_id": "121",
-			"sections_title": "gentcs ecol&evol",
-			"sections_instructor": "",
-			"sections_dept": "biol",
-			"sections_year": 1900,
-			"sections_avg": 68.22,
-			"sections_pass": 1780,
-			"sections_fail": 110,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "80344",
 			"sections_id": "102",
 			"sections_title": "dev soc cli psy",
@@ -1232,6 +1220,18 @@
 			"sections_avg": 68.22,
 			"sections_pass": 863,
 			"sections_fail": 60,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "20542",
+			"sections_id": "121",
+			"sections_title": "gentcs ecol&evol",
+			"sections_instructor": "",
+			"sections_dept": "biol",
+			"sections_year": 1900,
+			"sections_avg": 68.22,
+			"sections_pass": 1780,
+			"sections_fail": 110,
 			"sections_audit": 0
 		},
 		{
@@ -1271,18 +1271,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "72090",
-			"sections_id": "234",
-			"sections_title": "fund genetics",
-			"sections_instructor": "",
-			"sections_dept": "biol",
-			"sections_year": 1900,
-			"sections_avg": 68.27,
-			"sections_pass": 646,
-			"sections_fail": 44,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "90894",
 			"sections_id": "102",
 			"sections_title": "princpl macrecon",
@@ -1292,6 +1280,18 @@
 			"sections_avg": 68.27,
 			"sections_pass": 2169,
 			"sections_fail": 166,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "72090",
+			"sections_id": "234",
+			"sections_title": "fund genetics",
+			"sections_instructor": "",
+			"sections_dept": "biol",
+			"sections_year": 1900,
+			"sections_avg": 68.27,
+			"sections_pass": 646,
+			"sections_fail": 44,
 			"sections_audit": 0
 		},
 		{
@@ -1307,18 +1307,6 @@
 			"sections_audit": 1
 		},
 		{
-			"sections_uuid": "90072",
-			"sections_id": "221",
-			"sections_title": "matrix algebra",
-			"sections_instructor": "",
-			"sections_dept": "math",
-			"sections_year": 1900,
-			"sections_avg": 68.33,
-			"sections_pass": 835,
-			"sections_fail": 85,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "27839",
 			"sections_id": "218",
 			"sections_title": "analys beh data",
@@ -1331,27 +1319,15 @@
 			"sections_audit": 1
 		},
 		{
-			"sections_uuid": "88778",
-			"sections_id": "301",
-			"sections_title": "human physiology",
+			"sections_uuid": "90072",
+			"sections_id": "221",
+			"sections_title": "matrix algebra",
 			"sections_instructor": "",
-			"sections_dept": "caps",
+			"sections_dept": "math",
 			"sections_year": 1900,
-			"sections_avg": 68.4,
-			"sections_pass": 565,
-			"sections_fail": 27,
-			"sections_audit": 0
-		},
-		{
-			"sections_uuid": "90881",
-			"sections_id": "101",
-			"sections_title": "prncpls micrecon",
-			"sections_instructor": "",
-			"sections_dept": "econ",
-			"sections_year": 1900,
-			"sections_avg": 68.4,
-			"sections_pass": 2378,
-			"sections_fail": 132,
+			"sections_avg": 68.33,
+			"sections_pass": 835,
+			"sections_fail": 85,
 			"sections_audit": 0
 		},
 		{
@@ -1367,27 +1343,27 @@
 			"sections_audit": 2
 		},
 		{
-			"sections_uuid": "52233",
+			"sections_uuid": "90881",
 			"sections_id": "101",
 			"sections_title": "prncpls micrecon",
 			"sections_instructor": "",
 			"sections_dept": "econ",
 			"sections_year": 1900,
-			"sections_avg": 68.41,
-			"sections_pass": 2023,
-			"sections_fail": 145,
-			"sections_audit": 1
+			"sections_avg": 68.4,
+			"sections_pass": 2378,
+			"sections_fail": 132,
+			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "47036",
-			"sections_id": "104",
-			"sections_title": "dff calc ap c&ss",
+			"sections_uuid": "88778",
+			"sections_id": "301",
+			"sections_title": "human physiology",
 			"sections_instructor": "",
-			"sections_dept": "math",
+			"sections_dept": "caps",
 			"sections_year": 1900,
-			"sections_avg": 68.41,
-			"sections_pass": 816,
-			"sections_fail": 95,
+			"sections_avg": 68.4,
+			"sections_pass": 565,
+			"sections_fail": 27,
 			"sections_audit": 0
 		},
 		{
@@ -1403,6 +1379,30 @@
 			"sections_audit": 0
 		},
 		{
+			"sections_uuid": "47036",
+			"sections_id": "104",
+			"sections_title": "dff calc ap c&ss",
+			"sections_instructor": "",
+			"sections_dept": "math",
+			"sections_year": 1900,
+			"sections_avg": 68.41,
+			"sections_pass": 816,
+			"sections_fail": 95,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "52233",
+			"sections_id": "101",
+			"sections_title": "prncpls micrecon",
+			"sections_instructor": "",
+			"sections_dept": "econ",
+			"sections_year": 1900,
+			"sections_avg": 68.41,
+			"sections_pass": 2023,
+			"sections_fail": 145,
+			"sections_audit": 1
+		},
+		{
 			"sections_uuid": "47113",
 			"sections_id": "221",
 			"sections_title": "matrix algebra",
@@ -1412,6 +1412,18 @@
 			"sections_avg": 68.46,
 			"sections_pass": 761,
 			"sections_fail": 87,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "80362",
+			"sections_id": "218",
+			"sections_title": "analys beh data",
+			"sections_instructor": "",
+			"sections_dept": "psyc",
+			"sections_year": 1900,
+			"sections_avg": 68.48,
+			"sections_pass": 557,
+			"sections_fail": 46,
 			"sections_audit": 0
 		},
 		{
@@ -1427,15 +1439,15 @@
 			"sections_audit": 2
 		},
 		{
-			"sections_uuid": "80362",
-			"sections_id": "218",
-			"sections_title": "analys beh data",
+			"sections_uuid": "73004",
+			"sections_id": "221",
+			"sections_title": "matrix algebra",
 			"sections_instructor": "",
-			"sections_dept": "psyc",
+			"sections_dept": "math",
 			"sections_year": 1900,
-			"sections_avg": 68.48,
-			"sections_pass": 557,
-			"sections_fail": 46,
+			"sections_avg": 68.51,
+			"sections_pass": 621,
+			"sections_fail": 71,
 			"sections_audit": 0
 		},
 		{
@@ -1451,18 +1463,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "73004",
-			"sections_id": "221",
-			"sections_title": "matrix algebra",
-			"sections_instructor": "",
-			"sections_dept": "math",
-			"sections_year": 1900,
-			"sections_avg": 68.51,
-			"sections_pass": 621,
-			"sections_fail": 71,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "25583",
 			"sections_id": "218",
 			"sections_title": "analys beh data",
@@ -1472,6 +1472,18 @@
 			"sections_avg": 68.53,
 			"sections_pass": 598,
 			"sections_fail": 39,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "78098",
+			"sections_id": "217",
+			"sections_title": "rsrch mthds",
+			"sections_instructor": "",
+			"sections_dept": "psyc",
+			"sections_year": 1900,
+			"sections_avg": 68.58,
+			"sections_pass": 557,
+			"sections_fail": 12,
 			"sections_audit": 0
 		},
 		{
@@ -1485,18 +1497,6 @@
 			"sections_pass": 999,
 			"sections_fail": 128,
 			"sections_audit": 1
-		},
-		{
-			"sections_uuid": "78098",
-			"sections_id": "217",
-			"sections_title": "rsrch mthds",
-			"sections_instructor": "",
-			"sections_dept": "psyc",
-			"sections_year": 1900,
-			"sections_avg": 68.58,
-			"sections_pass": 557,
-			"sections_fail": 12,
-			"sections_audit": 0
 		},
 		{
 			"sections_uuid": "94734",
@@ -1547,15 +1547,15 @@
 			"sections_audit": 1
 		},
 		{
-			"sections_uuid": "27216",
-			"sections_id": "101",
-			"sections_title": "int calc ap ph s",
+			"sections_uuid": "31482",
+			"sections_id": "314",
+			"sections_title": "health psycholgy",
 			"sections_instructor": "",
-			"sections_dept": "math",
+			"sections_dept": "psyc",
 			"sections_year": 1900,
 			"sections_avg": 68.65,
-			"sections_pass": 1114,
-			"sections_fail": 145,
+			"sections_pass": 691,
+			"sections_fail": 19,
 			"sections_audit": 1
 		},
 		{
@@ -1571,15 +1571,15 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "31482",
-			"sections_id": "314",
-			"sections_title": "health psycholgy",
+			"sections_uuid": "27216",
+			"sections_id": "101",
+			"sections_title": "int calc ap ph s",
 			"sections_instructor": "",
-			"sections_dept": "psyc",
+			"sections_dept": "math",
 			"sections_year": 1900,
 			"sections_avg": 68.65,
-			"sections_pass": 691,
-			"sections_fail": 19,
+			"sections_pass": 1114,
+			"sections_fail": 145,
 			"sections_audit": 1
 		},
 		{
@@ -1619,16 +1619,16 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "31631",
-			"sections_id": "121",
-			"sections_title": "strctr bond chem",
+			"sections_uuid": "89676",
+			"sections_id": "102",
+			"sections_title": "dev soc cli psy",
 			"sections_instructor": "",
-			"sections_dept": "chem",
+			"sections_dept": "psyc",
 			"sections_year": 1900,
 			"sections_avg": 68.72,
-			"sections_pass": 1762,
-			"sections_fail": 264,
-			"sections_audit": 0
+			"sections_pass": 1785,
+			"sections_fail": 146,
+			"sections_audit": 1
 		},
 		{
 			"sections_uuid": "11431",
@@ -1643,16 +1643,16 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "89676",
-			"sections_id": "102",
-			"sections_title": "dev soc cli psy",
+			"sections_uuid": "31631",
+			"sections_id": "121",
+			"sections_title": "strctr bond chem",
 			"sections_instructor": "",
-			"sections_dept": "psyc",
+			"sections_dept": "chem",
 			"sections_year": 1900,
 			"sections_avg": 68.72,
-			"sections_pass": 1785,
-			"sections_fail": 146,
-			"sections_audit": 1
+			"sections_pass": 1762,
+			"sections_fail": 264,
+			"sections_audit": 0
 		},
 		{
 			"sections_uuid": "46997",
@@ -1679,18 +1679,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "34263",
-			"sections_id": "112",
-			"sections_title": "unicellular life",
-			"sections_instructor": "",
-			"sections_dept": "biol",
-			"sections_year": 1900,
-			"sections_avg": 68.77,
-			"sections_pass": 1215,
-			"sections_fail": 230,
-			"sections_audit": 1
-		},
-		{
 			"sections_uuid": "82096",
 			"sections_id": "121",
 			"sections_title": "structural chem",
@@ -1701,6 +1689,18 @@
 			"sections_pass": 1634,
 			"sections_fail": 260,
 			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "34263",
+			"sections_id": "112",
+			"sections_title": "unicellular life",
+			"sections_instructor": "",
+			"sections_dept": "biol",
+			"sections_year": 1900,
+			"sections_avg": 68.77,
+			"sections_pass": 1215,
+			"sections_fail": 230,
+			"sections_audit": 1
 		},
 		{
 			"sections_uuid": "19624",
@@ -1727,18 +1727,6 @@
 			"sections_audit": 1
 		},
 		{
-			"sections_uuid": "89239",
-			"sections_id": "205",
-			"sections_title": "physical chem",
-			"sections_instructor": "",
-			"sections_dept": "chem",
-			"sections_year": 1900,
-			"sections_avg": 68.87,
-			"sections_pass": 846,
-			"sections_fail": 97,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "25566",
 			"sections_id": "102",
 			"sections_title": "dev soc cli psy",
@@ -1748,6 +1736,18 @@
 			"sections_avg": 68.87,
 			"sections_pass": 760,
 			"sections_fail": 38,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "89239",
+			"sections_id": "205",
+			"sections_title": "physical chem",
+			"sections_instructor": "",
+			"sections_dept": "chem",
+			"sections_year": 1900,
+			"sections_avg": 68.87,
+			"sections_pass": 846,
+			"sections_fail": 97,
 			"sections_audit": 0
 		},
 		{
@@ -1763,18 +1763,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "57748",
-			"sections_id": "293",
-			"sections_title": "financial acctng",
-			"sections_instructor": "",
-			"sections_dept": "comm",
-			"sections_year": 1900,
-			"sections_avg": 68.91,
-			"sections_pass": 648,
-			"sections_fail": 82,
-			"sections_audit": 1
-		},
-		{
 			"sections_uuid": "89691",
 			"sections_id": "217",
 			"sections_title": "rsrch mthds",
@@ -1784,6 +1772,18 @@
 			"sections_avg": 68.91,
 			"sections_pass": 536,
 			"sections_fail": 23,
+			"sections_audit": 1
+		},
+		{
+			"sections_uuid": "57748",
+			"sections_id": "293",
+			"sections_title": "financial acctng",
+			"sections_instructor": "",
+			"sections_dept": "comm",
+			"sections_year": 1900,
+			"sections_avg": 68.91,
+			"sections_pass": 648,
+			"sections_fail": 82,
 			"sections_audit": 1
 		},
 		{
@@ -1799,16 +1799,16 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "21907",
-			"sections_id": "102",
-			"sections_title": "princpl macrecon",
+			"sections_uuid": "72895",
+			"sections_id": "100",
+			"sections_title": "df calc ap ph sc",
 			"sections_instructor": "",
-			"sections_dept": "econ",
+			"sections_dept": "math",
 			"sections_year": 1900,
 			"sections_avg": 68.98,
-			"sections_pass": 1827,
-			"sections_fail": 135,
-			"sections_audit": 6
+			"sections_pass": 923,
+			"sections_fail": 62,
+			"sections_audit": 0
 		},
 		{
 			"sections_uuid": "78343",
@@ -1823,16 +1823,16 @@
 			"sections_audit": 1
 		},
 		{
-			"sections_uuid": "72895",
-			"sections_id": "100",
-			"sections_title": "df calc ap ph sc",
+			"sections_uuid": "21907",
+			"sections_id": "102",
+			"sections_title": "princpl macrecon",
 			"sections_instructor": "",
-			"sections_dept": "math",
+			"sections_dept": "econ",
 			"sections_year": 1900,
 			"sections_avg": 68.98,
-			"sections_pass": 923,
-			"sections_fail": 62,
-			"sections_audit": 0
+			"sections_pass": 1827,
+			"sections_fail": 135,
+			"sections_audit": 6
 		},
 		{
 			"sections_uuid": "5155",
@@ -1943,18 +1943,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "17021",
-			"sections_id": "101",
-			"sections_title": "government can",
-			"sections_instructor": "",
-			"sections_dept": "poli",
-			"sections_year": 1900,
-			"sections_avg": 69.24,
-			"sections_pass": 662,
-			"sections_fail": 47,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "94749",
 			"sections_id": "217",
 			"sections_title": "rsrch mthds",
@@ -1964,6 +1952,18 @@
 			"sections_avg": 69.24,
 			"sections_pass": 507,
 			"sections_fail": 19,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "17021",
+			"sections_id": "101",
+			"sections_title": "government can",
+			"sections_instructor": "",
+			"sections_dept": "poli",
+			"sections_year": 1900,
+			"sections_avg": 69.24,
+			"sections_pass": 662,
+			"sections_fail": 47,
 			"sections_audit": 0
 		},
 		{
@@ -2015,18 +2015,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "24385",
-			"sections_id": "102",
-			"sections_title": "changing envr",
-			"sections_instructor": "",
-			"sections_dept": "geob",
-			"sections_year": 1900,
-			"sections_avg": 69.36,
-			"sections_pass": 544,
-			"sections_fail": 31,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "33971",
 			"sections_id": "102",
 			"sections_title": "df calc app lf s",
@@ -2039,15 +2027,15 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "89218",
-			"sections_id": "121",
-			"sections_title": "strctr bond chem",
+			"sections_uuid": "24385",
+			"sections_id": "102",
+			"sections_title": "changing envr",
 			"sections_instructor": "",
-			"sections_dept": "chem",
+			"sections_dept": "geob",
 			"sections_year": 1900,
-			"sections_avg": 69.41,
-			"sections_pass": 1699,
-			"sections_fail": 251,
+			"sections_avg": 69.36,
+			"sections_pass": 544,
+			"sections_fail": 31,
 			"sections_audit": 0
 		},
 		{
@@ -2063,6 +2051,18 @@
 			"sections_audit": 0
 		},
 		{
+			"sections_uuid": "89218",
+			"sections_id": "121",
+			"sections_title": "strctr bond chem",
+			"sections_instructor": "",
+			"sections_dept": "chem",
+			"sections_year": 1900,
+			"sections_avg": 69.41,
+			"sections_pass": 1699,
+			"sections_fail": 251,
+			"sections_audit": 0
+		},
+		{
 			"sections_uuid": "72932",
 			"sections_id": "104",
 			"sections_title": "dff calc ap c&ss",
@@ -2075,16 +2075,16 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "21896",
-			"sections_id": "101",
-			"sections_title": "prncpls micrecon",
+			"sections_uuid": "5166",
+			"sections_id": "105",
+			"sections_title": "int calc ap c&ss",
 			"sections_instructor": "",
-			"sections_dept": "econ",
+			"sections_dept": "math",
 			"sections_year": 1900,
 			"sections_avg": 69.43,
-			"sections_pass": 2099,
-			"sections_fail": 79,
-			"sections_audit": 2
+			"sections_pass": 973,
+			"sections_fail": 56,
+			"sections_audit": 0
 		},
 		{
 			"sections_uuid": "5145",
@@ -2099,16 +2099,16 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "5166",
-			"sections_id": "105",
-			"sections_title": "int calc ap c&ss",
+			"sections_uuid": "21896",
+			"sections_id": "101",
+			"sections_title": "prncpls micrecon",
 			"sections_instructor": "",
-			"sections_dept": "math",
+			"sections_dept": "econ",
 			"sections_year": 1900,
 			"sections_avg": 69.43,
-			"sections_pass": 973,
-			"sections_fail": 56,
-			"sections_audit": 0
+			"sections_pass": 2099,
+			"sections_fail": 79,
+			"sections_audit": 2
 		},
 		{
 			"sections_uuid": "80835",
@@ -2147,18 +2147,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "74293",
-			"sections_id": "102",
-			"sections_title": "princpl macrecon",
-			"sections_instructor": "",
-			"sections_dept": "econ",
-			"sections_year": 1900,
-			"sections_avg": 69.5,
-			"sections_pass": 2083,
-			"sections_fail": 119,
-			"sections_audit": 2
-		},
-		{
 			"sections_uuid": "3868",
 			"sections_id": "253",
 			"sections_title": "multivrbl calc",
@@ -2169,6 +2157,18 @@
 			"sections_pass": 656,
 			"sections_fail": 46,
 			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "74293",
+			"sections_id": "102",
+			"sections_title": "princpl macrecon",
+			"sections_instructor": "",
+			"sections_dept": "econ",
+			"sections_year": 1900,
+			"sections_avg": 69.5,
+			"sections_pass": 2083,
+			"sections_fail": 119,
+			"sections_audit": 2
 		},
 		{
 			"sections_uuid": "78083",
@@ -2219,18 +2219,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "21442",
-			"sections_id": "102",
-			"sections_title": "princpl macrecon",
-			"sections_instructor": "",
-			"sections_dept": "econ",
-			"sections_year": 1900,
-			"sections_avg": 69.62,
-			"sections_pass": 1787,
-			"sections_fail": 187,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "33525",
 			"sections_id": "101",
 			"sections_title": "energy & waves",
@@ -2240,6 +2228,18 @@
 			"sections_avg": 69.62,
 			"sections_pass": 1423,
 			"sections_fail": 171,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "21442",
+			"sections_id": "102",
+			"sections_title": "princpl macrecon",
+			"sections_instructor": "",
+			"sections_dept": "econ",
+			"sections_year": 1900,
+			"sections_avg": 69.62,
+			"sections_pass": 1787,
+			"sections_fail": 187,
 			"sections_audit": 0
 		},
 		{
@@ -2267,18 +2267,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "5225",
-			"sections_id": "221",
-			"sections_title": "matrix algebra",
-			"sections_instructor": "",
-			"sections_dept": "math",
-			"sections_year": 1900,
-			"sections_avg": 69.69,
-			"sections_pass": 568,
-			"sections_fail": 59,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "34075",
 			"sections_id": "253",
 			"sections_title": "multivrbl calc",
@@ -2291,15 +2279,15 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "43707",
-			"sections_id": "120",
-			"sections_title": "log & crit think",
+			"sections_uuid": "5225",
+			"sections_id": "221",
+			"sections_title": "matrix algebra",
 			"sections_instructor": "",
-			"sections_dept": "phil",
+			"sections_dept": "math",
 			"sections_year": 1900,
-			"sections_avg": 69.7,
-			"sections_pass": 634,
-			"sections_fail": 70,
+			"sections_avg": 69.69,
+			"sections_pass": 568,
+			"sections_fail": 59,
 			"sections_audit": 0
 		},
 		{
@@ -2313,6 +2301,18 @@
 			"sections_pass": 865,
 			"sections_fail": 22,
 			"sections_audit": 2
+		},
+		{
+			"sections_uuid": "43707",
+			"sections_id": "120",
+			"sections_title": "log & crit think",
+			"sections_instructor": "",
+			"sections_dept": "phil",
+			"sections_year": 1900,
+			"sections_avg": 69.7,
+			"sections_pass": 634,
+			"sections_fail": 70,
+			"sections_audit": 0
 		},
 		{
 			"sections_uuid": "19559",
@@ -2399,15 +2399,15 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "54004",
-			"sections_id": "112",
-			"sections_title": "unicellular life",
+			"sections_uuid": "98660",
+			"sections_id": "100",
+			"sections_title": "intro physics",
 			"sections_instructor": "",
-			"sections_dept": "biol",
+			"sections_dept": "phys",
 			"sections_year": 1900,
 			"sections_avg": 69.89,
-			"sections_pass": 1442,
-			"sections_fail": 116,
+			"sections_pass": 740,
+			"sections_fail": 85,
 			"sections_audit": 0
 		},
 		{
@@ -2423,15 +2423,15 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "98660",
-			"sections_id": "100",
-			"sections_title": "intro physics",
+			"sections_uuid": "54004",
+			"sections_id": "112",
+			"sections_title": "unicellular life",
 			"sections_instructor": "",
-			"sections_dept": "phys",
+			"sections_dept": "biol",
 			"sections_year": 1900,
 			"sections_avg": 69.89,
-			"sections_pass": 740,
-			"sections_fail": 85,
+			"sections_pass": 1442,
+			"sections_fail": 116,
 			"sections_audit": 0
 		},
 		{
@@ -2507,18 +2507,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "20532",
-			"sections_id": "112",
-			"sections_title": "biology of cell",
-			"sections_instructor": "",
-			"sections_dept": "biol",
-			"sections_year": 1900,
-			"sections_avg": 70.02,
-			"sections_pass": 1578,
-			"sections_fail": 150,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "80854",
 			"sections_id": "217",
 			"sections_title": "rsrch mthds",
@@ -2528,6 +2516,18 @@
 			"sections_avg": 70.02,
 			"sections_pass": 517,
 			"sections_fail": 14,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "20532",
+			"sections_id": "112",
+			"sections_title": "biology of cell",
+			"sections_instructor": "",
+			"sections_dept": "biol",
+			"sections_year": 1900,
+			"sections_avg": 70.02,
+			"sections_pass": 1578,
+			"sections_fail": 150,
 			"sections_audit": 0
 		},
 		{
@@ -2543,6 +2543,18 @@
 			"sections_audit": 0
 		},
 		{
+			"sections_uuid": "80930",
+			"sections_id": "315",
+			"sections_title": "childhood & adol",
+			"sections_instructor": "",
+			"sections_dept": "psyc",
+			"sections_year": 1900,
+			"sections_avg": 70.06,
+			"sections_pass": 596,
+			"sections_fail": 35,
+			"sections_audit": 0
+		},
+		{
 			"sections_uuid": "3747",
 			"sections_id": "100",
 			"sections_title": "df calc ap ph sc",
@@ -2555,15 +2567,15 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "80930",
-			"sections_id": "315",
-			"sections_title": "childhood & adol",
+			"sections_uuid": "3772",
+			"sections_id": "103",
+			"sections_title": "int calc ap lf s",
 			"sections_instructor": "",
-			"sections_dept": "psyc",
+			"sections_dept": "math",
 			"sections_year": 1900,
-			"sections_avg": 70.06,
-			"sections_pass": 596,
-			"sections_fail": 35,
+			"sections_avg": 70.08,
+			"sections_pass": 523,
+			"sections_fail": 27,
 			"sections_audit": 0
 		},
 		{
@@ -2577,18 +2589,6 @@
 			"sections_pass": 1948,
 			"sections_fail": 120,
 			"sections_audit": 2
-		},
-		{
-			"sections_uuid": "3772",
-			"sections_id": "103",
-			"sections_title": "int calc ap lf s",
-			"sections_instructor": "",
-			"sections_dept": "math",
-			"sections_year": 1900,
-			"sections_avg": 70.08,
-			"sections_pass": 523,
-			"sections_fail": 27,
-			"sections_audit": 0
 		},
 		{
 			"sections_uuid": "78147",
@@ -2639,18 +2639,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "67002",
-			"sections_id": "101",
-			"sections_title": "government can",
-			"sections_instructor": "",
-			"sections_dept": "poli",
-			"sections_year": 1900,
-			"sections_avg": 70.15,
-			"sections_pass": 619,
-			"sections_fail": 42,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "92605",
 			"sections_id": "150",
 			"sections_title": "rsrch&writ human",
@@ -2660,6 +2648,18 @@
 			"sections_avg": 70.15,
 			"sections_pass": 1856,
 			"sections_fail": 87,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "67002",
+			"sections_id": "101",
+			"sections_title": "government can",
+			"sections_instructor": "",
+			"sections_dept": "poli",
+			"sections_year": 1900,
+			"sections_avg": 70.15,
+			"sections_pass": 619,
+			"sections_fail": 42,
 			"sections_audit": 0
 		},
 		{
@@ -2831,16 +2831,16 @@
 			"sections_audit": 1
 		},
 		{
-			"sections_uuid": "96388",
-			"sections_id": "298",
-			"sections_title": "intro to finance",
+			"sections_uuid": "50198",
+			"sections_id": "101",
+			"sections_title": "energy & waves",
 			"sections_instructor": "",
-			"sections_dept": "comm",
+			"sections_dept": "phys",
 			"sections_year": 1900,
 			"sections_avg": 70.63,
-			"sections_pass": 559,
-			"sections_fail": 60,
-			"sections_audit": 3
+			"sections_pass": 1558,
+			"sections_fail": 184,
+			"sections_audit": 0
 		},
 		{
 			"sections_uuid": "33988",
@@ -2855,16 +2855,16 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "50198",
-			"sections_id": "101",
-			"sections_title": "energy & waves",
+			"sections_uuid": "96388",
+			"sections_id": "298",
+			"sections_title": "intro to finance",
 			"sections_instructor": "",
-			"sections_dept": "phys",
+			"sections_dept": "comm",
 			"sections_year": 1900,
 			"sections_avg": 70.63,
-			"sections_pass": 1558,
-			"sections_fail": 184,
-			"sections_audit": 0
+			"sections_pass": 559,
+			"sections_fail": 60,
+			"sections_audit": 3
 		},
 		{
 			"sections_uuid": "25637",
@@ -3011,18 +3011,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "72057",
-			"sections_id": "121",
-			"sections_title": "gentcs ecol&evol",
-			"sections_instructor": "",
-			"sections_dept": "biol",
-			"sections_year": 1900,
-			"sections_avg": 70.95,
-			"sections_pass": 1795,
-			"sections_fail": 73,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "20574",
 			"sections_id": "234",
 			"sections_title": "fund genetics",
@@ -3032,6 +3020,18 @@
 			"sections_avg": 70.95,
 			"sections_pass": 670,
 			"sections_fail": 30,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "72057",
+			"sections_id": "121",
+			"sections_title": "gentcs ecol&evol",
+			"sections_instructor": "",
+			"sections_dept": "biol",
+			"sections_year": 1900,
+			"sections_avg": 70.95,
+			"sections_pass": 1795,
+			"sections_fail": 73,
 			"sections_audit": 0
 		},
 		{
@@ -3071,18 +3071,6 @@
 			"sections_audit": 2
 		},
 		{
-			"sections_uuid": "79097",
-			"sections_id": "114",
-			"sections_title": "catastroph earth",
-			"sections_instructor": "",
-			"sections_dept": "eosc",
-			"sections_year": 1900,
-			"sections_avg": 71.02,
-			"sections_pass": 1064,
-			"sections_fail": 48,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "37831",
 			"sections_id": "120",
 			"sections_title": "log & crit think",
@@ -3095,15 +3083,15 @@
 			"sections_audit": 3
 		},
 		{
-			"sections_uuid": "33530",
-			"sections_id": "102",
-			"sections_title": "elec light & rad",
+			"sections_uuid": "79097",
+			"sections_id": "114",
+			"sections_title": "catastroph earth",
 			"sections_instructor": "",
-			"sections_dept": "phys",
+			"sections_dept": "eosc",
 			"sections_year": 1900,
-			"sections_avg": 71.05,
-			"sections_pass": 510,
-			"sections_fail": 61,
+			"sections_avg": 71.02,
+			"sections_pass": 1064,
+			"sections_fail": 48,
 			"sections_audit": 0
 		},
 		{
@@ -3119,27 +3107,15 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "43935",
-			"sections_id": "293",
-			"sections_title": "financial acctng",
-			"sections_instructor": "",
-			"sections_dept": "comm",
-			"sections_year": 1900,
-			"sections_avg": 71.07,
-			"sections_pass": 529,
-			"sections_fail": 37,
-			"sections_audit": 4
-		},
-		{
-			"sections_uuid": "89981",
+			"sections_uuid": "33530",
 			"sections_id": "102",
-			"sections_title": "df calc app lf s",
+			"sections_title": "elec light & rad",
 			"sections_instructor": "",
-			"sections_dept": "math",
+			"sections_dept": "phys",
 			"sections_year": 1900,
-			"sections_avg": 71.07,
-			"sections_pass": 756,
-			"sections_fail": 78,
+			"sections_avg": 71.05,
+			"sections_pass": 510,
+			"sections_fail": 61,
 			"sections_audit": 0
 		},
 		{
@@ -3155,6 +3131,30 @@
 			"sections_audit": 1
 		},
 		{
+			"sections_uuid": "89981",
+			"sections_id": "102",
+			"sections_title": "df calc app lf s",
+			"sections_instructor": "",
+			"sections_dept": "math",
+			"sections_year": 1900,
+			"sections_avg": 71.07,
+			"sections_pass": 756,
+			"sections_fail": 78,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "43935",
+			"sections_id": "293",
+			"sections_title": "financial acctng",
+			"sections_instructor": "",
+			"sections_dept": "comm",
+			"sections_year": 1900,
+			"sections_avg": 71.07,
+			"sections_pass": 529,
+			"sections_fail": 37,
+			"sections_audit": 4
+		},
+		{
 			"sections_uuid": "80395",
 			"sections_id": "307",
 			"sections_title": "cultural psych",
@@ -3164,18 +3164,6 @@
 			"sections_avg": 71.1,
 			"sections_pass": 557,
 			"sections_fail": 19,
-			"sections_audit": 0
-		},
-		{
-			"sections_uuid": "43911",
-			"sections_id": "291",
-			"sections_title": "appl stat in bus",
-			"sections_instructor": "",
-			"sections_dept": "comm",
-			"sections_year": 1900,
-			"sections_avg": 71.15,
-			"sections_pass": 628,
-			"sections_fail": 24,
 			"sections_audit": 0
 		},
 		{
@@ -3191,6 +3179,18 @@
 			"sections_audit": 0
 		},
 		{
+			"sections_uuid": "43911",
+			"sections_id": "291",
+			"sections_title": "appl stat in bus",
+			"sections_instructor": "",
+			"sections_dept": "comm",
+			"sections_year": 1900,
+			"sections_avg": 71.15,
+			"sections_pass": 628,
+			"sections_fail": 24,
+			"sections_audit": 0
+		},
+		{
 			"sections_uuid": "54746",
 			"sections_id": "314",
 			"sections_title": "health psycholgy",
@@ -3200,6 +3200,18 @@
 			"sections_avg": 71.16,
 			"sections_pass": 699,
 			"sections_fail": 9,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "38780",
+			"sections_id": "291",
+			"sections_title": "appl stat in bus",
+			"sections_instructor": "",
+			"sections_dept": "comm",
+			"sections_year": 1900,
+			"sections_avg": 71.19,
+			"sections_pass": 798,
+			"sections_fail": 17,
 			"sections_audit": 0
 		},
 		{
@@ -3215,16 +3227,16 @@
 			"sections_audit": 3
 		},
 		{
-			"sections_uuid": "38780",
-			"sections_id": "291",
-			"sections_title": "appl stat in bus",
+			"sections_uuid": "33183",
+			"sections_id": "120",
+			"sections_title": "log & crit think",
 			"sections_instructor": "",
-			"sections_dept": "comm",
+			"sections_dept": "phil",
 			"sections_year": 1900,
-			"sections_avg": 71.19,
-			"sections_pass": 798,
-			"sections_fail": 17,
-			"sections_audit": 0
+			"sections_avg": 71.22,
+			"sections_pass": 1245,
+			"sections_fail": 87,
+			"sections_audit": 3
 		},
 		{
 			"sections_uuid": "49856",
@@ -3239,16 +3251,16 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "33183",
-			"sections_id": "120",
-			"sections_title": "log & crit think",
+			"sections_uuid": "711",
+			"sections_id": "290",
+			"sections_title": "int quan dec mak",
 			"sections_instructor": "",
-			"sections_dept": "phil",
+			"sections_dept": "comm",
 			"sections_year": 1900,
-			"sections_avg": 71.22,
-			"sections_pass": 1245,
-			"sections_fail": 87,
-			"sections_audit": 3
+			"sections_avg": 71.25,
+			"sections_pass": 661,
+			"sections_fail": 49,
+			"sections_audit": 5
 		},
 		{
 			"sections_uuid": "82120",
@@ -3261,18 +3273,6 @@
 			"sections_pass": 869,
 			"sections_fail": 56,
 			"sections_audit": 0
-		},
-		{
-			"sections_uuid": "711",
-			"sections_id": "290",
-			"sections_title": "int quan dec mak",
-			"sections_instructor": "",
-			"sections_dept": "comm",
-			"sections_year": 1900,
-			"sections_avg": 71.25,
-			"sections_pass": 661,
-			"sections_fail": 49,
-			"sections_audit": 5
 		},
 		{
 			"sections_uuid": "70730",
@@ -3311,18 +3311,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "80561",
-			"sections_id": "101",
-			"sections_title": "energy & waves",
-			"sections_instructor": "",
-			"sections_dept": "phys",
-			"sections_year": 1900,
-			"sections_avg": 71.43,
-			"sections_pass": 1395,
-			"sections_fail": 171,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "17016",
 			"sections_id": "100",
 			"sections_title": "intro to politic",
@@ -3332,6 +3320,18 @@
 			"sections_avg": 71.43,
 			"sections_pass": 872,
 			"sections_fail": 47,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "80561",
+			"sections_id": "101",
+			"sections_title": "energy & waves",
+			"sections_instructor": "",
+			"sections_dept": "phys",
+			"sections_year": 1900,
+			"sections_avg": 71.43,
+			"sections_pass": 1395,
+			"sections_fail": 171,
 			"sections_audit": 0
 		},
 		{
@@ -3359,18 +3359,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "97419",
-			"sections_id": "112",
-			"sections_title": "univrsty writing",
-			"sections_instructor": "",
-			"sections_dept": "engl",
-			"sections_year": 1900,
-			"sections_avg": 71.51,
-			"sections_pass": 2502,
-			"sections_fail": 65,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "72942",
 			"sections_id": "105",
 			"sections_title": "int calc ap c&ss",
@@ -3380,6 +3368,18 @@
 			"sections_avg": 71.51,
 			"sections_pass": 906,
 			"sections_fail": 47,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "97419",
+			"sections_id": "112",
+			"sections_title": "univrsty writing",
+			"sections_instructor": "",
+			"sections_dept": "engl",
+			"sections_year": 1900,
+			"sections_avg": 71.51,
+			"sections_pass": 2502,
+			"sections_fail": 65,
 			"sections_audit": 0
 		},
 		{
@@ -3419,18 +3419,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "31931",
-			"sections_id": "102",
-			"sections_title": "df calc app lf s",
-			"sections_instructor": "",
-			"sections_dept": "math",
-			"sections_year": 1900,
-			"sections_avg": 71.6,
-			"sections_pass": 621,
-			"sections_fail": 44,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "78167",
 			"sections_id": "314",
 			"sections_title": "health psycholgy",
@@ -3440,6 +3428,18 @@
 			"sections_avg": 71.6,
 			"sections_pass": 806,
 			"sections_fail": 14,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "31931",
+			"sections_id": "102",
+			"sections_title": "df calc app lf s",
+			"sections_instructor": "",
+			"sections_dept": "math",
+			"sections_year": 1900,
+			"sections_avg": 71.6,
+			"sections_pass": 621,
+			"sections_fail": 44,
 			"sections_audit": 0
 		},
 		{
@@ -3527,16 +3527,16 @@
 			"sections_audit": 4
 		},
 		{
-			"sections_uuid": "42129",
+			"sections_uuid": "52132",
 			"sections_id": "200",
-			"sections_title": "fund cell bio",
-			"sections_instructor": "young, robin",
-			"sections_dept": "biol",
-			"sections_year": 2014,
+			"sections_title": "elem stat applic",
+			"sections_instructor": "",
+			"sections_dept": "stat",
+			"sections_year": 1900,
 			"sections_avg": 71.78,
-			"sections_pass": 1126,
-			"sections_fail": 72,
-			"sections_audit": 2
+			"sections_pass": 653,
+			"sections_fail": 26,
+			"sections_audit": 0
 		},
 		{
 			"sections_uuid": "42130",
@@ -3551,27 +3551,15 @@
 			"sections_audit": 6
 		},
 		{
-			"sections_uuid": "52132",
+			"sections_uuid": "42129",
 			"sections_id": "200",
-			"sections_title": "elem stat applic",
-			"sections_instructor": "",
-			"sections_dept": "stat",
-			"sections_year": 1900,
+			"sections_title": "fund cell bio",
+			"sections_instructor": "young, robin",
+			"sections_dept": "biol",
+			"sections_year": 2014,
 			"sections_avg": 71.78,
-			"sections_pass": 653,
-			"sections_fail": 26,
-			"sections_audit": 0
-		},
-		{
-			"sections_uuid": "27902",
-			"sections_id": "314",
-			"sections_title": "health psycholgy",
-			"sections_instructor": "",
-			"sections_dept": "psyc",
-			"sections_year": 1900,
-			"sections_avg": 71.79,
-			"sections_pass": 782,
-			"sections_fail": 16,
+			"sections_pass": 1126,
+			"sections_fail": 72,
 			"sections_audit": 2
 		},
 		{
@@ -3587,6 +3575,18 @@
 			"sections_audit": 0
 		},
 		{
+			"sections_uuid": "27902",
+			"sections_id": "314",
+			"sections_title": "health psycholgy",
+			"sections_instructor": "",
+			"sections_dept": "psyc",
+			"sections_year": 1900,
+			"sections_avg": 71.79,
+			"sections_pass": 782,
+			"sections_fail": 16,
+			"sections_audit": 2
+		},
+		{
 			"sections_uuid": "53726",
 			"sections_id": "260",
 			"sections_title": "intro global pol",
@@ -3597,30 +3597,6 @@
 			"sections_pass": 581,
 			"sections_fail": 26,
 			"sections_audit": 3
-		},
-		{
-			"sections_uuid": "55084",
-			"sections_id": "230",
-			"sections_title": "fund ecology",
-			"sections_instructor": "",
-			"sections_dept": "biol",
-			"sections_year": 1900,
-			"sections_avg": 71.85,
-			"sections_pass": 505,
-			"sections_fail": 20,
-			"sections_audit": 0
-		},
-		{
-			"sections_uuid": "21513",
-			"sections_id": "355",
-			"sections_title": "intro int trade",
-			"sections_instructor": "",
-			"sections_dept": "econ",
-			"sections_year": 1900,
-			"sections_avg": 71.85,
-			"sections_pass": 600,
-			"sections_fail": 27,
-			"sections_audit": 0
 		},
 		{
 			"sections_uuid": "41176",
@@ -3635,15 +3611,27 @@
 			"sections_audit": 1
 		},
 		{
-			"sections_uuid": "57743",
-			"sections_id": "292",
-			"sections_title": "mngmt&orgnz bhvr",
+			"sections_uuid": "21513",
+			"sections_id": "355",
+			"sections_title": "intro int trade",
 			"sections_instructor": "",
-			"sections_dept": "comm",
+			"sections_dept": "econ",
 			"sections_year": 1900,
-			"sections_avg": 71.87,
-			"sections_pass": 716,
-			"sections_fail": 17,
+			"sections_avg": 71.85,
+			"sections_pass": 600,
+			"sections_fail": 27,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "55084",
+			"sections_id": "230",
+			"sections_title": "fund ecology",
+			"sections_instructor": "",
+			"sections_dept": "biol",
+			"sections_year": 1900,
+			"sections_avg": 71.85,
+			"sections_pass": 505,
+			"sections_fail": 20,
 			"sections_audit": 0
 		},
 		{
@@ -3656,6 +3644,18 @@
 			"sections_avg": 71.87,
 			"sections_pass": 683,
 			"sections_fail": 23,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "57743",
+			"sections_id": "292",
+			"sections_title": "mngmt&orgnz bhvr",
+			"sections_instructor": "",
+			"sections_dept": "comm",
+			"sections_year": 1900,
+			"sections_avg": 71.87,
+			"sections_pass": 716,
+			"sections_fail": 17,
 			"sections_audit": 0
 		},
 		{
@@ -3719,18 +3719,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "81479",
-			"sections_id": "293",
-			"sections_title": "financial acctng",
-			"sections_instructor": "",
-			"sections_dept": "comm",
-			"sections_year": 1900,
-			"sections_avg": 71.99,
-			"sections_pass": 698,
-			"sections_fail": 41,
-			"sections_audit": 1
-		},
-		{
 			"sections_uuid": "63112",
 			"sections_id": "110",
 			"sections_title": "intro literature",
@@ -3741,6 +3729,18 @@
 			"sections_pass": 689,
 			"sections_fail": 20,
 			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "81479",
+			"sections_id": "293",
+			"sections_title": "financial acctng",
+			"sections_instructor": "",
+			"sections_dept": "comm",
+			"sections_year": 1900,
+			"sections_avg": 71.99,
+			"sections_pass": 698,
+			"sections_fail": 41,
+			"sections_audit": 1
 		},
 		{
 			"sections_uuid": "48364",
@@ -3767,15 +3767,15 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "18671",
-			"sections_id": "160",
-			"sections_title": "comp eng design",
+			"sections_uuid": "4139",
+			"sections_id": "100",
+			"sections_title": "intr lang&ling",
 			"sections_instructor": "",
-			"sections_dept": "apsc",
+			"sections_dept": "ling",
 			"sections_year": 1900,
 			"sections_avg": 72.08,
-			"sections_pass": 576,
-			"sections_fail": 118,
+			"sections_pass": 536,
+			"sections_fail": 33,
 			"sections_audit": 0
 		},
 		{
@@ -3791,15 +3791,15 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "4139",
-			"sections_id": "100",
-			"sections_title": "intr lang&ling",
+			"sections_uuid": "18671",
+			"sections_id": "160",
+			"sections_title": "comp eng design",
 			"sections_instructor": "",
-			"sections_dept": "ling",
+			"sections_dept": "apsc",
 			"sections_year": 1900,
 			"sections_avg": 72.08,
-			"sections_pass": 536,
-			"sections_fail": 33,
+			"sections_pass": 576,
+			"sections_fail": 118,
 			"sections_audit": 0
 		},
 		{
@@ -3815,18 +3815,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "64764",
-			"sections_id": "123",
-			"sections_title": "phys & org chem",
-			"sections_instructor": "",
-			"sections_dept": "chem",
-			"sections_year": 1900,
-			"sections_avg": 72.1,
-			"sections_pass": 1530,
-			"sections_fail": 115,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "78173",
 			"sections_id": "315",
 			"sections_title": "childhood & adol",
@@ -3837,6 +3825,18 @@
 			"sections_pass": 536,
 			"sections_fail": 9,
 			"sections_audit": 2
+		},
+		{
+			"sections_uuid": "64764",
+			"sections_id": "123",
+			"sections_title": "phys & org chem",
+			"sections_instructor": "",
+			"sections_dept": "chem",
+			"sections_year": 1900,
+			"sections_avg": 72.1,
+			"sections_pass": 1530,
+			"sections_fail": 115,
+			"sections_audit": 0
 		},
 		{
 			"sections_uuid": "53712",
@@ -3899,18 +3899,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "51084",
-			"sections_id": "102",
-			"sections_title": "changing envr",
-			"sections_instructor": "",
-			"sections_dept": "geob",
-			"sections_year": 1900,
-			"sections_avg": 72.19,
-			"sections_pass": 565,
-			"sections_fail": 36,
-			"sections_audit": 2
-		},
-		{
 			"sections_uuid": "90084",
 			"sections_id": "253",
 			"sections_title": "multivrbl calc",
@@ -3921,6 +3909,18 @@
 			"sections_pass": 736,
 			"sections_fail": 33,
 			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "51084",
+			"sections_id": "102",
+			"sections_title": "changing envr",
+			"sections_instructor": "",
+			"sections_dept": "geob",
+			"sections_year": 1900,
+			"sections_avg": 72.19,
+			"sections_pass": 565,
+			"sections_fail": 36,
+			"sections_audit": 2
 		},
 		{
 			"sections_uuid": "8879",
@@ -3983,39 +3983,15 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "83846",
-			"sections_id": "393",
-			"sections_title": "commercial law",
+			"sections_uuid": "81944",
+			"sections_id": "200",
+			"sections_title": "elem stat applic",
 			"sections_instructor": "",
-			"sections_dept": "comm",
+			"sections_dept": "stat",
 			"sections_year": 1900,
 			"sections_avg": 72.3,
-			"sections_pass": 690,
-			"sections_fail": 27,
-			"sections_audit": 2
-		},
-		{
-			"sections_uuid": "41359",
-			"sections_id": "110",
-			"sections_title": "intro literature",
-			"sections_instructor": "",
-			"sections_dept": "engl",
-			"sections_year": 1900,
-			"sections_avg": 72.3,
-			"sections_pass": 1948,
-			"sections_fail": 27,
-			"sections_audit": 0
-		},
-		{
-			"sections_uuid": "95133",
-			"sections_id": "110",
-			"sections_title": "intro literature",
-			"sections_instructor": "",
-			"sections_dept": "engl",
-			"sections_year": 1900,
-			"sections_avg": 72.3,
-			"sections_pass": 1398,
-			"sections_fail": 20,
+			"sections_pass": 797,
+			"sections_fail": 33,
 			"sections_audit": 0
 		},
 		{
@@ -4031,16 +4007,40 @@
 			"sections_audit": 2
 		},
 		{
-			"sections_uuid": "81944",
-			"sections_id": "200",
-			"sections_title": "elem stat applic",
+			"sections_uuid": "95133",
+			"sections_id": "110",
+			"sections_title": "intro literature",
 			"sections_instructor": "",
-			"sections_dept": "stat",
+			"sections_dept": "engl",
 			"sections_year": 1900,
 			"sections_avg": 72.3,
-			"sections_pass": 797,
-			"sections_fail": 33,
+			"sections_pass": 1398,
+			"sections_fail": 20,
 			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "41359",
+			"sections_id": "110",
+			"sections_title": "intro literature",
+			"sections_instructor": "",
+			"sections_dept": "engl",
+			"sections_year": 1900,
+			"sections_avg": 72.3,
+			"sections_pass": 1948,
+			"sections_fail": 27,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "83846",
+			"sections_id": "393",
+			"sections_title": "commercial law",
+			"sections_instructor": "",
+			"sections_dept": "comm",
+			"sections_year": 1900,
+			"sections_avg": 72.3,
+			"sections_pass": 690,
+			"sections_fail": 27,
+			"sections_audit": 2
 		},
 		{
 			"sections_uuid": "81452",
@@ -4055,18 +4055,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "42124",
-			"sections_id": "140",
-			"sections_title": "lab inv life sc",
-			"sections_instructor": "",
-			"sections_dept": "biol",
-			"sections_year": 1900,
-			"sections_avg": 72.38,
-			"sections_pass": 1318,
-			"sections_fail": 20,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "54055",
 			"sections_id": "201",
 			"sections_title": "intro biochem",
@@ -4076,6 +4064,18 @@
 			"sections_avg": 72.38,
 			"sections_pass": 884,
 			"sections_fail": 86,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "42124",
+			"sections_id": "140",
+			"sections_title": "lab inv life sc",
+			"sections_instructor": "",
+			"sections_dept": "biol",
+			"sections_year": 1900,
+			"sections_avg": 72.38,
+			"sections_pass": 1318,
+			"sections_fail": 20,
 			"sections_audit": 0
 		},
 		{
@@ -4127,18 +4127,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "43949",
-			"sections_id": "295",
-			"sections_title": "managerial econ",
-			"sections_instructor": "",
-			"sections_dept": "comm",
-			"sections_year": 1900,
-			"sections_avg": 72.43,
-			"sections_pass": 641,
-			"sections_fail": 11,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "80017",
 			"sections_id": "202",
 			"sections_title": "med micb & immun",
@@ -4148,6 +4136,18 @@
 			"sections_avg": 72.43,
 			"sections_pass": 696,
 			"sections_fail": 39,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "43949",
+			"sections_id": "295",
+			"sections_title": "managerial econ",
+			"sections_instructor": "",
+			"sections_dept": "comm",
+			"sections_year": 1900,
+			"sections_avg": 72.43,
+			"sections_pass": 641,
+			"sections_fail": 11,
 			"sections_audit": 0
 		},
 		{
@@ -4211,18 +4211,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "19594",
-			"sections_id": "140",
-			"sections_title": "lab inv life sc",
-			"sections_instructor": "",
-			"sections_dept": "biol",
-			"sections_year": 1900,
-			"sections_avg": 72.55,
-			"sections_pass": 1525,
-			"sections_fail": 17,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "38701",
 			"sections_id": "101",
 			"sections_title": "busn fundamental",
@@ -4235,27 +4223,15 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "54050",
-			"sections_id": "200",
-			"sections_title": "fund cell bio",
+			"sections_uuid": "19594",
+			"sections_id": "140",
+			"sections_title": "lab inv life sc",
 			"sections_instructor": "",
 			"sections_dept": "biol",
 			"sections_year": 1900,
-			"sections_avg": 72.56,
-			"sections_pass": 1257,
-			"sections_fail": 45,
-			"sections_audit": 0
-		},
-		{
-			"sections_uuid": "57026",
-			"sections_id": "110",
-			"sections_title": "intro literature",
-			"sections_instructor": "",
-			"sections_dept": "engl",
-			"sections_year": 1900,
-			"sections_avg": 72.56,
-			"sections_pass": 1474,
-			"sections_fail": 29,
+			"sections_avg": 72.55,
+			"sections_pass": 1525,
+			"sections_fail": 17,
 			"sections_audit": 0
 		},
 		{
@@ -4271,6 +4247,30 @@
 			"sections_audit": 0
 		},
 		{
+			"sections_uuid": "57026",
+			"sections_id": "110",
+			"sections_title": "intro literature",
+			"sections_instructor": "",
+			"sections_dept": "engl",
+			"sections_year": 1900,
+			"sections_avg": 72.56,
+			"sections_pass": 1474,
+			"sections_fail": 29,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "54050",
+			"sections_id": "200",
+			"sections_title": "fund cell bio",
+			"sections_instructor": "",
+			"sections_dept": "biol",
+			"sections_year": 1900,
+			"sections_avg": 72.56,
+			"sections_pass": 1257,
+			"sections_fail": 45,
+			"sections_audit": 0
+		},
+		{
 			"sections_uuid": "89269",
 			"sections_id": "235",
 			"sections_title": "org chem lab",
@@ -4283,18 +4283,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "37222",
-			"sections_id": "112",
-			"sections_title": "univrsty writing",
-			"sections_instructor": "",
-			"sections_dept": "engl",
-			"sections_year": 1900,
-			"sections_avg": 72.59,
-			"sections_pass": 2498,
-			"sections_fail": 45,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "2369",
 			"sections_id": "114",
 			"sections_title": "catastroph earth",
@@ -4304,6 +4292,18 @@
 			"sections_avg": 72.59,
 			"sections_pass": 1950,
 			"sections_fail": 69,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "37222",
+			"sections_id": "112",
+			"sections_title": "univrsty writing",
+			"sections_instructor": "",
+			"sections_dept": "engl",
+			"sections_year": 1900,
+			"sections_avg": 72.59,
+			"sections_pass": 2498,
+			"sections_fail": 45,
 			"sections_audit": 0
 		},
 		{
@@ -4331,18 +4331,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "83395",
-			"sections_id": "110",
-			"sections_title": "comptn, progrmng",
-			"sections_instructor": "",
-			"sections_dept": "cpsc",
-			"sections_year": 1900,
-			"sections_avg": 72.63,
-			"sections_pass": 736,
-			"sections_fail": 118,
-			"sections_audit": 3
-		},
-		{
 			"sections_uuid": "86315",
 			"sections_id": "114",
 			"sections_title": "catastroph earth",
@@ -4355,16 +4343,16 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "18066",
-			"sections_id": "140",
-			"sections_title": "lab inv life sc",
+			"sections_uuid": "83395",
+			"sections_id": "110",
+			"sections_title": "comptn, progrmng",
 			"sections_instructor": "",
-			"sections_dept": "biol",
+			"sections_dept": "cpsc",
 			"sections_year": 1900,
-			"sections_avg": 72.64,
-			"sections_pass": 1483,
-			"sections_fail": 15,
-			"sections_audit": 0
+			"sections_avg": 72.63,
+			"sections_pass": 736,
+			"sections_fail": 118,
+			"sections_audit": 3
 		},
 		{
 			"sections_uuid": "769",
@@ -4379,15 +4367,15 @@
 			"sections_audit": 2
 		},
 		{
-			"sections_uuid": "88955",
+			"sections_uuid": "18066",
 			"sections_id": "140",
 			"sections_title": "lab inv life sc",
 			"sections_instructor": "",
 			"sections_dept": "biol",
 			"sections_year": 1900,
-			"sections_avg": 72.66,
-			"sections_pass": 1571,
-			"sections_fail": 26,
+			"sections_avg": 72.64,
+			"sections_pass": 1483,
+			"sections_fail": 15,
 			"sections_audit": 0
 		},
 		{
@@ -4400,6 +4388,18 @@
 			"sections_avg": 72.66,
 			"sections_pass": 1441,
 			"sections_fail": 97,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "88955",
+			"sections_id": "140",
+			"sections_title": "lab inv life sc",
+			"sections_instructor": "",
+			"sections_dept": "biol",
+			"sections_year": 1900,
+			"sections_avg": 72.66,
+			"sections_pass": 1571,
+			"sections_fail": 26,
 			"sections_audit": 0
 		},
 		{
@@ -4439,18 +4439,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "20545",
-			"sections_id": "140",
-			"sections_title": "lab inv life sc",
-			"sections_instructor": "",
-			"sections_dept": "biol",
-			"sections_year": 1900,
-			"sections_avg": 72.75,
-			"sections_pass": 1501,
-			"sections_fail": 17,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "42772",
 			"sections_id": "110",
 			"sections_title": "intro literature",
@@ -4463,27 +4451,27 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "83597",
-			"sections_id": "101",
-			"sections_title": "busn fundamental",
+			"sections_uuid": "20545",
+			"sections_id": "140",
+			"sections_title": "lab inv life sc",
 			"sections_instructor": "",
-			"sections_dept": "comm",
+			"sections_dept": "biol",
 			"sections_year": 1900,
-			"sections_avg": 72.76,
-			"sections_pass": 662,
-			"sections_fail": 15,
+			"sections_avg": 72.75,
+			"sections_pass": 1501,
+			"sections_fail": 17,
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "48276",
-			"sections_id": "110",
-			"sections_title": "intro literature",
+			"sections_uuid": "50203",
+			"sections_id": "102",
+			"sections_title": "elec light & rad",
 			"sections_instructor": "",
-			"sections_dept": "engl",
+			"sections_dept": "phys",
 			"sections_year": 1900,
 			"sections_avg": 72.76,
-			"sections_pass": 1435,
-			"sections_fail": 25,
+			"sections_pass": 649,
+			"sections_fail": 52,
 			"sections_audit": 0
 		},
 		{
@@ -4499,15 +4487,27 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "50203",
-			"sections_id": "102",
-			"sections_title": "elec light & rad",
+			"sections_uuid": "48276",
+			"sections_id": "110",
+			"sections_title": "intro literature",
 			"sections_instructor": "",
-			"sections_dept": "phys",
+			"sections_dept": "engl",
 			"sections_year": 1900,
 			"sections_avg": 72.76,
-			"sections_pass": 649,
-			"sections_fail": 52,
+			"sections_pass": 1435,
+			"sections_fail": 25,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "83597",
+			"sections_id": "101",
+			"sections_title": "busn fundamental",
+			"sections_instructor": "",
+			"sections_dept": "comm",
+			"sections_year": 1900,
+			"sections_avg": 72.76,
+			"sections_pass": 662,
+			"sections_fail": 15,
 			"sections_audit": 0
 		},
 		{
@@ -4547,18 +4547,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "89227",
-			"sections_id": "123",
-			"sections_title": "thm kin org chem",
-			"sections_instructor": "",
-			"sections_dept": "chem",
-			"sections_year": 1900,
-			"sections_avg": 72.83,
-			"sections_pass": 1545,
-			"sections_fail": 121,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "98574",
 			"sections_id": "101",
 			"sections_title": "beginner span i",
@@ -4571,15 +4559,15 @@
 			"sections_audit": 2
 		},
 		{
-			"sections_uuid": "20544",
-			"sections_id": "140",
-			"sections_title": "lab inv life sc",
-			"sections_instructor": "pollock, carol;sun, chin",
-			"sections_dept": "biol",
-			"sections_year": 2012,
-			"sections_avg": 72.84,
-			"sections_pass": 915,
-			"sections_fail": 8,
+			"sections_uuid": "89227",
+			"sections_id": "123",
+			"sections_title": "thm kin org chem",
+			"sections_instructor": "",
+			"sections_dept": "chem",
+			"sections_year": 1900,
+			"sections_avg": 72.83,
+			"sections_pass": 1545,
+			"sections_fail": 121,
 			"sections_audit": 0
 		},
 		{
@@ -4595,15 +4583,15 @@
 			"sections_audit": 2
 		},
 		{
-			"sections_uuid": "72059",
+			"sections_uuid": "20544",
 			"sections_id": "140",
 			"sections_title": "lab inv life sc",
-			"sections_instructor": "nomme, kathy margaret;pollock, carol;sun, chin",
+			"sections_instructor": "pollock, carol;sun, chin",
 			"sections_dept": "biol",
-			"sections_year": 2013,
-			"sections_avg": 72.85,
-			"sections_pass": 910,
-			"sections_fail": 14,
+			"sections_year": 2012,
+			"sections_avg": 72.84,
+			"sections_pass": 915,
+			"sections_fail": 8,
 			"sections_audit": 0
 		},
 		{
@@ -4619,15 +4607,15 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "54039",
+			"sections_uuid": "72059",
 			"sections_id": "140",
 			"sections_title": "lab inv life sc",
-			"sections_instructor": "",
+			"sections_instructor": "nomme, kathy margaret;pollock, carol;sun, chin",
 			"sections_dept": "biol",
-			"sections_year": 1900,
-			"sections_avg": 72.86,
-			"sections_pass": 1518,
-			"sections_fail": 10,
+			"sections_year": 2013,
+			"sections_avg": 72.85,
+			"sections_pass": 910,
+			"sections_fail": 14,
 			"sections_audit": 0
 		},
 		{
@@ -4640,6 +4628,18 @@
 			"sections_avg": 72.86,
 			"sections_pass": 566,
 			"sections_fail": 27,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "54039",
+			"sections_id": "140",
+			"sections_title": "lab inv life sc",
+			"sections_instructor": "",
+			"sections_dept": "biol",
+			"sections_year": 1900,
+			"sections_avg": 72.86,
+			"sections_pass": 1518,
+			"sections_fail": 10,
 			"sections_audit": 0
 		},
 		{
@@ -4679,18 +4679,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "42121",
-			"sections_id": "121",
-			"sections_title": "gentcs ecol&evol",
-			"sections_instructor": "",
-			"sections_dept": "biol",
-			"sections_year": 1900,
-			"sections_avg": 72.91,
-			"sections_pass": 1761,
-			"sections_fail": 73,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "42865",
 			"sections_id": "112",
 			"sections_title": "strat univ writ",
@@ -4700,6 +4688,18 @@
 			"sections_avg": 72.91,
 			"sections_pass": 2698,
 			"sections_fail": 79,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "42121",
+			"sections_id": "121",
+			"sections_title": "gentcs ecol&evol",
+			"sections_instructor": "",
+			"sections_dept": "biol",
+			"sections_year": 1900,
+			"sections_avg": 72.91,
+			"sections_pass": 1761,
+			"sections_fail": 73,
 			"sections_audit": 0
 		},
 		{
@@ -4715,18 +4715,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "97331",
-			"sections_id": "110",
-			"sections_title": "intro literature",
-			"sections_instructor": "",
-			"sections_dept": "engl",
-			"sections_year": 1900,
-			"sections_avg": 72.94,
-			"sections_pass": 1590,
-			"sections_fail": 23,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "9652",
 			"sections_id": "202",
 			"sections_title": "med micb & immun",
@@ -4737,6 +4725,18 @@
 			"sections_pass": 569,
 			"sections_fail": 25,
 			"sections_audit": 1
+		},
+		{
+			"sections_uuid": "97331",
+			"sections_id": "110",
+			"sections_title": "intro literature",
+			"sections_instructor": "",
+			"sections_dept": "engl",
+			"sections_year": 1900,
+			"sections_avg": 72.94,
+			"sections_pass": 1590,
+			"sections_fail": 23,
+			"sections_audit": 0
 		},
 		{
 			"sections_uuid": "733",
@@ -4751,18 +4751,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "72916",
-			"sections_id": "102",
-			"sections_title": "df calc app lf s",
-			"sections_instructor": "",
-			"sections_dept": "math",
-			"sections_year": 1900,
-			"sections_avg": 72.98,
-			"sections_pass": 574,
-			"sections_fail": 35,
-			"sections_audit": 1
-		},
-		{
 			"sections_uuid": "5914",
 			"sections_id": "100",
 			"sections_title": "intro physics",
@@ -4773,6 +4761,18 @@
 			"sections_pass": 719,
 			"sections_fail": 56,
 			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "72916",
+			"sections_id": "102",
+			"sections_title": "df calc app lf s",
+			"sections_instructor": "",
+			"sections_dept": "math",
+			"sections_year": 1900,
+			"sections_avg": 72.98,
+			"sections_pass": 574,
+			"sections_fail": 35,
+			"sections_audit": 1
 		},
 		{
 			"sections_uuid": "55070",
@@ -4811,18 +4811,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "71224",
-			"sections_id": "295",
-			"sections_title": "managerial econ",
-			"sections_instructor": "",
-			"sections_dept": "comm",
-			"sections_year": 1900,
-			"sections_avg": 73.12,
-			"sections_pass": 568,
-			"sections_fail": 11,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "67014",
 			"sections_id": "260",
 			"sections_title": "intro global pol",
@@ -4832,6 +4820,18 @@
 			"sections_avg": 73.12,
 			"sections_pass": 721,
 			"sections_fail": 6,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "71224",
+			"sections_id": "295",
+			"sections_title": "managerial econ",
+			"sections_instructor": "",
+			"sections_dept": "comm",
+			"sections_year": 1900,
+			"sections_avg": 73.12,
+			"sections_pass": 568,
+			"sections_fail": 11,
 			"sections_audit": 0
 		},
 		{
@@ -4883,18 +4883,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "57756",
-			"sections_id": "294",
-			"sections_title": "managerial acctg",
-			"sections_instructor": "",
-			"sections_dept": "comm",
-			"sections_year": 1900,
-			"sections_avg": 73.25,
-			"sections_pass": 643,
-			"sections_fail": 17,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "62349",
 			"sections_id": "110",
 			"sections_title": "comptn, progrmng",
@@ -4904,6 +4892,18 @@
 			"sections_avg": 73.25,
 			"sections_pass": 966,
 			"sections_fail": 190,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "57756",
+			"sections_id": "294",
+			"sections_title": "managerial acctg",
+			"sections_instructor": "",
+			"sections_dept": "comm",
+			"sections_year": 1900,
+			"sections_avg": 73.25,
+			"sections_pass": 643,
+			"sections_fail": 17,
 			"sections_audit": 0
 		},
 		{
@@ -4943,18 +4943,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "8246",
-			"sections_id": "160",
-			"sections_title": "comp eng design",
-			"sections_instructor": "",
-			"sections_dept": "apsc",
-			"sections_year": 1900,
-			"sections_avg": 73.39,
-			"sections_pass": 645,
-			"sections_fail": 118,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "70542",
 			"sections_id": "114",
 			"sections_title": "catastroph earth",
@@ -4967,15 +4955,15 @@
 			"sections_audit": 1
 		},
 		{
-			"sections_uuid": "37132",
-			"sections_id": "110",
-			"sections_title": "intro literature",
+			"sections_uuid": "8246",
+			"sections_id": "160",
+			"sections_title": "comp eng design",
 			"sections_instructor": "",
-			"sections_dept": "engl",
+			"sections_dept": "apsc",
 			"sections_year": 1900,
-			"sections_avg": 73.44,
-			"sections_pass": 1579,
-			"sections_fail": 34,
+			"sections_avg": 73.39,
+			"sections_pass": 645,
+			"sections_fail": 118,
 			"sections_audit": 0
 		},
 		{
@@ -4991,15 +4979,15 @@
 			"sections_audit": 1
 		},
 		{
-			"sections_uuid": "54044",
-			"sections_id": "200",
-			"sections_title": "fund cell bio",
-			"sections_instructor": "mazari-andersen, alicia",
-			"sections_dept": "biol",
-			"sections_year": 2010,
-			"sections_avg": 73.45,
-			"sections_pass": 1158,
-			"sections_fail": 24,
+			"sections_uuid": "37132",
+			"sections_id": "110",
+			"sections_title": "intro literature",
+			"sections_instructor": "",
+			"sections_dept": "engl",
+			"sections_year": 1900,
+			"sections_avg": 73.44,
+			"sections_pass": 1579,
+			"sections_fail": 34,
 			"sections_audit": 0
 		},
 		{
@@ -5012,6 +5000,18 @@
 			"sections_avg": 73.45,
 			"sections_pass": 1409,
 			"sections_fail": 63,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "54044",
+			"sections_id": "200",
+			"sections_title": "fund cell bio",
+			"sections_instructor": "mazari-andersen, alicia",
+			"sections_dept": "biol",
+			"sections_year": 2010,
+			"sections_avg": 73.45,
+			"sections_pass": 1158,
+			"sections_fail": 24,
 			"sections_audit": 0
 		},
 		{
@@ -5039,18 +5039,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "71186",
-			"sections_id": "291",
-			"sections_title": "appl stat in bus",
-			"sections_instructor": "",
-			"sections_dept": "comm",
-			"sections_year": 1900,
-			"sections_avg": 73.49,
-			"sections_pass": 571,
-			"sections_fail": 21,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "79990",
 			"sections_id": "157",
 			"sections_title": "intr phys eng i",
@@ -5060,6 +5048,18 @@
 			"sections_avg": 73.49,
 			"sections_pass": 691,
 			"sections_fail": 27,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "71186",
+			"sections_id": "291",
+			"sections_title": "appl stat in bus",
+			"sections_instructor": "",
+			"sections_dept": "comm",
+			"sections_year": 1900,
+			"sections_avg": 73.49,
+			"sections_pass": 571,
+			"sections_fail": 21,
 			"sections_audit": 0
 		},
 		{
@@ -5099,18 +5099,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "38815",
-			"sections_id": "295",
-			"sections_title": "managerial econ",
-			"sections_instructor": "",
-			"sections_dept": "comm",
-			"sections_year": 1900,
-			"sections_avg": 73.57,
-			"sections_pass": 764,
-			"sections_fail": 12,
-			"sections_audit": 2
-		},
-		{
 			"sections_uuid": "69586",
 			"sections_id": "200",
 			"sections_title": "elem stat applic",
@@ -5121,6 +5109,18 @@
 			"sections_pass": 625,
 			"sections_fail": 31,
 			"sections_audit": 1
+		},
+		{
+			"sections_uuid": "38815",
+			"sections_id": "295",
+			"sections_title": "managerial econ",
+			"sections_instructor": "",
+			"sections_dept": "comm",
+			"sections_year": 1900,
+			"sections_avg": 73.57,
+			"sections_pass": 764,
+			"sections_fail": 12,
+			"sections_audit": 2
 		},
 		{
 			"sections_uuid": "42123",
@@ -5135,18 +5135,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "72085",
-			"sections_id": "230",
-			"sections_title": "fund ecology",
-			"sections_instructor": "",
-			"sections_dept": "biol",
-			"sections_year": 1900,
-			"sections_avg": 73.67,
-			"sections_pass": 535,
-			"sections_fail": 24,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "12370",
 			"sections_id": "202",
 			"sections_title": "med micb & immun",
@@ -5157,6 +5145,18 @@
 			"sections_pass": 658,
 			"sections_fail": 47,
 			"sections_audit": 1
+		},
+		{
+			"sections_uuid": "72085",
+			"sections_id": "230",
+			"sections_title": "fund ecology",
+			"sections_instructor": "",
+			"sections_dept": "biol",
+			"sections_year": 1900,
+			"sections_avg": 73.67,
+			"sections_pass": 535,
+			"sections_fail": 24,
+			"sections_audit": 0
 		},
 		{
 			"sections_uuid": "22418",
@@ -5183,18 +5183,6 @@
 			"sections_audit": 2
 		},
 		{
-			"sections_uuid": "55065",
-			"sections_id": "200",
-			"sections_title": "fund cell bio",
-			"sections_instructor": "young, robin",
-			"sections_dept": "biol",
-			"sections_year": 2015,
-			"sections_avg": 73.7,
-			"sections_pass": 1174,
-			"sections_fail": 95,
-			"sections_audit": 1
-		},
-		{
 			"sections_uuid": "55066",
 			"sections_id": "200",
 			"sections_title": "fund cell bio",
@@ -5205,6 +5193,18 @@
 			"sections_pass": 1174,
 			"sections_fail": 95,
 			"sections_audit": 2
+		},
+		{
+			"sections_uuid": "55065",
+			"sections_id": "200",
+			"sections_title": "fund cell bio",
+			"sections_instructor": "young, robin",
+			"sections_dept": "biol",
+			"sections_year": 2015,
+			"sections_avg": 73.7,
+			"sections_pass": 1174,
+			"sections_fail": 95,
+			"sections_audit": 1
 		},
 		{
 			"sections_uuid": "81492",
@@ -5231,18 +5231,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "31645",
-			"sections_id": "235",
-			"sections_title": "org chem lab",
-			"sections_instructor": "",
-			"sections_dept": "chem",
-			"sections_year": 1900,
-			"sections_avg": 73.81,
-			"sections_pass": 549,
-			"sections_fail": 1,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "42885",
 			"sections_id": "220",
 			"sections_title": "lit engl 18c",
@@ -5255,15 +5243,15 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "36555",
-			"sections_id": "160",
-			"sections_title": "comp eng design",
+			"sections_uuid": "31645",
+			"sections_id": "235",
+			"sections_title": "org chem lab",
 			"sections_instructor": "",
-			"sections_dept": "apsc",
+			"sections_dept": "chem",
 			"sections_year": 1900,
-			"sections_avg": 73.83,
-			"sections_pass": 690,
-			"sections_fail": 99,
+			"sections_avg": 73.81,
+			"sections_pass": 549,
+			"sections_fail": 1,
 			"sections_audit": 0
 		},
 		{
@@ -5276,6 +5264,18 @@
 			"sections_avg": 73.83,
 			"sections_pass": 663,
 			"sections_fail": 18,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "36555",
+			"sections_id": "160",
+			"sections_title": "comp eng design",
+			"sections_instructor": "",
+			"sections_dept": "apsc",
+			"sections_year": 1900,
+			"sections_avg": 73.83,
+			"sections_pass": 690,
+			"sections_fail": 99,
 			"sections_audit": 0
 		},
 		{
@@ -5315,18 +5315,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "54524",
-			"sections_id": "235",
-			"sections_title": "org chem lab",
-			"sections_instructor": "",
-			"sections_dept": "chem",
-			"sections_year": 1900,
-			"sections_avg": 73.94,
-			"sections_pass": 1086,
-			"sections_fail": 1,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "419",
 			"sections_id": "159",
 			"sections_title": "intro phys lab",
@@ -5336,6 +5324,18 @@
 			"sections_avg": 73.94,
 			"sections_pass": 761,
 			"sections_fail": 5,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "54524",
+			"sections_id": "235",
+			"sections_title": "org chem lab",
+			"sections_instructor": "",
+			"sections_dept": "chem",
+			"sections_year": 1900,
+			"sections_avg": 73.94,
+			"sections_pass": 1086,
+			"sections_fail": 1,
 			"sections_audit": 0
 		},
 		{
@@ -5447,18 +5447,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "919",
-			"sections_id": "393",
-			"sections_title": "commercial law",
-			"sections_instructor": "",
-			"sections_dept": "comm",
-			"sections_year": 1900,
-			"sections_avg": 74.13,
-			"sections_pass": 694,
-			"sections_fail": 11,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "398",
 			"sections_id": "157",
 			"sections_title": "intr phys eng i",
@@ -5468,6 +5456,18 @@
 			"sections_avg": 74.13,
 			"sections_pass": 765,
 			"sections_fail": 64,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "919",
+			"sections_id": "393",
+			"sections_title": "commercial law",
+			"sections_instructor": "",
+			"sections_dept": "comm",
+			"sections_year": 1900,
+			"sections_avg": 74.13,
+			"sections_pass": 694,
+			"sections_fail": 11,
 			"sections_audit": 0
 		},
 		{
@@ -5531,24 +5531,24 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "23370",
-			"sections_id": "390",
-			"sections_title": "intr mcr hum ant",
-			"sections_instructor": "roskelley, calvin",
-			"sections_dept": "caps",
-			"sections_year": 2014,
-			"sections_avg": 74.34,
-			"sections_pass": 579,
-			"sections_fail": 10,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "23371",
 			"sections_id": "390",
 			"sections_title": "intr mcr hum ant",
 			"sections_instructor": "",
 			"sections_dept": "caps",
 			"sections_year": 1900,
+			"sections_avg": 74.34,
+			"sections_pass": 579,
+			"sections_fail": 10,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "23370",
+			"sections_id": "390",
+			"sections_title": "intr mcr hum ant",
+			"sections_instructor": "roskelley, calvin",
+			"sections_dept": "caps",
+			"sections_year": 2014,
 			"sections_avg": 74.34,
 			"sections_pass": 579,
 			"sections_fail": 10,
@@ -5579,18 +5579,6 @@
 			"sections_audit": 1
 		},
 		{
-			"sections_uuid": "8797",
-			"sections_id": "201",
-			"sections_title": "technical commun",
-			"sections_instructor": "",
-			"sections_dept": "apsc",
-			"sections_year": 1900,
-			"sections_avg": 74.43,
-			"sections_pass": 757,
-			"sections_fail": 26,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "38798",
 			"sections_id": "292",
 			"sections_title": "mngmt&orgnz bhvr",
@@ -5603,15 +5591,15 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "31203",
-			"sections_id": "154",
-			"sections_title": "chem for engr",
+			"sections_uuid": "8797",
+			"sections_id": "201",
+			"sections_title": "technical commun",
 			"sections_instructor": "",
-			"sections_dept": "chem",
+			"sections_dept": "apsc",
 			"sections_year": 1900,
-			"sections_avg": 74.44,
-			"sections_pass": 547,
-			"sections_fail": 47,
+			"sections_avg": 74.43,
+			"sections_pass": 757,
+			"sections_fail": 26,
 			"sections_audit": 0
 		},
 		{
@@ -5627,39 +5615,15 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "72047",
-			"sections_id": "112",
-			"sections_title": "biology of cell",
+			"sections_uuid": "31203",
+			"sections_id": "154",
+			"sections_title": "chem for engr",
 			"sections_instructor": "",
-			"sections_dept": "biol",
+			"sections_dept": "chem",
 			"sections_year": 1900,
-			"sections_avg": 74.49,
-			"sections_pass": 1586,
-			"sections_fail": 84,
-			"sections_audit": 0
-		},
-		{
-			"sections_uuid": "38774",
-			"sections_id": "290",
-			"sections_title": "int quan dec mak",
-			"sections_instructor": "",
-			"sections_dept": "comm",
-			"sections_year": 1900,
-			"sections_avg": 74.49,
-			"sections_pass": 829,
-			"sections_fail": 67,
-			"sections_audit": 0
-		},
-		{
-			"sections_uuid": "38807",
-			"sections_id": "294",
-			"sections_title": "managerial acctg",
-			"sections_instructor": "",
-			"sections_dept": "comm",
-			"sections_year": 1900,
-			"sections_avg": 74.49,
-			"sections_pass": 774,
-			"sections_fail": 35,
+			"sections_avg": 74.44,
+			"sections_pass": 547,
+			"sections_fail": 47,
 			"sections_audit": 0
 		},
 		{
@@ -5675,6 +5639,42 @@
 			"sections_audit": 1
 		},
 		{
+			"sections_uuid": "38807",
+			"sections_id": "294",
+			"sections_title": "managerial acctg",
+			"sections_instructor": "",
+			"sections_dept": "comm",
+			"sections_year": 1900,
+			"sections_avg": 74.49,
+			"sections_pass": 774,
+			"sections_fail": 35,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "38774",
+			"sections_id": "290",
+			"sections_title": "int quan dec mak",
+			"sections_instructor": "",
+			"sections_dept": "comm",
+			"sections_year": 1900,
+			"sections_avg": 74.49,
+			"sections_pass": 829,
+			"sections_fail": 67,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "72047",
+			"sections_id": "112",
+			"sections_title": "biology of cell",
+			"sections_instructor": "",
+			"sections_dept": "biol",
+			"sections_year": 1900,
+			"sections_avg": 74.49,
+			"sections_pass": 1586,
+			"sections_fail": 84,
+			"sections_audit": 0
+		},
+		{
 			"sections_uuid": "90972",
 			"sections_id": "355",
 			"sections_title": "intro int trade",
@@ -5687,15 +5687,15 @@
 			"sections_audit": 3
 		},
 		{
-			"sections_uuid": "18079",
-			"sections_id": "201",
-			"sections_title": "cell biology 2",
+			"sections_uuid": "70742",
+			"sections_id": "260",
+			"sections_title": "intro global pol",
 			"sections_instructor": "",
-			"sections_dept": "biol",
+			"sections_dept": "poli",
 			"sections_year": 1900,
 			"sections_avg": 74.53,
-			"sections_pass": 750,
-			"sections_fail": 25,
+			"sections_pass": 656,
+			"sections_fail": 9,
 			"sections_audit": 0
 		},
 		{
@@ -5711,27 +5711,15 @@
 			"sections_audit": 1
 		},
 		{
-			"sections_uuid": "70742",
-			"sections_id": "260",
-			"sections_title": "intro global pol",
+			"sections_uuid": "18079",
+			"sections_id": "201",
+			"sections_title": "cell biology 2",
 			"sections_instructor": "",
-			"sections_dept": "poli",
+			"sections_dept": "biol",
 			"sections_year": 1900,
 			"sections_avg": 74.53,
-			"sections_pass": 656,
-			"sections_fail": 9,
-			"sections_audit": 0
-		},
-		{
-			"sections_uuid": "81485",
-			"sections_id": "294",
-			"sections_title": "managerial acctg",
-			"sections_instructor": "",
-			"sections_dept": "comm",
-			"sections_year": 1900,
-			"sections_avg": 74.56,
-			"sections_pass": 717,
-			"sections_fail": 12,
+			"sections_pass": 750,
+			"sections_fail": 25,
 			"sections_audit": 0
 		},
 		{
@@ -5747,15 +5735,15 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "42134",
-			"sections_id": "201",
-			"sections_title": "intro biochem",
+			"sections_uuid": "81485",
+			"sections_id": "294",
+			"sections_title": "managerial acctg",
 			"sections_instructor": "",
-			"sections_dept": "biol",
+			"sections_dept": "comm",
 			"sections_year": 1900,
-			"sections_avg": 74.58,
-			"sections_pass": 733,
-			"sections_fail": 36,
+			"sections_avg": 74.56,
+			"sections_pass": 717,
+			"sections_fail": 12,
 			"sections_audit": 0
 		},
 		{
@@ -5768,6 +5756,18 @@
 			"sections_avg": 74.58,
 			"sections_pass": 1049,
 			"sections_fail": 3,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "42134",
+			"sections_id": "201",
+			"sections_title": "intro biochem",
+			"sections_instructor": "",
+			"sections_dept": "biol",
+			"sections_year": 1900,
+			"sections_avg": 74.58,
+			"sections_pass": 733,
+			"sections_fail": 36,
 			"sections_audit": 0
 		},
 		{
@@ -5855,18 +5855,6 @@
 			"sections_audit": 2
 		},
 		{
-			"sections_uuid": "19807",
-			"sections_id": "160",
-			"sections_title": "comp eng design",
-			"sections_instructor": "",
-			"sections_dept": "apsc",
-			"sections_year": 1900,
-			"sections_avg": 74.96,
-			"sections_pass": 715,
-			"sections_fail": 112,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "17037",
 			"sections_id": "260",
 			"sections_title": "intro global pol",
@@ -5877,6 +5865,18 @@
 			"sections_pass": 556,
 			"sections_fail": 8,
 			"sections_audit": 1
+		},
+		{
+			"sections_uuid": "19807",
+			"sections_id": "160",
+			"sections_title": "comp eng design",
+			"sections_instructor": "",
+			"sections_dept": "apsc",
+			"sections_year": 1900,
+			"sections_avg": 74.96,
+			"sections_pass": 715,
+			"sections_fail": 112,
+			"sections_audit": 0
 		},
 		{
 			"sections_uuid": "75260",
@@ -5987,15 +5987,15 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "72071",
-			"sections_id": "201",
-			"sections_title": "intro biochem",
+			"sections_uuid": "2923",
+			"sections_id": "200",
+			"sections_title": "elem stat applic",
 			"sections_instructor": "",
-			"sections_dept": "biol",
+			"sections_dept": "stat",
 			"sections_year": 1900,
 			"sections_avg": 75.28,
-			"sections_pass": 729,
-			"sections_fail": 15,
+			"sections_pass": 770,
+			"sections_fail": 24,
 			"sections_audit": 0
 		},
 		{
@@ -6011,15 +6011,27 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "2923",
-			"sections_id": "200",
-			"sections_title": "elem stat applic",
+			"sections_uuid": "72071",
+			"sections_id": "201",
+			"sections_title": "intro biochem",
 			"sections_instructor": "",
-			"sections_dept": "stat",
+			"sections_dept": "biol",
 			"sections_year": 1900,
 			"sections_avg": 75.28,
-			"sections_pass": 770,
-			"sections_fail": 24,
+			"sections_pass": 729,
+			"sections_fail": 15,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "61087",
+			"sections_id": "110",
+			"sections_title": "comptn, progrmng",
+			"sections_instructor": "",
+			"sections_dept": "cpsc",
+			"sections_year": 1900,
+			"sections_avg": 75.29,
+			"sections_pass": 601,
+			"sections_fail": 67,
 			"sections_audit": 0
 		},
 		{
@@ -6033,18 +6045,6 @@
 			"sections_pass": 712,
 			"sections_fail": 1,
 			"sections_audit": 4
-		},
-		{
-			"sections_uuid": "61087",
-			"sections_id": "110",
-			"sections_title": "comptn, progrmng",
-			"sections_instructor": "",
-			"sections_dept": "cpsc",
-			"sections_year": 1900,
-			"sections_avg": 75.29,
-			"sections_pass": 601,
-			"sections_fail": 67,
-			"sections_audit": 0
 		},
 		{
 			"sections_uuid": "33517",
@@ -6083,16 +6083,16 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "45774",
-			"sections_id": "160",
-			"sections_title": "comp eng design",
+			"sections_uuid": "760",
+			"sections_id": "296",
+			"sections_title": "intro marketing",
 			"sections_instructor": "",
-			"sections_dept": "apsc",
+			"sections_dept": "comm",
 			"sections_year": 1900,
 			"sections_avg": 75.46,
-			"sections_pass": 735,
-			"sections_fail": 103,
-			"sections_audit": 0
+			"sections_pass": 693,
+			"sections_fail": 1,
+			"sections_audit": 1
 		},
 		{
 			"sections_uuid": "715",
@@ -6107,16 +6107,16 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "760",
-			"sections_id": "296",
-			"sections_title": "intro marketing",
+			"sections_uuid": "45774",
+			"sections_id": "160",
+			"sections_title": "comp eng design",
 			"sections_instructor": "",
-			"sections_dept": "comm",
+			"sections_dept": "apsc",
 			"sections_year": 1900,
 			"sections_avg": 75.46,
-			"sections_pass": 693,
-			"sections_fail": 1,
-			"sections_audit": 1
+			"sections_pass": 735,
+			"sections_fail": 103,
+			"sections_audit": 0
 		},
 		{
 			"sections_uuid": "4220",
@@ -6191,18 +6191,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "96380",
-			"sections_id": "296",
-			"sections_title": "intro marketing",
-			"sections_instructor": "",
-			"sections_dept": "comm",
-			"sections_year": 1900,
-			"sections_avg": 75.74,
-			"sections_pass": 630,
-			"sections_fail": 1,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "70533",
 			"sections_id": "112",
 			"sections_title": "fluid earth",
@@ -6215,6 +6203,18 @@
 			"sections_audit": 1
 		},
 		{
+			"sections_uuid": "96380",
+			"sections_id": "296",
+			"sections_title": "intro marketing",
+			"sections_instructor": "",
+			"sections_dept": "comm",
+			"sections_year": 1900,
+			"sections_avg": 75.74,
+			"sections_pass": 630,
+			"sections_fail": 1,
+			"sections_audit": 0
+		},
+		{
 			"sections_uuid": "93648",
 			"sections_id": "202",
 			"sections_title": "med micb & immun",
@@ -6224,30 +6224,6 @@
 			"sections_avg": 75.75,
 			"sections_pass": 668,
 			"sections_fail": 28,
-			"sections_audit": 0
-		},
-		{
-			"sections_uuid": "88781",
-			"sections_id": "390",
-			"sections_title": "intr mcr hum ant",
-			"sections_instructor": "roskelley, calvin",
-			"sections_dept": "caps",
-			"sections_year": 2013,
-			"sections_avg": 75.76,
-			"sections_pass": 583,
-			"sections_fail": 10,
-			"sections_audit": 0
-		},
-		{
-			"sections_uuid": "88782",
-			"sections_id": "390",
-			"sections_title": "intr mcr hum ant",
-			"sections_instructor": "",
-			"sections_dept": "caps",
-			"sections_year": 1900,
-			"sections_avg": 75.76,
-			"sections_pass": 583,
-			"sections_fail": 10,
 			"sections_audit": 0
 		},
 		{
@@ -6263,15 +6239,27 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "36611",
-			"sections_id": "450",
-			"sections_title": "prof eng practce",
+			"sections_uuid": "88782",
+			"sections_id": "390",
+			"sections_title": "intr mcr hum ant",
 			"sections_instructor": "",
-			"sections_dept": "apsc",
+			"sections_dept": "caps",
 			"sections_year": 1900,
-			"sections_avg": 75.77,
+			"sections_avg": 75.76,
 			"sections_pass": 583,
-			"sections_fail": 5,
+			"sections_fail": 10,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "88781",
+			"sections_id": "390",
+			"sections_title": "intr mcr hum ant",
+			"sections_instructor": "roskelley, calvin",
+			"sections_dept": "caps",
+			"sections_year": 2013,
+			"sections_avg": 75.76,
+			"sections_pass": 583,
+			"sections_fail": 10,
 			"sections_audit": 0
 		},
 		{
@@ -6284,6 +6272,18 @@
 			"sections_avg": 75.77,
 			"sections_pass": 788,
 			"sections_fail": 0,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "36611",
+			"sections_id": "450",
+			"sections_title": "prof eng practce",
+			"sections_instructor": "",
+			"sections_dept": "apsc",
+			"sections_year": 1900,
+			"sections_avg": 75.77,
+			"sections_pass": 583,
+			"sections_fail": 5,
 			"sections_audit": 0
 		},
 		{
@@ -6323,18 +6323,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "46297",
-			"sections_id": "200",
-			"sections_title": "intr cr writing",
-			"sections_instructor": "",
-			"sections_dept": "crwr",
-			"sections_year": 1900,
-			"sections_avg": 75.97,
-			"sections_pass": 915,
-			"sections_fail": 24,
-			"sections_audit": 2
-		},
-		{
 			"sections_uuid": "5944",
 			"sections_id": "170",
 			"sections_title": "mechanics i",
@@ -6345,6 +6333,18 @@
 			"sections_pass": 791,
 			"sections_fail": 63,
 			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "46297",
+			"sections_id": "200",
+			"sections_title": "intr cr writing",
+			"sections_instructor": "",
+			"sections_dept": "crwr",
+			"sections_year": 1900,
+			"sections_avg": 75.97,
+			"sections_pass": 915,
+			"sections_fail": 24,
+			"sections_audit": 2
 		},
 		{
 			"sections_uuid": "81711",
@@ -6419,18 +6419,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "81507",
-			"sections_id": "296",
-			"sections_title": "intro marketing",
-			"sections_instructor": "",
-			"sections_dept": "comm",
-			"sections_year": 1900,
-			"sections_avg": 76.17,
-			"sections_pass": 811,
-			"sections_fail": 4,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "62355",
 			"sections_id": "121",
 			"sections_title": "model comptn",
@@ -6440,6 +6428,18 @@
 			"sections_avg": 76.17,
 			"sections_pass": 701,
 			"sections_fail": 52,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "81507",
+			"sections_id": "296",
+			"sections_title": "intro marketing",
+			"sections_instructor": "",
+			"sections_dept": "comm",
+			"sections_year": 1900,
+			"sections_avg": 76.17,
+			"sections_pass": 811,
+			"sections_fail": 4,
 			"sections_audit": 0
 		},
 		{
@@ -6491,18 +6491,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "45945",
-			"sections_id": "112",
-			"sections_title": "fluid earth",
-			"sections_instructor": "",
-			"sections_dept": "eosc",
-			"sections_year": 1900,
-			"sections_avg": 76.37,
-			"sections_pass": 503,
-			"sections_fail": 20,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "45541",
 			"sections_id": "101",
 			"sections_title": "lang of world",
@@ -6512,6 +6500,18 @@
 			"sections_avg": 76.37,
 			"sections_pass": 533,
 			"sections_fail": 9,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "45945",
+			"sections_id": "112",
+			"sections_title": "fluid earth",
+			"sections_instructor": "",
+			"sections_dept": "eosc",
+			"sections_year": 1900,
+			"sections_avg": 76.37,
+			"sections_pass": 503,
+			"sections_fail": 20,
 			"sections_audit": 0
 		},
 		{
@@ -6647,18 +6647,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "42523",
-			"sections_id": "205",
-			"sections_title": "physical chem",
-			"sections_instructor": "",
-			"sections_dept": "chem",
-			"sections_year": 1900,
-			"sections_avg": 76.95,
-			"sections_pass": 1159,
-			"sections_fail": 48,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "43963",
 			"sections_id": "296",
 			"sections_title": "intro marketing",
@@ -6669,6 +6657,18 @@
 			"sections_pass": 737,
 			"sections_fail": 3,
 			"sections_audit": 4
+		},
+		{
+			"sections_uuid": "42523",
+			"sections_id": "205",
+			"sections_title": "physical chem",
+			"sections_instructor": "",
+			"sections_dept": "chem",
+			"sections_year": 1900,
+			"sections_avg": 76.95,
+			"sections_pass": 1159,
+			"sections_fail": 48,
+			"sections_audit": 0
 		},
 		{
 			"sections_uuid": "51181",
@@ -7043,18 +7043,6 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "38516",
-			"sections_id": "118",
-			"sections_title": "gold & gems",
-			"sections_instructor": "turner, david",
-			"sections_dept": "eosc",
-			"sections_year": 2010,
-			"sections_avg": 80.43,
-			"sections_pass": 570,
-			"sections_fail": 16,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "98712",
 			"sections_id": "159",
 			"sections_title": "intro phys lab",
@@ -7064,6 +7052,18 @@
 			"sections_avg": 80.43,
 			"sections_pass": 777,
 			"sections_fail": 3,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "38516",
+			"sections_id": "118",
+			"sections_title": "gold & gems",
+			"sections_instructor": "turner, david",
+			"sections_dept": "eosc",
+			"sections_year": 2010,
+			"sections_avg": 80.43,
+			"sections_pass": 570,
+			"sections_fail": 16,
 			"sections_audit": 0
 		},
 		{
@@ -7295,24 +7295,24 @@
 			"sections_audit": 0
 		},
 		{
-			"sections_uuid": "85074",
-			"sections_id": "330",
-			"sections_title": "com adult educ",
-			"sections_instructor": "bishundayal, deonarine",
-			"sections_dept": "adhe",
-			"sections_year": 2012,
-			"sections_avg": 91.33,
-			"sections_pass": 18,
-			"sections_fail": 0,
-			"sections_audit": 0
-		},
-		{
 			"sections_uuid": "85075",
 			"sections_id": "330",
 			"sections_title": "com adult educ",
 			"sections_instructor": "",
 			"sections_dept": "adhe",
 			"sections_year": 1900,
+			"sections_avg": 91.33,
+			"sections_pass": 18,
+			"sections_fail": 0,
+			"sections_audit": 0
+		},
+		{
+			"sections_uuid": "85074",
+			"sections_id": "330",
+			"sections_title": "com adult educ",
+			"sections_instructor": "bishundayal, deonarine",
+			"sections_dept": "adhe",
+			"sections_year": 2012,
 			"sections_avg": 91.33,
 			"sections_pass": 18,
 			"sections_fail": 0,
