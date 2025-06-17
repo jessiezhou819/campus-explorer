@@ -133,7 +133,7 @@ export default class InsightFacade implements IInsightFacade {
 		}
 		try {
 			const sectionInterface: Section = {
-				uuid: String(section.uuid ?? section.id), // Use section.id if uuid is not present
+				uuid: section.id as string, // Use section.id if uuid is not present
 				id: section.Course as string,
 				title: section.Title as string,
 				instructor: section.Professor as string,
