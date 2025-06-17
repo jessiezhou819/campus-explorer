@@ -18,5 +18,5 @@
 	"eslint.useFlatConfig": false,
 	"eslint.problems.shortenToSingleLine": true,
 	"eslint.run": "onSave",
-  	"prettier.useTabs": true
+	"prettier.useTabs": true
 }

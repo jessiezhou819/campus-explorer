@@ -23,17 +23,17 @@ To do this, follow these steps; the specifics of each step will vary based on yo
 Once your environment is configured you need to further prepare the project's tooling and dependencies.
 In the project folder:
 
-1. `yarn install` to download the packages specified in your project's *package.json* to the *node_modules* directory.
+1. `yarn install` to download the packages specified in your project's _package.json_ to the _node_modules_ directory.
 
 1. `yarn build` to compile your project. You must run this command after making changes to your TypeScript files. If it does not build locally, AutoTest will not be able to build it. This will also run formatting and linting, so make sure to fix those errors too!
 
 1. `yarn test` to run the test suite.
-    - To run with coverage, run `yarn cover`
+
+   - To run with coverage, run `yarn cover`
 
 1. `yarn prettier:fix` to format your project code.
 
 1. `yarn lint:check` to see lint errors in your project code. You may be able to fix some of them using the `yarn lint:fix` command.
-
 
 If you are curious, some of these commands are actually shortcuts defined in [package.json -> scripts](./package.json).
 

@@ -5,7 +5,7 @@ module.exports = {
 	env: {
 		browser: true,
 		es6: true,
-		node: true
+		node: true,
 	},
 	// noInlineConfig: true, // disallows using /* eslint-disable */ comments
 	parser: "@typescript-eslint/parser",
