@@ -1,4 +1,5 @@
 import { InsightError, InsightResult } from "./IInsightFacade";
+import { Options, Query, Section } from "./Interface";
 import {
 	logicValidator,
 	negationValidator,
@@ -8,7 +9,7 @@ import {
 	optionsValidator,
 } from "./QueryValidation";
 
-export function getAllDatasetIds(query: any): Set<string> {
+export function getAllDatasetIds(query: Query): Set<string> {
 	const ids = new Set<string>();
 
 	const getKey = (key: string): string => {
@@ -40,12 +41,11 @@ export function getAllDatasetIds(query: any): Set<string> {
 
 	const order = query.OPTIONS?.ORDER;
 	if (typeof order === "string") getKey(order);
-	else if (order?.keys) order.keys.forEach(getKey);
 
 	return ids;
 }
 
-export function handleWhere(this: any, where: any, data: any): any[] {
+export function handleWhere(where: any, data: Section[]): any[] {
 	if (!Array.isArray(data)) {
 		throw new InsightError("handleWhere() expects data to be an array");
 	}
@@ -76,7 +76,7 @@ export function handleWhere(this: any, where: any, data: any): any[] {
 	}
 }
 
-export function handleAnd(this: any, comparator: any, data: any[]): any[] {
+export function handleAnd(this: any, comparator: any, data: Section[]): any[] {
 	logicValidator(comparator);
 	let andResult = data;
 	for (const sub of comparator) {
@@ -85,18 +85,18 @@ export function handleAnd(this: any, comparator: any, data: any[]): any[] {
 	return andResult;
 }
 
-export function handleOr(comparator: any, data: any[]): any[] {
+export function handleOr(comparator: any, data: Section[]): any[] {
 	logicValidator(comparator);
 	return removeDups(comparator.map((sub: any) => handleWhere(sub, data)));
 }
 
-export function handleNot(comparator: any, data: any[]): any[] {
+export function handleNot(comparator: any, data: Section[]): any[] {
 	negationValidator(comparator);
 	const negated = handleWhere(comparator, data);
 	return data.filter((row: any) => !negated.includes(row));
 }
 
-export function handleComparator(comparatorType: string, comparator: any, data: any[]): any[] {
+export function handleComparator(comparatorType: string, comparator: any, data: Section[]): any[] {
 	validateComparators(comparatorType, comparator, data);
 	return applyComparator(comparatorType, comparator, data);
 }
@@ -133,7 +133,7 @@ export function applyComparator(type: string, comparator: any, data: any[]): any
 					return r[field] === "";
 				});
 			}
-			validateWildcardPattern(value); // ADD THIS LINE
+			validateWildcardPattern(value);
 			return data.filter((r) => {
 				if (!(field in r)) throw new InsightError(`Field ${field} not present in row`);
 				return matchWildcard(r[field], value);
@@ -168,7 +168,7 @@ export function removeDups(arrays: any[][]): any[] {
 	return result;
 }
 
-export function handleOptions(options: any, data: any[]): InsightResult[] {
+export function handleOptions(options: Options, data: any[]): InsightResult[] {
 	const columns = options.COLUMNS;
 	if (!Array.isArray(data)) {
 		throw new InsightError("Data must be an array");
