@@ -9,7 +9,7 @@ import {
 	NotFoundError,
 	ResultTooLargeError,
 } from "./IInsightFacade";
-import { Query, Section } from "./Interface";
+import { Section } from "./Interface";
 import { getAllDatasetIds, handleWhere, handleOptions } from "./QueryHandling";
 import { handleSections, loadZipFromBase64, validateId } from "./DataProcessing";
 
@@ -95,7 +95,7 @@ export default class InsightFacade implements IInsightFacade {
 		return id;
 	}
 
-	public async performQuery(query: Query): Promise<InsightResult[]> {
+	public async performQuery(query: any): Promise<InsightResult[]> {
 		await this.ensureInitialized();
 		if (!query || typeof query !== "object") {
 			throw new InsightError("Query must be an object");
