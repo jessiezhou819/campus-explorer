@@ -10,3 +10,13 @@ export interface Section {
 	fail: number;
 	audit: number;
 }
+
+export interface Query {
+	WHERE: any;
+	OPTIONS: Options;
+}
+
+export interface Options {
+	COLUMNS: string[];
+	ORDER?: string;
+}

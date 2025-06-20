@@ -9,10 +9,9 @@ import {
 	NotFoundError,
 	ResultTooLargeError,
 } from "./IInsightFacade";
-import { Section } from "./Interface";
-// import { isValidColumn, logicValidator, negationValidator, optionsValidator, validateComparators, validateWildcardPattern } from "./QueryValidation";
+import { Query, Section } from "./Interface";
 import { getAllDatasetIds, handleWhere, handleOptions } from "./QueryHandling";
-//import { optionsValidator, validateComparators } from "./QueryValidation";
+import { handleSections, loadZipFromBase64, validateId } from "./DataProcessing";
 
 /**
  * This is the main programmatic entry point for the project.
@@ -20,7 +19,6 @@ import { getAllDatasetIds, handleWhere, handleOptions } from "./QueryHandling";
  *
  */
 export default class InsightFacade implements IInsightFacade {
-	private OVERALL_YEAR: number = 1900;
 	private static readonly MAX_RESULT_ROWS: number = 5000;
 	private dataDir: string;
 	private datasetMap: Map<string, InsightDataset>;
@@ -38,129 +36,54 @@ export default class InsightFacade implements IInsightFacade {
 
 		if (await fs.pathExists(this.dataDir)) {
 			const saved: InsightDataset[] = await fs.readJSON(this.dataDir);
-			this.datasetMap = new Map(saved.map((ds) => [ds.id, ds]));
 
 			const dataReadPromises = saved.map(async (ds) => {
-				const dataPath = `data/${ds.id}.json`;
+				const datasetId: string = ds.id;
+				const dataPath = `data/${datasetId}.json`;
+
 				if (await fs.pathExists(dataPath)) {
 					const sections: Section[] = await fs.readJSON(dataPath);
-					this.datasetDataMap.set(ds.id, sections);
+					this.datasetDataMap.set(datasetId, sections);
+					this.datasetMap.set(datasetId, ds);
 				}
 			});
 
 			await Promise.all(dataReadPromises);
 		}
-
 		this.isInitialized = true;
 	}
 
 	public async addDataset(id: string, content: string, kind: InsightDatasetKind): Promise<string[]> {
+		validateId(id);
 		await this.ensureInitialized();
-		this.validateId(id);
-		if (this.datasetMap.has(id)) {
-			throw new InsightError("duplicate dataset");
+
+		if (this.datasetMap.has(id)) throw new InsightError("duplicate dataset");
+
+		const zip: JSZip = await loadZipFromBase64(content);
+		let result: any[] = []; // For C1 only: Section[]
+
+		if (kind === InsightDatasetKind.Sections) {
+			result = await handleSections(zip);
+		} else if (kind === InsightDatasetKind.Rooms) {
+			throw new InsightError("Rooms dataset not implemented yet");
 		}
 
-		if (!content || typeof content !== "string") {
-			throw new InsightError("Empty content");
-		}
+		if (result.length === 0) throw new InsightError("No valid sections found");
 
-		let courses: JSZip;
-		try {
-			courses = await JSZip.loadAsync(content, { base64: true });
-		} catch (_err) {
-			throw new InsightError("Invalid content");
-		}
+		this.datasetMap.set(id, { id: id, kind: kind, numRows: result.length }); // Store dataset metadata
+		this.datasetDataMap.set(id, result); // Store all sections data based on dataset id
 
-		const hasCoursesFolderAtRoot: boolean = Object.keys(courses.files).some((filePath) =>
-			filePath.startsWith("courses/")
-		);
-		if (!hasCoursesFolderAtRoot) {
-			throw new InsightError("Invalid dataset structure: 'courses/' folder not found at root");
-		}
-
-		const coursesFolder = courses.folder("courses");
-		const sections: Section[] = await this.processSections(coursesFolder);
-
-		if (sections.length === 0) {
-			throw new InsightError("No valid sections found");
-		}
-
-		this.datasetMap.set(id, { id: id, kind: kind, numRows: sections.length });
 		await fs.outputJSON(this.dataDir, Array.from(this.datasetMap.values()));
+		await fs.outputJSON(`data/${id}.json`, result);
 
-		await fs.outputJSON(`data/${id}.json`, sections); // save data rows
-		this.datasetDataMap.set(id, sections);
 		return Array.from(this.datasetMap.keys());
 	}
 
-	private validateId(id: string): void {
-		if (!id || id.trim() === "" || id.includes("_")) {
-			throw new InsightError("invalid id");
-		}
-	}
-
-	private async processSections(courses: JSZip | null): Promise<Section[]> {
-		if (!courses) throw new InsightError("courses folder null");
-		const results: Section[] = [];
-
-		const filePromises = Object.values(courses.files).map(async (file) => {
-			if (file.dir) return;
-
-			try {
-				const content = await file.async("text");
-				const parsedCourse = JSON.parse(content);
-
-				if (!parsedCourse.hasOwnProperty("result") || !Array.isArray(parsedCourse.result)) {
-					throw new InsightError(`Invalid course structure in file: ${file.name}`);
-				}
-
-				for (const section of parsedCourse.result) {
-					const parsedSection: Section = this.parseSection(section);
-					results.push(parsedSection);
-				}
-			} catch (_err) {
-				// skip files that cannot be parsed
-			}
-		});
-		await Promise.all(filePromises);
-		return results;
-	}
-
-	private parseSection(section: any): Section {
-		if (!this.isValidSection(section)) {
-			throw new InsightError(`Invalid section structure`);
-		}
-		try {
-			const sectionInterface: Section = {
-				uuid: String(section.id),
-				id: String(section.Course),
-				title: String(section.Title),
-				instructor: String(section.Professor),
-				dept: String(section.Subject),
-				year: section.Section === "overall" ? this.OVERALL_YEAR : Number(section.Year),
-				avg: parseFloat(section.Avg),
-				pass: parseInt(section.Pass),
-				fail: parseInt(section.Fail),
-				audit: parseInt(section.Audit),
-			};
-			return sectionInterface;
-		} catch (error) {
-			throw new InsightError(`Error parsing section: ${error}`);
-		}
-	}
-
-	private isValidSection(section: any): boolean {
-		const requiredFields = ["id", "Course", "Title", "Professor", "Subject", "Year", "Avg", "Pass", "Fail", "Audit"];
-		return requiredFields.every((key) => key in section && section[key] !== undefined && section[key] !== null);
-	}
-
 	public async removeDataset(id: string): Promise<string> {
+		validateId(id);
 		await this.ensureInitialized();
-		this.validateId(id);
-		if (!this.datasetMap.has(id)) {
-			throw new NotFoundError("dataset not found");
-		}
+
+		if (!this.datasetMap.has(id)) throw new NotFoundError("dataset not found");
 
 		try {
 			this.datasetMap.delete(id);
@@ -172,7 +95,7 @@ export default class InsightFacade implements IInsightFacade {
 		return id;
 	}
 
-	public async performQuery(query: any): Promise<InsightResult[]> {
+	public async performQuery(query: Query): Promise<InsightResult[]> {
 		await this.ensureInitialized();
 		if (!query || typeof query !== "object") {
 			throw new InsightError("Query must be an object");
@@ -197,7 +120,7 @@ export default class InsightFacade implements IInsightFacade {
 
 		const filtered = handleWhere(query.WHERE, sections);
 		if (!Array.isArray(filtered)) {
-			throw new InsightError("handleWhere() did not retrn an array");
+			throw new InsightError("handleWhere() did not return an array");
 		}
 		const result = handleOptions(query.OPTIONS, filtered);
 		if (result.length > InsightFacade.MAX_RESULT_ROWS) {
