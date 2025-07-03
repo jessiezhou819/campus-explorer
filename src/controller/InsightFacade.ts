@@ -90,7 +90,9 @@ export default class InsightFacade implements IInsightFacade {
 			this.datasetDataMap.delete(id);
 			await fs.outputJSON(this.dataDir, Array.from(this.datasetMap.values()));
 			const dataPath = `data/${id}.json`;
-			await fs.outputJSON(dataPath, Array.from(this.datasetMap.values()));
+			if (await fs.pathExists(dataPath)) {
+				await fs.remove(dataPath);
+			}
 		} catch (error) {
 			throw new InsightError(`Failed to remove dataset: ${error}`);
 		}
