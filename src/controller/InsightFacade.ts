@@ -9,9 +9,9 @@ import {
 	NotFoundError,
 	ResultTooLargeError,
 } from "./IInsightFacade";
-import { Section } from "./Interface";
+import { Room, Section } from "./Interface";
 import { getAllDatasetIds, handleWhere, handleOptions } from "./QueryHandling";
-import { handleSections, loadZipFromBase64, validateId } from "./DataProcessing";
+import { handleRooms, handleSections, loadZipFromBase64, validateId } from "./DataProcessing";
 
 /**
  * This is the main programmatic entry point for the project.
@@ -22,12 +22,12 @@ export default class InsightFacade implements IInsightFacade {
 	private static readonly MAX_RESULT_ROWS: number = 5000;
 	private dataDir: string;
 	private datasetMap: Map<string, InsightDataset>;
-	private datasetDataMap: Map<string, Section[]>;
+	private datasetDataMap: Map<string, any[]>; // stores Section[] | Room[]
 	private isInitialized = false;
 
 	constructor() {
 		this.datasetMap = new Map<string, InsightDataset>();
-		this.datasetDataMap = new Map<string, Section[]>(); // actually store sections
+		this.datasetDataMap = new Map<string, any[]>(); // actually store sections
 		this.dataDir = "data/datasets.json";
 	}
 
@@ -60,15 +60,18 @@ export default class InsightFacade implements IInsightFacade {
 		if (this.datasetMap.has(id)) throw new InsightError("duplicate dataset");
 
 		const zip: JSZip = await loadZipFromBase64(content);
-		let result: any[] = []; // For C1 only: Section[]
+		let result: Section[] | Room[] = []; // For C1 only: Section[]
 
 		if (kind === InsightDatasetKind.Sections) {
 			result = await handleSections(zip);
 		} else if (kind === InsightDatasetKind.Rooms) {
-			throw new InsightError("Rooms dataset not implemented yet");
+			result = await handleRooms(zip);
 		}
 
-		if (result.length === 0) throw new InsightError("No valid sections found");
+		// console.log(`Found ${result.length} rooms`);
+		// console.log(result[0]);
+
+		if (result.length === 0) throw new InsightError("No valid sections or rooms found");
 
 		this.datasetMap.set(id, { id: id, kind: kind, numRows: result.length }); // Store dataset metadata
 		this.datasetDataMap.set(id, result); // Store all sections data based on dataset id

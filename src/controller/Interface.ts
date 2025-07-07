@@ -11,6 +11,26 @@ export interface Section {
 	audit: number;
 }
 
+export interface Room {
+	fullname: string;
+	shortname: string;
+	number: string;
+	name: string;
+	address: string;
+	lat: number;
+	lon: number;
+	seats: number;
+	type: string;
+	furniture: string;
+	href: string;
+}
+
+export interface GeoResponse {
+	lat?: number;
+	lon?: number;
+	error?: string;
+}
+
 export interface Query {
 	WHERE: any;
 	OPTIONS: Options;
