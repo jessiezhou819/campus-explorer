@@ -42,6 +42,7 @@ describe("InsightFacade", function () {
 	let invalidCourseJson: string;
 	let resultWrongType: string;
 	let section5000: string;
+	let campus: string;
 
 	before(async function () {
 		// This block runs once and loads the datasets.
@@ -61,7 +62,7 @@ describe("InsightFacade", function () {
 		sectionEmptyValues = await getContentFromArchives("section_empty_values.zip");
 		resultWrongType = await getContentFromArchives("result_wrong_type.zip");
 		section5000 = await getContentFromArchives("5000_sections.zip");
-
+		campus = await getContentFromArchives("campus.zip");
 		await clearDisk();
 	});
 
@@ -73,6 +74,15 @@ describe("InsightFacade", function () {
 
 		after(async function () {
 			await clearDisk();
+		});
+
+		it.only("should add a rooms dataset", async function () {
+			try {
+				const result = await facade.addDataset("room", campus, InsightDatasetKind.Rooms);
+				expect(result).to.deep.equal(["room"]);
+			} catch (err) {
+				expect.fail(`addDataset should not have thrown, but threw ${err}`);
+			}
 		});
 
 		it("should reject with an empty dataset id", async function () {
