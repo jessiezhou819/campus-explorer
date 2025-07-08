@@ -76,10 +76,21 @@ describe("InsightFacade", function () {
 			await clearDisk();
 		});
 
-		it.only("should add a rooms dataset", async function () {
+		it("should add a rooms dataset", async function () {
 			try {
 				const result = await facade.addDataset("room", campus, InsightDatasetKind.Rooms);
 				expect(result).to.deep.equal(["room"]);
+			} catch (err) {
+				expect.fail(`addDataset should not have thrown, but threw ${err}`);
+			}
+		});
+
+		it("should add, crash, and add again", async function () {
+			try {
+				await facade.addDataset("a", campus, InsightDatasetKind.Rooms);
+				const newInstance = new InsightFacade();
+				const result = await newInstance.addDataset("b", campus, InsightDatasetKind.Rooms);
+				expect(result).to.deep.equal(["a", "b"]);
 			} catch (err) {
 				expect.fail(`addDataset should not have thrown, but threw ${err}`);
 			}

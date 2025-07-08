@@ -42,8 +42,8 @@ export default class InsightFacade implements IInsightFacade {
 				const dataPath = `data/${datasetId}.json`;
 
 				if (await fs.pathExists(dataPath)) {
-					const sections: Section[] = await fs.readJSON(dataPath);
-					this.datasetDataMap.set(datasetId, sections);
+					const result = await fs.readJSON(dataPath);
+					this.datasetDataMap.set(datasetId, result);
 					this.datasetMap.set(datasetId, ds);
 				}
 			});
@@ -67,9 +67,6 @@ export default class InsightFacade implements IInsightFacade {
 		} else if (kind === InsightDatasetKind.Rooms) {
 			result = await handleRooms(zip);
 		}
-
-		// console.log(`Found ${result.length} rooms`);
-		// console.log(result[0]);
 
 		if (result.length === 0) throw new InsightError("No valid sections or rooms found");
 

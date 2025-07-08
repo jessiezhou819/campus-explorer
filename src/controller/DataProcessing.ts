@@ -32,124 +32,123 @@ export async function handleSections(zip: JSZip): Promise<Section[]> {
 }
 
 export async function handleRooms(zip: JSZip): Promise<Room[]> {
-	if (!zip.file("index.htm")) {
-		throw new InsightError("index.htm not found in zip");
-	}
-	if (!zip.folder("campus/discover/buildings-and-classrooms/")) {
-		throw new InsightError("No campus/discover/buildings-and-classrooms folder");
-	}
-
 	const indexFile = zip.file("index.htm");
-	const textContent = await indexFile?.async("text");
-	if (typeof textContent !== "string") throw new InsightError("index.htm could not be read");
+	if (!indexFile) throw new InsightError("index.htm not found in zip");
 
-	const html = parse5.parse(textContent);
-	const validTable = findValidTable(html);
-	if (!validTable) throw new InsightError("Buildings table not found");
-	const buildings = await constructBuildingsList(validTable);
-	if (buildings.length === 0) throw new InsightError("No valid buildings found");
+	if (!zip.folder("campus/discover/buildings-and-classrooms/")) {
+		throw new InsightError("Expected folder not found: campus/discover/buildings-and-classrooms/");
+	}
 
-	const rooms: Room[] = [];
+	const rawHtml = await indexFile.async("text");
+	if (typeof rawHtml !== "string") {
+		throw new InsightError("index.htm could not be read as text");
+	}
+
+	const parsedIndex = parse5.parse(rawHtml);
+	const buildingsTable = findValidTable(parsedIndex);
+	if (!buildingsTable) {
+		throw new InsightError("Valid building table not found in index.htm");
+	}
+
+	const buildings = await constructBuildingsList(buildingsTable);
+	if (buildings.length === 0) {
+		throw new InsightError("No valid buildings found in index.htm");
+	}
+
+	const roomResults: Room[] = [];
+
 	await Promise.all(
 		buildings.map(async (building) => {
-			const buildingFile = zip.file(building.href.replace("./", "")); // href: './campus/discover/buildings-and-classrooms/ACU.htm'
-			if (!buildingFile) {
-				throw new InsightError(`Building file ${building.href} not found in zip`);
-			}
-			const buildingHTML = await buildingFile.async("text");
-			if (typeof buildingHTML !== "string") throw new InsightError("building.html could not be read");
+			const buildingPath = building.href.replace("./", "");
+			const buildingFile = zip.file(buildingPath);
 
-			const parsedBuilding = parse5.parse(buildingHTML);
-			rooms.push(...(await parseBuildingRooms(building, parsedBuilding))); // github copilot
+			if (!buildingFile) return;
+
+			const buildingText = await buildingFile.async("text");
+			if (typeof buildingText !== "string") return;
+
+			const buildingHtml = parse5.parse(buildingText);
+			const parsedRooms = await parseBuildingRooms(building, buildingHtml);
+			roomResults.push(...parsedRooms);
 		})
 	);
 
-	return rooms;
-
-	// parse the index.htm file using parse5
-	// Inside index.htm find the valid building file link based on the class name
-	// Inside building.htm find the room table and validate the rooms before adding them to the result
-	// if result is empty, throw an InsightError
+	return roomResults;
 }
 
 function findValidTable(node: any): any | null {
-	if (node.tagName !== undefined && node.tagName === "table") {
-		if (tableContainsFieldinTd(node)) {
-			return node;
-		}
+	if (node?.tagName === "table" && tableContainsFieldInTd(node)) {
+		return node;
 	}
-	if ("childNodes" in node) {
+
+	if (node?.childNodes) {
 		for (const child of node.childNodes) {
-			const foundTable = findValidTable(child);
-			if (foundTable) {
-				return foundTable;
-			}
+			const found = findValidTable(child);
+			if (found) return found;
 		}
 	}
+
 	return null;
 }
 
-function tableContainsFieldinTd(tableNode: any): boolean {
-	// go to tbody -> check each tr -> check each td to to see if .attr .class contains views-field
-	const stack = [...tableNode.childNodes];
+function tableContainsFieldInTd(tableNode: any): boolean {
+	const stack = [...(tableNode.childNodes || [])];
+
 	while (stack.length > 0) {
-		const currNode = stack.pop(); // might be tbody, tr, td, etc.
-		if (currNode.tagName !== "undefined" && currNode.tagName === "td") {
-			const classAttr = currNode.attrs.find((attr: any) => attr.name === "class");
-			if (classAttr?.value.includes("views-field")) {
+		const node = stack.pop();
+		if (node?.tagName === "td") {
+			const classAttr = node.attrs?.find((attr: any) => attr.name === "class")?.value;
+			if (classAttr?.includes("views-field")) {
 				return true;
 			}
 		}
-		if ("childNodes" in currNode) {
-			stack.push(...currNode.childNodes);
+		if (node?.childNodes) {
+			stack.push(...node.childNodes);
 		}
 	}
+
 	return false;
 }
 
-// use promise all to speed up?
 async function constructBuildingsList(tableNode: any): Promise<any[]> {
 	const buildings: any[] = [];
 
-	for (const child of tableNode.childNodes) {
-		if (child.tagName === "tbody") {
-			for (const row of child.childNodes) {
-				if (row.tagName !== "tr") continue;
+	const tbody = tableNode.childNodes?.find((child: any) => child.tagName === "tbody");
+	if (!tbody) return buildings;
 
-				let link = "";
-				let fullname = "";
-				let shortname = "";
-				let address = "";
+	for (const row of tbody.childNodes || []) {
+		if (row.tagName !== "tr") continue;
+		const building = parseBuildingRow(row);
+		if (building) buildings.push(building);
+	}
 
-				for (const cell of row.childNodes) {
-					if (cell.tagName !== "td") continue;
+	return buildings;
+}
 
-					const classAttr = cell.attrs?.find((attr: any) => attr.name === "class")?.value || "";
+function parseBuildingRow(row: any): any | null {
+	let link = "",
+		fullname = "",
+		shortname = "",
+		address = "";
 
-					if (classAttr.includes("views-field-title")) {
-						const aTag = cell.childNodes?.find((c: any) => c.tagName === "a");
-						if (aTag) {
-							link = aTag.attrs?.find((attr: any) => attr.name === "href")?.value || "";
-							fullname = extractText(aTag).trim();
-						}
-					}
+	for (const cell of row.childNodes || []) {
+		if (cell.tagName !== "td") continue;
+		const classAttr = cell.attrs?.find((attr: any) => attr.name === "class")?.value || "";
 
-					if (classAttr.includes("views-field-field-building-address")) {
-						address = extractText(cell).trim();
-					}
-
-					if (classAttr.includes("views-field-field-building-code")) {
-						shortname = extractText(cell).trim();
-					}
-				}
-
-				if (link && fullname && shortname && address) {
-					buildings.push({ href: link, fullname, shortname, address });
-				}
+		if (classAttr.includes("views-field-title")) {
+			const aTag = cell.childNodes?.find((c: any) => c.tagName === "a");
+			if (aTag) {
+				link = aTag.attrs?.find((attr: any) => attr.name === "href")?.value || "";
+				fullname = extractText(aTag).trim();
 			}
+		} else if (classAttr.includes("views-field-field-building-address")) {
+			address = extractText(cell).trim();
+		} else if (classAttr.includes("views-field-field-building-code")) {
+			shortname = extractText(cell).trim();
 		}
 	}
-	return buildings;
+
+	return link && fullname && shortname && address ? { href: link, fullname, shortname, address } : null;
 }
 
 function extractText(node: any): string {
@@ -163,42 +162,54 @@ function extractText(node: any): string {
 }
 
 async function getBuildingGeolocation(address: string): Promise<GeoResponse> {
-	const encodedAddress = encodeURIComponent(address);
-	const geolocation = await fetch(`http://cs310.students.cs.ubc.ca:11316/api/v1/project_team051/${encodedAddress}`);
-	return geolocation.json();
+	try {
+		const encodedAddress = encodeURIComponent(address);
+		const response = await fetch(`http://cs310.students.cs.ubc.ca:11316/api/v1/project_team051/${encodedAddress}`);
+
+		if (!response.ok) {
+			return { error: `Geolocation fetch failed with status ${response.status}` };
+		}
+
+		const geolocation = await response.json();
+		return geolocation;
+	} catch (_err) {
+		return { error: "Geolocation fetch failed" };
+	}
 }
 
 async function parseBuildingRooms(building: any, buildingHTML: any): Promise<Room[]> {
 	const rooms: Room[] = [];
-	const roomsTable = findValidTable(buildingHTML);
 
-	if (!roomsTable) return rooms;
+	const table = findValidTable(buildingHTML);
+	if (!table) return rooms;
 
-	const geolocation: GeoResponse = await getBuildingGeolocation(building.address);
-	if (geolocation.error || !geolocation.lat || !geolocation.lon) return rooms;
+	const tbody = table.childNodes?.find((n: any) => n.tagName === "tbody");
+	if (!tbody) return rooms;
 
-	const tbodyNode = roomsTable.childNodes.find((node: any) => node.tagName === "tbody");
-	if (!tbodyNode) return rooms;
+	const geo = await getBuildingGeolocation(building.address);
+	if (geo.error || !geo.lat || !geo.lon) return rooms;
 
-	for (const row of tbodyNode.childNodes) {
+	for (const row of tbody.childNodes || []) {
 		if (row.tagName !== "tr") continue;
 
 		const room: Room = {
 			fullname: building.fullname,
 			shortname: building.shortname,
 			number: "",
-			name: "", // You might need to populate this elsewhere
+			name: "",
 			address: building.address,
-			lat: geolocation.lat,
-			lon: geolocation.lon,
+			lat: geo.lat,
+			lon: geo.lon,
 			seats: 0,
 			type: "",
 			furniture: "",
 			href: building.href,
 		};
+
 		populateRoomDetails(row, room);
-		if (room.number && room.type && room.seats > 0 && room.furniture) {
-			room.name = `${building.shortname}_${room.number}`;
+
+		if (room.number && room.type && room.furniture && room.seats > 0) {
+			room.name = `${room.shortname}_${room.number}`;
 			rooms.push(room);
 		}
 	}
@@ -214,7 +225,7 @@ function populateRoomDetails(row: any, room: Room): void {
 		const text = extractText(cell).trim();
 
 		if (classAttr.includes("views-field-field-room-number")) room.number = text;
-		else if (classAttr.includes("views-field-field-room-capacity")) room.seats = parseInt(text, 10);
+		else if (classAttr.includes("views-field-field-room-capacity")) room.seats = Number(text);
 		else if (classAttr.includes("views-field-field-room-furniture")) room.furniture = text;
 		else if (classAttr.includes("views-field-field-room-type")) room.type = text;
 	}
