@@ -196,6 +196,34 @@ export function handleOptions(options: Options, data: any[]): InsightResult[] {
 }
 
 export function sortResults(data: InsightResult[], order: any): InsightResult[] {
+	if (typeof order === "string") {
+		return simpleSortResults(data, order);
+	} else if (order && Array.isArray(order.keys)) {
+		let direction = 0;
+		if (order.dir === "DOWN") {
+			direction = -1;
+		} else {
+			direction = 1;
+		}
+		const keys = order.keys;
+
+		return data.sort((a, b) => {
+			for (const key of keys) {
+				const valueA = a[key];
+				const valueB = b[key];
+
+				if (valueA < valueB) return -1 * direction;
+				if (valueA > valueB) return 1 * direction;
+				// if equal, move to next key
+			}
+			return 0; // all keys equal
+		});
+		} else {
+		throw new InsightError("Invalid ORDER");
+		}
+}
+
+export function simpleSortResults(data: InsightResult[], order: any): InsightResult[] {
 	const key = order;
 	return data.sort((a, b) => {
 		if (a[key] < b[key]) return -1;

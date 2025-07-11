@@ -12,6 +12,7 @@ import {
 import { Room, Section } from "./Interface";
 import { getAllDatasetIds, handleWhere, handleOptions } from "./QueryHandling";
 import { handleRooms, handleSections, loadZipFromBase64, validateId } from "./DataProcessing";
+import { handleTransformations } from "./QueryAggregation";
 
 /**
  * This is the main programmatic entry point for the project.
@@ -126,6 +127,10 @@ export default class InsightFacade implements IInsightFacade {
 		const filtered = handleWhere(query.WHERE, sections);
 		if (!Array.isArray(filtered)) {
 			throw new InsightError("handleWhere() did not return an array");
+		}
+
+		if ("TRANSFORMATIONS" in query) {
+			handleTransformations(filtered, query.TRANSFORMATIONS.GROUP, query.TRANSFORMATIONS.APPLY);
 		}
 		const result = handleOptions(query.OPTIONS, filtered);
 		if (result.length > InsightFacade.MAX_RESULT_ROWS) {

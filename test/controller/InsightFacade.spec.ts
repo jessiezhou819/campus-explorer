@@ -570,5 +570,8 @@ describe("InsightFacade", function () {
 		it("[valid/ISEmptyString.json] IS empty string", checkQuery);
 		it("[valid/singleCompare.json] single element in compare", checkQuery);
 		it("[valid/5000sections.json] 5000", checkQuery);
+
+		// rooms valid
+		it("[rooms_valid/rooms.json] Rooms dataset", checkQuery);
 	});
 });

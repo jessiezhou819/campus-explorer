@@ -1,7 +1,10 @@
 import { InsightError } from "./IInsightFacade";
 
 function validateNumericComparator(type: string, suffix: string, value: any): void {
-	const numericSuffixes = ["avg", "pass", "fail", "audit", "year"];
+	const numericSuffixes = [
+	"avg", "pass", "fail", "audit", "year", // Sections fields
+	"lat", "lon", "seats"                   // Rooms fields
+    ];
 	if (!numericSuffixes.includes(suffix)) {
 		throw new InsightError(`${type} comparator must be used with a numeric field`);
 	}
@@ -23,7 +26,12 @@ export function validateWildcardPattern(pattern: string): void {
 //(written using ChatGPT)
 
 function validateStringComparator(suffix: string, value: any): void {
-	const stringSuffixes = ["dept", "id", "instructor", "title", "uuid"];
+	const stringSuffixes = [
+    "dept", "id", "instructor", "title", "uuid", // Sections fields
+
+    "fullname", "shortname", "number", "name", "address",
+    "type", "furniture", "href"                  // Rooms fields
+	];
 	if (!stringSuffixes.includes(suffix)) {
 		throw new InsightError(`IS comparator must be used with a string field`);
 	}
