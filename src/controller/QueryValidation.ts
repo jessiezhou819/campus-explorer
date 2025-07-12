@@ -41,7 +41,9 @@ function validateStringComparator(suffix: string, value: any): void {
 }
 export function isValidColumn(column: string): boolean {
 	const validFieldSuffixes = [
-		"_dept",
+		"_fullname", "_shortname", "_number", "_name", "_address",	// room
+        "_lat", "_lon", "_seats", "_type", "_furniture", "_href", // room
+		"_dept", // rest r sections
 		"_id",
 		"_avg",
 		"_instructor",
@@ -52,6 +54,9 @@ export function isValidColumn(column: string): boolean {
 		"_pass",
 		"_fail",
 	];
+	if (!column.includes("_")) {
+        return true;
+    }
 	return validFieldSuffixes.some((suffix) => column.endsWith(suffix));
 }
 export function validateComparators(type: string, comparator: any, data: any[]): void {

@@ -8,52 +8,68 @@ export function handleTransformations(filtered: any[], group: string[], apply: a
 		const groupObj = applyRulesToGroup(rows, group, key, apply);
 		results.push(groupObj);
 	}
+
+    console.log("DEBUG: handleTransformations() - Final results =", JSON.stringify(results, null, 2));
 	return results;
 }
 
 function groupBy(filtered: any[], GROUP: string[]): Map<string, any[]> {
+    console.log("DEBUG: First row keys =", Object.keys(filtered[0]));
 	const groupMap = new Map<string, any[]>();
 
 	for (const item of filtered) {
-		//  Build group keys
-		const groupValues: string[] = [];
-		for (const key of GROUP) {
-			groupValues.push(String(item[key])); // Make sure it's a string
-		}
-		const groupKey = groupValues.join("|"); // e.g. "HEBB|Lecture"
+    const groupValues = GROUP.map((key) => {
+        const field = key.split("_")[1]; // strip dataset prefix
+        if (!(field in item)) {
+            throw new InsightError(`Field ${field} not found in row`);
+        }
+        return String(item[field]);
+    }); // keep full prefixed keys
+        const groupKey = groupValues.join("|"); // unique identifier for this group
 
-		//  If group not in map, create it
-		if (!groupMap.has(groupKey)) {
-			groupMap.set(groupKey, []);
-		}
-
-		//  Add item to the group
-		const group = groupMap.get(groupKey);
-		if (group) {
-			group.push(item);
-		}
-	}
-
+        if (!groupMap.has(groupKey)) {
+            groupMap.set(groupKey, []);
+        }
+        groupMap.get(groupKey)?.push(item);
+    }
+    // console.log("DEBUG: Total groups created =", groupMap.size);
 	return groupMap;
 }
 
 function applyRulesToGroup(rows: any[], GROUP: string[], groupKey: string, APPLY: any[]): any {
-	const groupObj: any = {};
-	const groupValues = JSON.parse(groupKey);
-	GROUP.forEach((key, idx) => {
-		groupObj[key] = groupValues[idx];
-	});
+    console.log(`DEBUG: Applying rules to groupKey='${groupKey}' with ${rows.length} rows`);
+    const groupObj: any = {};
+    GROUP.forEach((key) => {
+        const split = key.split("_");
+        if (split.length === 2) {
+            const field = split[1]; // shortname
+            groupObj[key] = rows[0][field]; // first row's value for this group key
+            console.log(`DEBUG: Grouping by '${key}' with value '${groupObj[key]}'`);
+        }
+    });
 	for (const applyRule of APPLY) {
 		const applyKey = Object.keys(applyRule)[0];
 		const applyTokenObj = applyRule[applyKey]; // { MAX: "field", MIN: "field", AVG: "field", SUM: "field", COUNT: "field" }
 		const applyToken = Object.keys(applyTokenObj)[0]; // MAX, MIN, AVG, SUM, COUNT
-		const applyField = applyTokenObj[applyToken]; // The field to apply the aggregation on ex: "avgYear", "maxSeats", etc.
-		groupObj[applyKey] = applyAggregation(applyToken, rows, applyField);
+        const applyField = applyTokenObj[applyToken];
+        // if (!(applyField in rows[0])) {
+        //     throw new InsightError(`Field ${applyField} not found in roww`);
+        // }
+        const field = applyField.split("_")[1];
+        if (!(field in rows[0])) {
+            throw new InsightError(`Field ${field} not found in row`);
+        }
+        groupObj[applyKey] = applyAggregation(applyToken, rows, field);
+        console.log(`DEBUG: Applying ${applyToken} on field '${applyField}' for groupKey='${groupKey}'`);
+
+        //console.log(`DEBUG: Applying ${applyToken} on field '${applyField}' for groupKey='${groupKey}'`);
 	}
 	return groupObj;
 }
 
 function applyAggregation(token: string, rows: any[], key: string): any {
+    // console.log(`DEBUG: applyAggregation() - Token=${token}, Field=${key}, Rows=${rows.length}`);
+
 	switch (token) {
 		case "MAX":
 			return calculateMax(rows, key);
@@ -111,6 +127,8 @@ function calculateAvg(rows: any[], key: string): number {
 }
 
 function calculateMax(rows: any[], key: string): number {
+    // console.log("DEBUG: calculateMax rows =", rows.map(r => r[key]));
+
 	if (rows.length === 0) throw new InsightError("No rows to calculate MAX");
 	let resultSoFar = rows[0][key];
 	for (const row of rows) {

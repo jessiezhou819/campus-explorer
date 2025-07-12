@@ -43,6 +43,7 @@ export function getAllDatasetIds(query: Query): Set<string> {
 	if (typeof order === "string") getKey(order);
 
 	return ids;
+	// add in check for transformations !!!
 }
 
 export function handleWhere(where: any, data: Section[]): any[] {
@@ -194,6 +195,32 @@ export function handleOptions(options: Options, data: any[]): InsightResult[] {
 
 	return result;
 }
+
+// export function handleOptions(options: Options, data: any[]): InsightResult[] {
+// 	const columns = options.COLUMNS;
+// 	if (!Array.isArray(data)) {
+// 		throw new InsightError("Data must be an array");
+// 	}
+// 	for (const col of columns) {
+// 		if (typeof col !== "string" || !isValidColumn(col)) {
+// 			throw new InsightError(`Invalid column name: ${col}`);
+// 		}
+// 	}
+// 	let result = data.map((row) =>
+// 		Object.fromEntries(
+// 			columns.map((col: any) => {
+// 				return [col, row[col]];
+// 			})
+// 		)
+// 	);
+// 	optionsValidator(options, columns);
+
+// 	if (options.ORDER) {
+// 		result = sortResults(result, options.ORDER);
+// 	}
+
+// 	return result;
+// }
 
 export function sortResults(data: InsightResult[], order: any): InsightResult[] {
 	if (typeof order === "string") {
