@@ -3,9 +3,15 @@ import { getAllDatasetIds } from "./QueryHandling";
 
 export function validateNumericComparator(type: string, suffix: string, value: any): void {
 	const numericSuffixes = [
-	"avg", "pass", "fail", "audit", "year", // Sections fields
-	"lat", "lon", "seats"                   // Rooms fields
-    ];
+		"avg",
+		"pass",
+		"fail",
+		"audit",
+		"year", // Sections fields
+		"lat",
+		"lon",
+		"seats", // Rooms fields
+	];
 	if (!numericSuffixes.includes(suffix)) {
 		throw new InsightError(`${type} comparator must be used with a numeric field`);
 	}
@@ -40,10 +46,20 @@ export function validateWildcardPattern(pattern: string): void {
 
 function validateStringComparator(suffix: string, value: any): void {
 	const stringSuffixes = [
-    "dept", "id", "instructor", "title", "uuid", // Sections fields
+		"dept",
+		"id",
+		"instructor",
+		"title",
+		"uuid", // Sections fields
 
-    "fullname", "shortname", "number", "name", "address",
-    "type", "furniture", "href"                  // Rooms fields
+		"fullname",
+		"shortname",
+		"number",
+		"name",
+		"address",
+		"type",
+		"furniture",
+		"href", // Rooms fields
 	];
 	if (!stringSuffixes.includes(suffix)) {
 		throw new InsightError(`IS comparator must be used with a string field`);
@@ -54,8 +70,17 @@ function validateStringComparator(suffix: string, value: any): void {
 }
 export function isValidColumn(column: string): boolean {
 	const validFieldSuffixes = [
-		"_fullname", "_shortname", "_number", "_name", "_address",	// room
-        "_lat", "_lon", "_seats", "_type", "_furniture", "_href", // room
+		"_fullname",
+		"_shortname",
+		"_number",
+		"_name",
+		"_address", // room
+		"_lat",
+		"_lon",
+		"_seats",
+		"_type",
+		"_furniture",
+		"_href", // room
 		"_dept", // rest r sections
 		"_id",
 		"_avg",
@@ -68,8 +93,8 @@ export function isValidColumn(column: string): boolean {
 		"_fail",
 	];
 	if (!column.includes("_")) {
-        return true;
-    }
+		return true;
+	}
 	return validFieldSuffixes.some((suffix) => column.endsWith(suffix));
 }
 export function validateComparators(type: string, comparator: any, data: any[]): void {

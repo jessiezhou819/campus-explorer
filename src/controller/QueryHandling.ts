@@ -57,8 +57,10 @@ function processOptionsIds(options: Options | undefined, getKey: (key: string) =
 	}
 }
 
-function processTransformationsIds(transformations: { GROUP: string[]; APPLY: any[] } | 
-	undefined, getKey: (key: string) => void): void {
+function processTransformationsIds(
+	transformations: { GROUP: string[]; APPLY: any[] } | undefined,
+	getKey: (key: string) => void
+): void {
 	if (transformations) {
 		transformations.GROUP.forEach(getKey);
 
@@ -69,7 +71,6 @@ function processTransformationsIds(transformations: { GROUP: string[]; APPLY: an
 		});
 	}
 }
-
 
 export function handleWhere(where: any, data: Section[]): any[] {
 	if (!Array.isArray(data)) {
