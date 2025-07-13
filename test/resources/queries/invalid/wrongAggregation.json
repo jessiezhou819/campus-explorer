@@ -1,0 +1,21 @@
+{
+	"title": "ugh, wrong aggregation",
+	"input": {
+  "WHERE": {},
+  "OPTIONS": {
+    "COLUMNS": ["sections_avg", "totalAvg"]
+  },
+  "TRANSFORMATIONS": {
+    "GROUP": ["sections_dept"],
+    "APPLY": [
+      {
+        "totalAvg": {
+          "SUMMATION": "sections_avg"
+        }
+      }
+    ]
+  }
+},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

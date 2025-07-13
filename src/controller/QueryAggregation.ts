@@ -107,15 +107,15 @@ function calculateAvg(rows: any[], key: string): number {
     validateNumericComparator("AVG", key, 1);
 	if (rows.length === 0) throw new InsightError("No rows to calculate AVG");
 
-	let sum = new Decimal(0);
+	let total = new Decimal(0);
 	let numItems = 0;
 
 	for (const row of rows) {
-		sum = sum.add(new Decimal(row[key]));
+		total = total.add(new Decimal(row[key]));
 		numItems += 1;
 	}
 
-	const avg = sum.toNumber() / numItems;
+	const avg = total.toNumber() / numItems;
 	return Number(avg.toFixed(2));
 }
 
