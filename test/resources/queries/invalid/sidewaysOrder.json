@@ -18,7 +18,7 @@
 		"OPTIONS": {
 			"COLUMNS": ["rooms_shortname", "maxSeats"],
 			"ORDER": {
-				"dir": "DOWN",
+				"dir": "SIDEWAYS",
 				"keys": ["maxSeats"]
 			}
 		},
@@ -33,10 +33,6 @@
 			]
 		}
 	},
-	"errorExpected": false,
-	"expected": [
-		{ "rooms_shortname": "OSBO", "maxSeats": 442 },
-		{ "rooms_shortname": "HEBB", "maxSeats": 375 },
-		{ "rooms_shortname": "LSC", "maxSeats": 350 }
-	]
+	"errorExpected": true,
+	"expected": "InsightError"
 }

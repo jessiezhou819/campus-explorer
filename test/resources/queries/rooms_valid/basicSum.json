@@ -1,0 +1,38 @@
+{
+	"title": "Basic Input",
+	"input": {
+		"WHERE": {
+			"GT": {
+				"rooms_seats": 300
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": ["rooms_shortname", "averageSeats", "sumType"]
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": ["rooms_shortname"],
+			"APPLY": [
+				{
+					"averageSeats": {
+						"AVG": "rooms_seats"
+					}
+				},
+				{
+					"sumType": {
+						"SUM": "rooms_seats"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": false,
+	"expected": [
+		{ "rooms_shortname": "CIRS", "averageSeats": 426, "sumType": 426 },
+		{ "rooms_shortname": "ESB", "averageSeats": 350, "sumType": 350 },
+		{ "rooms_shortname": "HEBB", "averageSeats": 375, "sumType": 375 },
+		{ "rooms_shortname": "LSC", "averageSeats": 350, "sumType": 700 },
+		{ "rooms_shortname": "OSBO", "averageSeats": 442, "sumType": 442 },
+		{ "rooms_shortname": "WESB", "averageSeats": 325, "sumType": 325 },
+		{ "rooms_shortname": "WOOD", "averageSeats": 503, "sumType": 503 }
+	]
+}
