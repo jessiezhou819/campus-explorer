@@ -456,6 +456,17 @@ describe("InsightFacade", function () {
 				expect.fail(`listDatasets should not have thrown, but threw ${err}`);
 			}
 		});
+
+		it("should add, crash", async function () {
+			try {
+				await facade.addDataset("previous", campus, InsightDatasetKind.Rooms);
+				const newInstance = new InsightFacade();
+				const result = await newInstance.listDatasets();
+				expect(result).to.deep.equal([{ id: "previous", kind: InsightDatasetKind.Rooms, numRows: 364 }]);
+			} catch (err) {
+				expect.fail(`addDataset should not have thrown, but threw ${err}`);
+			}
+		});
 	});
 
 	describe("PerformQuery", function () {
@@ -587,5 +598,6 @@ describe("InsightFacade", function () {
 		it("[rooms_valid/basicMin.json] basic count", checkQuery);
 		it("[rooms_valid/basicSum.json] basic count", checkQuery);
 
+		it("[rooms_valid/allRooms.json] Rooms dataset", checkQuery);
 	});
 });
