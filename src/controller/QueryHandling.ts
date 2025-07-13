@@ -198,7 +198,12 @@ export function removeDups(arrays: any[][]): any[] {
 	return result;
 }
 
-export function handleOptions(options: Options, data: any[], applyKeys: Set<string>): InsightResult[] {
+export function handleOptions(
+	options: Options,
+	data: any[],
+	transformation: boolean,
+	applyKeys: any[]
+): InsightResult[] {
 	const columns = options.COLUMNS;
 	if (!Array.isArray(data)) {
 		throw new InsightError("Data must be an array");
@@ -207,8 +212,8 @@ export function handleOptions(options: Options, data: any[], applyKeys: Set<stri
 		if (typeof col !== "string" || !isValidColumn(col)) {
 			throw new InsightError(`Invalid column name: ${col}`);
 		}
-		if (!col.includes("_") && !applyKeys.has(col)) {
-			throw new InsightError(`Column ${col} not found in apply rules`);
+		if (transformation && !applyKeys.includes(col)) {
+			throw new InsightError(`Column ${col} not found in group or apply rules`);
 		}
 	}
 	let result = data.map((row) =>

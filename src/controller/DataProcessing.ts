@@ -211,7 +211,7 @@ async function parseBuildingRooms(building: any, buildingHTML: any): Promise<Roo
 			seats: 0,
 			type: "",
 			furniture: "",
-			href: building.href,
+			href: "",
 		};
 
 		populateRoomDetails(row, room);
@@ -228,8 +228,12 @@ function populateRoomDetails(row: any, room: Room): void {
 		const classAttr = cell.attrs?.find((attr: any) => attr.name === "class")?.value;
 		const text = extractText(cell).trim();
 
-		if (classAttr.includes("views-field-field-room-number")) room.number = text;
-		else if (classAttr.includes("views-field-field-room-capacity")) room.seats = Number(text);
+		if (classAttr.includes("views-field-field-room-number")) {
+			room.number = text;
+			const a = cell.childNodes?.find((n: any) => n.tagName === "a");
+			const link = a.attrs?.find((attr: any) => attr.name === "href")?.value;
+			room.href = link;
+		} else if (classAttr.includes("views-field-field-room-capacity")) room.seats = Number(text);
 		else if (classAttr.includes("views-field-field-room-furniture")) room.furniture = text;
 		else if (classAttr.includes("views-field-field-room-type")) room.type = text;
 		room.name = `${room.shortname}_${room.number}`;

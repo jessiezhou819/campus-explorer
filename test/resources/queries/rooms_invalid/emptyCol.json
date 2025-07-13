@@ -1,0 +1,34 @@
+{
+	"title": "Basic Input",
+	"input": {
+		"WHERE": {
+			"GT": {
+				"rooms_seats": 300
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": ["rooms_shortname", "averageSeats", "countType"],
+			"ORDER": {
+				"dir": "UP",
+				"keys": []
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": ["rooms_shortname"],
+			"APPLY": [
+				{
+					"averageSeats": {
+						"AVG": "rooms_seats"
+					}
+				},
+				{
+					"countType": {
+						"COUNT": "rooms_seats"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

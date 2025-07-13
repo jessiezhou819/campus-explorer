@@ -279,6 +279,15 @@ describe("InsightFacade", function () {
 			}
 		});
 
+		it("should reject sections as rooms", async function () {
+			try {
+				await facade.addDataset("emptyvalues", sections, InsightDatasetKind.Rooms);
+				expect.fail("Should have thrown!");
+			} catch (err) {
+				expect(err).to.be.instanceOf(InsightError);
+			}
+		});
+
 		it("should add the dataset with 1 valid section", async function () {
 			try {
 				const result = await facade.addDataset("valid", oneValidCourse, InsightDatasetKind.Sections);
@@ -467,6 +476,19 @@ describe("InsightFacade", function () {
 				expect.fail(`addDataset should not have thrown, but threw ${err}`);
 			}
 		});
+
+		it("add add remove", async function () {
+			try {
+				await facade.addDataset("a", campus, InsightDatasetKind.Rooms);
+				await facade.addDataset("b", campus, InsightDatasetKind.Rooms);
+				const newInstance = new InsightFacade();
+				await newInstance.removeDataset("a");
+				const result = await newInstance.listDatasets();
+				expect(result).to.deep.equal([{ id: "b", kind: InsightDatasetKind.Rooms, numRows: 364 }]);
+			} catch (err) {
+				expect.fail(`addDataset should not have thrown, but threw ${err}`);
+			}
+		});
 	});
 
 	describe("PerformQuery", function () {
@@ -594,10 +616,14 @@ describe("InsightFacade", function () {
 		it("[invalid/sumOnStringField.json] ughhjbvs", checkQuery);
 		it("[invalid/wrongAggregation.json] ughh", checkQuery);
 		it("[invalid/groupMustBeArray.json] ughhh", checkQuery);
+		it("[rooms_invalid/colNotInTrans.json] 1", checkQuery);
+		it("[rooms_invalid/dupApplyKey.json] 2", checkQuery);
+		it("[rooms_invalid/emptyGroup.json] 3", checkQuery);
+		it("[rooms_invalid/transExtraKey.json] 4", checkQuery);
+		it("[rooms_invalid/emptyCol.json] 5", checkQuery);
 		it("[rooms_valid/basicCount.json] basic count", checkQuery);
 		it("[rooms_valid/basicMin.json] basic count", checkQuery);
 		it("[rooms_valid/basicSum.json] basic count", checkQuery);
-
 		it("[rooms_valid/allRooms.json] Rooms dataset", checkQuery);
 	});
 });
