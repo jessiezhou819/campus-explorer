@@ -23,6 +23,14 @@ export async function loadZipFromBase64(content: string): Promise<JSZip> {
 		throw new InsightError("Invalid content");
 	}
 }
+export function getDatasetId(columns: string[]): string {
+    for (const col of columns) {
+        if (col.includes("_")) {
+            return col.split("_")[0];
+        }
+    }
+    throw new InsightError("No dataset ID found in COLUMNS");
+}
 
 export async function handleSections(zip: JSZip): Promise<Section[]> {
 	await validateZipStructure(zip, "courses");

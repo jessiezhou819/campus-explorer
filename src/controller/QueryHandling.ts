@@ -12,38 +12,64 @@ import {
 export function getAllDatasetIds(query: Query): Set<string> {
 	const ids = new Set<string>();
 
-	const getKey = (key: string): string => {
+	const getKey = (key: string): void => {
 		if (typeof key === "string" && key.includes("_")) {
-			ids.add(key.split("_")[0]);
+			const datasetId = key.split("_")[0];
+			ids.add(datasetId);
 		}
-		return key;
 	};
 
+	processWhereIds(query.WHERE, getKey);
+	processOptionsIds(query.OPTIONS, getKey);
+	processTransformationsIds((query as any).TRANSFORMATIONS, getKey);
+
+	return ids;
+}
+
+function processWhereIds(where: any, getKey: (key: string) => void): void {
 	const checkWhere = (filter: any): void => {
 		if (!filter || typeof filter !== "object" || filter === null) return;
 		const [type] = Object.keys(filter);
 		const value = filter[type];
+
 		if (["AND", "OR"].includes(type)) {
 			logicValidator(value);
-			value.forEach(checkWhere); // recursively check nested condition
+			value.forEach(checkWhere);
 		} else if (type === "NOT") {
 			negationValidator(value);
 			checkWhere(value);
 		} else if (value && typeof value === "object") {
-			validateComparators(type, value, []); // validate comparators
-			getKey(Object.keys(value)[0]); // check for keys in comparators
+			validateComparators(type, value, []);
+			getKey(Object.keys(value)[0]);
 		}
 	};
-
-	checkWhere(query.WHERE);
-
-	query.OPTIONS?.COLUMNS?.forEach(getKey);
-
-	const order = query.OPTIONS?.ORDER;
-	if (typeof order === "string") getKey(order);
-
-	return ids;
+	checkWhere(where);
 }
+
+function processOptionsIds(options: Options | undefined, getKey: (key: string) => void): void {
+	options?.COLUMNS?.forEach(getKey);
+
+	const order = options?.ORDER as string | { keys: string[]; dir?: string } | undefined;
+	if (typeof order === "string") {
+		getKey(order);
+	} else if (order && Array.isArray(order.keys)) {
+		order.keys.forEach(getKey);
+	}
+}
+
+function processTransformationsIds(transformations: { GROUP: string[]; APPLY: any[] } | 
+	undefined, getKey: (key: string) => void): void {
+	if (transformations) {
+		transformations.GROUP.forEach(getKey);
+
+		transformations.APPLY.forEach((applyRule: any) => {
+			const applyTokenObj = Object.values(applyRule)[0] as Record<string, string>;
+			const applyField = Object.values(applyTokenObj)[0];
+			getKey(applyField);
+		});
+	}
+}
+
 
 export function handleWhere(where: any, data: Section[]): any[] {
 	if (!Array.isArray(data)) {
@@ -168,7 +194,7 @@ export function removeDups(arrays: any[][]): any[] {
 	return result;
 }
 
-export function handleOptions(options: Options, data: any[]): InsightResult[] {
+export function handleOptions(options: Options, data: any[], applyKeys: Set<string>): InsightResult[] {
 	const columns = options.COLUMNS;
 	if (!Array.isArray(data)) {
 		throw new InsightError("Data must be an array");
@@ -177,11 +203,14 @@ export function handleOptions(options: Options, data: any[]): InsightResult[] {
 		if (typeof col !== "string" || !isValidColumn(col)) {
 			throw new InsightError(`Invalid column name: ${col}`);
 		}
+		if (!col.includes("_") && !applyKeys.has(col)) {
+			throw new InsightError(`Column ${col} not found in apply rules`);
+		}
 	}
 	let result = data.map((row) =>
 		Object.fromEntries(
 			columns.map((col: any) => {
-				const field = col.split("_")[1];
+				const field = col.includes("_") ? col.split("_")[1] : col;
 				return [col, row[field]];
 			})
 		)
@@ -191,11 +220,38 @@ export function handleOptions(options: Options, data: any[]): InsightResult[] {
 	if (options.ORDER) {
 		result = sortResults(result, options.ORDER);
 	}
-
 	return result;
 }
 
 export function sortResults(data: InsightResult[], order: any): InsightResult[] {
+	if (typeof order === "string") {
+		return simpleSortResults(data, order);
+	} else if (order && Array.isArray(order.keys)) {
+		let direction = 0;
+		if (order.dir === "DOWN") {
+			direction = -1;
+		} else {
+			direction = 1;
+		}
+		const keys = order.keys;
+
+		return data.sort((a, b) => {
+			for (const key of keys) {
+				const valueA = a[key];
+				const valueB = b[key];
+
+				if (valueA < valueB) return -1 * direction;
+				if (valueA > valueB) return 1 * direction;
+				// if equal, move to next key
+			}
+			return 0; // all keys equal
+		});
+	} else {
+		throw new InsightError("Invalid ORDER");
+	}
+}
+
+export function simpleSortResults(data: InsightResult[], order: any): InsightResult[] {
 	const key = order;
 	return data.sort((a, b) => {
 		if (a[key] < b[key]) return -1;

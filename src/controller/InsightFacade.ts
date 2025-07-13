@@ -12,6 +12,8 @@ import {
 import { Room, Section } from "./Interface";
 import { getAllDatasetIds, handleWhere, handleOptions } from "./QueryHandling";
 import { handleRooms, handleSections, loadZipFromBase64, validateId } from "./DataProcessing";
+import { handleTransformations } from "./QueryAggregation";
+import { performQueryValidator } from "./QueryValidation";
 
 /**
  * This is the main programmatic entry point for the project.
@@ -34,20 +36,22 @@ export default class InsightFacade implements IInsightFacade {
 	private async ensureInitialized(): Promise<void> {
 		if (this.isInitialized) return;
 
-		if (await fs.pathExists(this.dataDir)) {
-			const saved: InsightDataset[] = await fs.readJSON(this.dataDir);
+		const metaPath = `${this.dataDir}/index.json`;
+		if (await fs.pathExists(metaPath)) {
+			const saved: InsightDataset[] = await fs.readJSON(metaPath);
 
 			const dataReadPromises = saved.map(async (ds) => {
-				const datasetId: string = ds.id;
-				const dataPath = `data/${datasetId}.json`;
+				const datasetId = ds.id;
+				const dataPath = `${this.dataDir}/${datasetId}.json`;
 
 				if (await fs.pathExists(dataPath)) {
-					const result = await fs.readJSON(dataPath);
-					this.datasetDataMap.set(datasetId, result);
-					this.datasetMap.set(datasetId, ds);
+					const data = await fs.readJSON(dataPath);
+					this.datasetMap.set(datasetId, ds); // Restore metadata
+					this.datasetDataMap.set(datasetId, data); // Restore dataset rows
+				} else {
+					// optional: warn or clean up if data file is missing
 				}
 			});
-
 			await Promise.all(dataReadPromises);
 		}
 		this.isInitialized = true;
@@ -60,7 +64,7 @@ export default class InsightFacade implements IInsightFacade {
 		if (this.datasetMap.has(id)) throw new InsightError("duplicate dataset");
 
 		const zip: JSZip = await loadZipFromBase64(content);
-		let result: Section[] | Room[] = []; // For C1 only: Section[]
+		let result: Section[] | Room[] = []; 
 
 		if (kind === InsightDatasetKind.Sections) {
 			result = await handleSections(zip);
@@ -73,8 +77,8 @@ export default class InsightFacade implements IInsightFacade {
 		this.datasetMap.set(id, { id: id, kind: kind, numRows: result.length }); // Store dataset metadata
 		this.datasetDataMap.set(id, result); // Store all sections data based on dataset id
 
-		await fs.outputJSON(this.dataDir, Array.from(this.datasetMap.values()));
-		await fs.outputJSON(`data/${id}.json`, result);
+		await fs.outputJSON(`${this.dataDir}/index.json`, Array.from(this.datasetMap.values()));
+		await fs.outputJSON(`${this.dataDir}/${id}.json`, result);
 
 		return Array.from(this.datasetMap.keys());
 	}
@@ -88,8 +92,8 @@ export default class InsightFacade implements IInsightFacade {
 		try {
 			this.datasetMap.delete(id);
 			this.datasetDataMap.delete(id);
-			await fs.outputJSON(this.dataDir, Array.from(this.datasetMap.values()));
-			const dataPath = `data/${id}.json`;
+			await fs.outputJSON(`${this.dataDir}/index.json`, Array.from(this.datasetMap.values()));
+			const dataPath = `${this.dataDir}/${id}.json`;
 			if (await fs.pathExists(dataPath)) {
 				await fs.remove(dataPath);
 			}
@@ -102,32 +106,25 @@ export default class InsightFacade implements IInsightFacade {
 
 	public async performQuery(query: any): Promise<InsightResult[]> {
 		await this.ensureInitialized();
-		if (!query || typeof query !== "object") {
-			throw new InsightError("Query must be an object");
-		}
-		if (!("WHERE" in query) || !("OPTIONS" in query) || !("COLUMNS" in query.OPTIONS)) {
-			throw new InsightError("Missing WHERE or OPTIONS");
-		}
-		if (!Array.isArray(query.OPTIONS.COLUMNS) || query.OPTIONS.COLUMNS.length === 0) {
-			throw new InsightError("COLUMNS invalid format");
-		}
+		performQueryValidator(query);
 
 		const ids = getAllDatasetIds(query);
-		if (ids.size > 1) {
-			throw new InsightError("too many datasets in query");
-		}
-		const col = query.OPTIONS.COLUMNS[0];
-		const datasetId = col.split("_")[0];
-		const sections = this.datasetDataMap.get(datasetId);
-		if (!sections) {
-			throw new InsightError("Dataset data not loaded");
-		}
+		const datasetId = [...ids][0];
+		const datasetRows = this.datasetDataMap.get(datasetId);
+		if (!datasetRows) throw new InsightError(`Dataset ${datasetId} not loaded`);
 
-		const filtered = handleWhere(query.WHERE, sections);
-		if (!Array.isArray(filtered)) {
-			throw new InsightError("handleWhere() did not return an array");
+		let filtered = handleWhere(query.WHERE, datasetRows);
+		if (!Array.isArray(filtered)) throw new InsightError("handleWhere() did not return an array");
+
+		const applyKeys = new Set<string>();
+		if ("TRANSFORMATIONS" in query) {
+			const results = handleTransformations(filtered, query.TRANSFORMATIONS.GROUP, query.TRANSFORMATIONS.APPLY);
+			filtered = results;
+			for (const applyRule of query.TRANSFORMATIONS.APPLY) {
+				applyKeys.add(Object.keys(applyRule)[0]);
+			}
 		}
-		const result = handleOptions(query.OPTIONS, filtered);
+		const result = handleOptions(query.OPTIONS, filtered, applyKeys);
 		if (result.length > InsightFacade.MAX_RESULT_ROWS) {
 			throw new ResultTooLargeError(`Query result exceeds ${InsightFacade.MAX_RESULT_ROWS} rows`);
 		}

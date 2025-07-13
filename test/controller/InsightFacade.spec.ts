@@ -78,8 +78,8 @@ describe("InsightFacade", function () {
 
 		it("should add a rooms dataset", async function () {
 			try {
-				const result = await facade.addDataset("room", campus, InsightDatasetKind.Rooms);
-				expect(result).to.deep.equal(["room"]);
+				const result = await facade.addDataset("rooms", campus, InsightDatasetKind.Rooms);
+				expect(result).to.deep.equal(["rooms"]);
 			} catch (err) {
 				expect.fail(`addDataset should not have thrown, but threw ${err}`);
 			}
@@ -87,10 +87,10 @@ describe("InsightFacade", function () {
 
 		it("should add, crash, and add again", async function () {
 			try {
-				await facade.addDataset("a", campus, InsightDatasetKind.Rooms);
+				await facade.addDataset("rooms", campus, InsightDatasetKind.Rooms);
 				const newInstance = new InsightFacade();
 				const result = await newInstance.addDataset("b", campus, InsightDatasetKind.Rooms);
-				expect(result).to.deep.equal(["a", "b"]);
+				expect(result).to.deep.equal(["rooms", "b"]);
 			} catch (err) {
 				expect.fail(`addDataset should not have thrown, but threw ${err}`);
 			}
@@ -510,6 +510,7 @@ describe("InsightFacade", function () {
 			// Add the datasets to InsightFacade once.
 			// Will *fail* if there is a problem reading ANY dataset.
 			const loadDatasetPromises: Promise<string[]>[] = [
+				facade.addDataset("rooms", campus, InsightDatasetKind.Rooms),
 				facade.addDataset("sections", sections, InsightDatasetKind.Sections),
 				facade.addDataset("onecourse", oneValidCourse, InsightDatasetKind.Sections),
 				facade.addDataset("test5000", section5000, InsightDatasetKind.Sections),
@@ -570,5 +571,9 @@ describe("InsightFacade", function () {
 		it("[valid/ISEmptyString.json] IS empty string", checkQuery);
 		it("[valid/singleCompare.json] single element in compare", checkQuery);
 		it("[valid/5000sections.json] 5000", checkQuery);
+
+		// C2
+		it("[rooms_valid/rooms.json] Rooms dataset", checkQuery);
+		it("[valid/orderByTwo.json] orderbytwo", checkQuery);
 	});
 });

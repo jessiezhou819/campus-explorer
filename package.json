@@ -37,7 +37,7 @@
 		"eslint": "8.57.0",
 		"eslint-config-prettier": "9.1.0",
 		"mocha": "11.0.1",
-		"nyc": "17.1.0",
+		"nyc": "^17.1.0",
 		"prettier": "3.4.2",
 		"supertest": "7.0.0",
 		"ts-node": "10.9.2",
@@ -47,10 +47,17 @@
 		"postinstall": "git config core.hooksPath .githooks",
 		"cover": "nyc --reporter text --reporter html yarn run test",
 		"build": "tsc && yarn prettier:check && yarn lint:check",
-		"test": "mocha --require ts-node/register --timeout 10000 --extension .spec.ts --recursive test",
+		"test": "nyc mocha --require ts-node/register --require source-map-support/register --timeout 10000 --extension .ts --recursive test/**/*.spec.ts",
 		"lint:check": "eslint src test --ext .ts",
 		"lint:fix": "eslint src test --ext .ts --fix",
 		"prettier:check": "prettier src/**/*.ts test/**/*.ts --check",
 		"prettier:fix": "prettier src/**/*.ts test/**/*.ts --write"
-	}
+	},
+	"nyc": {
+  "check-coverage": true,
+  "lines": 80,
+  "functions": 80,
+  "branches": 75,
+  "statements": 80
+}
 }
