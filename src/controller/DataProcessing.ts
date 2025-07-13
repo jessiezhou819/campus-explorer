@@ -156,7 +156,7 @@ function parseBuildingRow(row: any): any | null {
 		}
 	}
 
-	return link && fullname && shortname && address ? { href: link, fullname, shortname, address } : null;
+	return link ? { href: link, fullname, shortname, address } : null;
 }
 
 function extractText(node: any): string {
@@ -215,11 +215,7 @@ async function parseBuildingRooms(building: any, buildingHTML: any): Promise<Roo
 		};
 
 		populateRoomDetails(row, room);
-
-		if (room.number && room.type && room.furniture && room.seats > 0) {
-			room.name = `${room.shortname}_${room.number}`;
-			rooms.push(room);
-		}
+		rooms.push(room);
 	}
 
 	return rooms;
@@ -236,6 +232,7 @@ function populateRoomDetails(row: any, room: Room): void {
 		else if (classAttr.includes("views-field-field-room-capacity")) room.seats = Number(text);
 		else if (classAttr.includes("views-field-field-room-furniture")) room.furniture = text;
 		else if (classAttr.includes("views-field-field-room-type")) room.type = text;
+		room.name = `${room.shortname}_${room.number}`;
 	}
 }
 
