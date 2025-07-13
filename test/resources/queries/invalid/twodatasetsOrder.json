@@ -1,5 +1,5 @@
 {
-	"title": "Complex",
+	"title": "2 datasets in order clause",
 	"input": {
 		"WHERE": {
 			"AND": [
@@ -16,10 +16,10 @@
 			]
 		},
 		"OPTIONS": {
-			"COLUMNS": ["rooms_shortname", "maxSeats"],
+			"COLUMNS": ["sections_shortname", "maxSeats"],
 			"ORDER": {
 				"dir": "DOWN",
-				"keys": ["maxSeats"]
+				"keys": ["maxSeats", "rooms_shortname"]
 			}
 		},
 		"TRANSFORMATIONS": {
@@ -33,10 +33,6 @@
 			]
 		}
 	},
-	"errorExpected": false,
-	"expected": [
-		{ "rooms_shortname": "OSBO", "maxSeats": 442 },
-		{ "rooms_shortname": "HEBB", "maxSeats": 375 },
-		{ "rooms_shortname": "LSC", "maxSeats": 350 }
-	]
+	"errorExpected": true,
+	"expected": "InsightError"
 }

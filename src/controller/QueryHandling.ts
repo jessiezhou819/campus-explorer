@@ -62,6 +62,9 @@ function processTransformationsIds(
 	getKey: (key: string) => void
 ): void {
 	if (transformations) {
+		if (!Array.isArray(transformations.GROUP) || !Array.isArray(transformations.APPLY)) {
+			throw new InsightError("TRANSFORMATIONS must contain GROUP and APPLY as arrays");
+		}
 		transformations.GROUP.forEach(getKey);
 
 		transformations.APPLY.forEach((applyRule: any) => {
@@ -231,8 +234,10 @@ export function sortResults(data: InsightResult[], order: any): InsightResult[] 
 		let direction = 0;
 		if (order.dir === "DOWN") {
 			direction = -1;
-		} else {
+		} else if (order.dir === "UP") {
 			direction = 1;
+		} else {
+			throw new InsightError("Invalid ORDER direction, must be 'UP' or 'DOWN'");
 		}
 		const keys = order.keys;
 

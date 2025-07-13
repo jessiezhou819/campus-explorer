@@ -586,6 +586,18 @@ describe("InsightFacade", function () {
 		// C2
 		it("[rooms_valid/rooms.json] Rooms dataset", checkQuery);
 		it("[valid/orderByTwo.json] orderbytwo", checkQuery);
+		it("[rooms_valid/basicCount.json] basic count", checkQuery);
+		it("[invalid/twodatasetsApply.json] complex count", checkQuery);
+		it("[invalid/sidewaysOrder.json] sideways order", checkQuery);
+		it("[invalid/twodatasetsOrder.json]  order has 2 datasets ", checkQuery);
+		it("[invalid/stringMismatch.json] ugh", checkQuery);
+		it("[invalid/sumOnStringField.json] ughhjbvs", checkQuery);
+		it("[invalid/wrongAggregation.json] ughh", checkQuery);
+		it("[invalid/groupMustBeArray.json] ughhh", checkQuery);
+		it("[rooms_valid/basicCount.json] basic count", checkQuery);
+		it("[rooms_valid/basicMin.json] basic count", checkQuery);
+		it("[rooms_valid/basicSum.json] basic count", checkQuery);
+
 		it("[rooms_valid/allRooms.json] Rooms dataset", checkQuery);
 	});
 });
