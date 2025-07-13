@@ -93,7 +93,7 @@ function calculateCount(rows: any[], key: string): number {
 }
 
 function calculateSum(rows: any[], key: string): number {
-    validateNumericComparator("SUM", key, rows);
+    validateNumericComparator("SUM", key, 1);
 	let sum = 0;
 
 	for (const row of rows) {
@@ -104,7 +104,7 @@ function calculateSum(rows: any[], key: string): number {
 }
 
 function calculateAvg(rows: any[], key: string): number {
-    validateNumericComparator("AVG", key, rows);
+    validateNumericComparator("AVG", key, 1);
 	if (rows.length === 0) throw new InsightError("No rows to calculate AVG");
 
 	let sum = new Decimal(0);
@@ -120,7 +120,7 @@ function calculateAvg(rows: any[], key: string): number {
 }
 
 function calculateMax(rows: any[], key: string): number {
-    validateNumericComparator("MAX", key, rows);
+    validateNumericComparator("MAX", key, 1);
 	if (rows.length === 0) throw new InsightError("No rows to calculate MAX");
 	let resultSoFar = rows[0][key];
 	for (const row of rows) {
@@ -132,7 +132,7 @@ function calculateMax(rows: any[], key: string): number {
 }
 
 function calculateMin(rows: any[], key: string): number {
-    validateNumericComparator("MIN", key, rows);
+    validateNumericComparator("MIN", key, 1);
 	if (rows.length === 0) throw new InsightError("No rows to calculate MIN");
 	let minValue = rows[0][key];
 	for (const row of rows) {
