@@ -3,6 +3,7 @@ import { InsightError } from "./IInsightFacade";
 import { validateNumericComparator } from "./QueryValidation";
 
 export function handleTransformations(filtered: any[], group: string[], apply: any[]): any[] {
+	if (group.length === 0) throw new InsightError("group must be a non-empty array");
 	const groupby = groupBy(filtered, group);
 	const results: any[] = [];
 	for (const [key, rows] of groupby.entries()) {
@@ -47,6 +48,7 @@ function applyRulesToGroup(rows: any[], group: string[], groupKey: string, apply
 	});
 	for (const applyRule of apply) {
 		const key = Object.keys(applyRule)[0];
+		if (key in groupObj) throw new InsightError(`Duplicate apply key: ${key}`);
 		const tokenObj = applyRule[key]; // { MAX: "field", MIN: "field", AVG: "field", SUM: "field", COUNT: "field" }
 		const token = Object.keys(tokenObj)[0]; // MAX, MIN, AVG, SUM, COUNT
 		const applyField = tokenObj[token];

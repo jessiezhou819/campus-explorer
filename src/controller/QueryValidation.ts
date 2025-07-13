@@ -93,6 +93,7 @@ export function isValidColumn(column: string): boolean {
 		"_fail",
 	];
 	if (!column.includes("_")) {
+		if (column.trim() === "") return false;
 		return true;
 	}
 	return validFieldSuffixes.some((suffix) => column.endsWith(suffix));

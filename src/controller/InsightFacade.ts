@@ -116,15 +116,32 @@ export default class InsightFacade implements IInsightFacade {
 		let filtered = handleWhere(query.WHERE, datasetRows);
 		if (!Array.isArray(filtered)) throw new InsightError("handleWhere() did not return an array");
 
-		const applyKeys = new Set<string>();
-		if ("TRANSFORMATIONS" in query) {
-			const results = handleTransformations(filtered, query.TRANSFORMATIONS.GROUP, query.TRANSFORMATIONS.APPLY);
-			filtered = results;
-			for (const applyRule of query.TRANSFORMATIONS.APPLY) {
-				applyKeys.add(Object.keys(applyRule)[0]);
+		const applyKeys: string[] = [];
+		const transformation = "TRANSFORMATIONS" in query;
+
+		if (transformation) {
+			const transformationKeys = Object.keys(query.TRANSFORMATIONS);
+			for (const key of transformationKeys) {
+				if (key !== "GROUP" && key !== "APPLY") throw new InsightError(`Invalid key in TRANSFORMATIONS: ${key}`);
 			}
+
+			const { GROUP, APPLY } = query.TRANSFORMATIONS;
+			if (!Array.isArray(GROUP) || !Array.isArray(APPLY)) throw new InsightError("GROUP and APPLY must both be arrays");
+			applyKeys.push(...GROUP);
+
+			for (const applyRule of APPLY) {
+				const keys = Object.keys(applyRule);
+				if (keys.length !== 1) {
+					throw new InsightError("Each APPLY rule must have exactly one key");
+				}
+				applyKeys.push(keys[0]);
+			}
+
+			const results = handleTransformations(filtered, GROUP, APPLY);
+			filtered = results;
 		}
-		const result = handleOptions(query.OPTIONS, filtered, applyKeys);
+
+		const result = handleOptions(query.OPTIONS, filtered, transformation, applyKeys);
 		if (result.length > InsightFacade.MAX_RESULT_ROWS) {
 			throw new ResultTooLargeError(`Query result exceeds ${InsightFacade.MAX_RESULT_ROWS} rows`);
 		}

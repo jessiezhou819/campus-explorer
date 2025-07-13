@@ -233,8 +233,7 @@ function populateRoomDetails(row: any, room: Room): void {
 			const a = cell.childNodes?.find((n: any) => n.tagName === "a");
 			const link = a.attrs?.find((attr: any) => attr.name === "href")?.value;
 			room.href = link;
-		}
-		else if (classAttr.includes("views-field-field-room-capacity")) room.seats = Number(text);
+		} else if (classAttr.includes("views-field-field-room-capacity")) room.seats = Number(text);
 		else if (classAttr.includes("views-field-field-room-furniture")) room.furniture = text;
 		else if (classAttr.includes("views-field-field-room-type")) room.type = text;
 		room.name = `${room.shortname}_${room.number}`;
