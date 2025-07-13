@@ -1,15 +1,15 @@
 {
 	"title": "group array",
 	"input": {
-  "WHERE": {},
-  "OPTIONS": {
-    "COLUMNS": ["sections_avg"]
-  },
-  "TRANSFORMATIONS": {
-    "GROUP": "sections_dept",
-    "APPLY": []
-  }
-    },
+		"WHERE": {},
+		"OPTIONS": {
+			"COLUMNS": ["sections_avg"]
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": "sections_dept",
+			"APPLY": []
+		}
+	},
 	"errorExpected": true,
 	"expected": "InsightError"
 }

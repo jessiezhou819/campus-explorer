@@ -585,6 +585,5 @@ describe("InsightFacade", function () {
 		it("[rooms_valid/basicCount.json] basic count", checkQuery);
 		it("[rooms_valid/basicMin.json] basic count", checkQuery);
 		it("[rooms_valid/basicSum.json] basic count", checkQuery);
-
 	});
 });

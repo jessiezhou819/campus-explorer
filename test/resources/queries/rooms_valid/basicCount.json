@@ -1,38 +1,38 @@
 {
 	"title": "Basic Input",
 	"input": {
-  "WHERE": {
-    "GT": {
-      "rooms_seats": 300
-    }
-  },
-  "OPTIONS": {
-    "COLUMNS": [
-      "rooms_shortname",
-      "averageSeats",
-      "countType"
-    ]
-  },
-  "TRANSFORMATIONS": {
-    "GROUP": [
-      "rooms_shortname"
-    ],
-    "APPLY": [
-      {
-        "averageSeats": {
-          "AVG": "rooms_seats"
-        }
-      },
-      {
-        "countType": {
-          "COUNT": "rooms_type"
-        }
-      }
-    ]
-  }
-},
-  "errorExpected": false,
+		"WHERE": {
+			"GT": {
+				"rooms_seats": 300
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": ["rooms_shortname", "averageSeats", "countType"]
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": ["rooms_shortname"],
+			"APPLY": [
+				{
+					"averageSeats": {
+						"AVG": "rooms_seats"
+					}
+				},
+				{
+					"countType": {
+						"COUNT": "rooms_type"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": false,
 	"expected": [
-       {"rooms_shortname":"CIRS","averageSeats":426,"countType":1},{"rooms_shortname":"ESB","averageSeats":350,"countType":1},{"rooms_shortname":"HEBB","averageSeats":375,"countType":1},{"rooms_shortname":"LSC","averageSeats":350,"countType":1},{"rooms_shortname":"OSBO","averageSeats":442,"countType":1},{"rooms_shortname":"WESB","averageSeats":325,"countType":1},{"rooms_shortname":"WOOD","averageSeats":503,"countType":1}
-    ]
+		{ "rooms_shortname": "CIRS", "averageSeats": 426, "countType": 1 },
+		{ "rooms_shortname": "ESB", "averageSeats": 350, "countType": 1 },
+		{ "rooms_shortname": "HEBB", "averageSeats": 375, "countType": 1 },
+		{ "rooms_shortname": "LSC", "averageSeats": 350, "countType": 1 },
+		{ "rooms_shortname": "OSBO", "averageSeats": 442, "countType": 1 },
+		{ "rooms_shortname": "WESB", "averageSeats": 325, "countType": 1 },
+		{ "rooms_shortname": "WOOD", "averageSeats": 503, "countType": 1 }
+	]
 }

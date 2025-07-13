@@ -1,15 +1,15 @@
 {
 	"title": "String mismatch",
 	"input": {
-  "WHERE": {
-    "LT": {
-      "sections_title": 80
-    }
-  },
-  "OPTIONS": {
-    "COLUMNS": ["sections_title"]
-  }	
-},
+		"WHERE": {
+			"LT": {
+				"sections_title": 80
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": ["sections_title"]
+		}
+	},
 	"errorExpected": true,
 	"expected": "InsightError"
 }

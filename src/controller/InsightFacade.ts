@@ -64,7 +64,7 @@ export default class InsightFacade implements IInsightFacade {
 		if (this.datasetMap.has(id)) throw new InsightError("duplicate dataset");
 
 		const zip: JSZip = await loadZipFromBase64(content);
-		let result: Section[] | Room[] = []; 
+		let result: Section[] | Room[] = [];
 
 		if (kind === InsightDatasetKind.Sections) {
 			result = await handleSections(zip);
