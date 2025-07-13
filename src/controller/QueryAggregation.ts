@@ -1,5 +1,6 @@
 import Decimal from "decimal.js";
 import { InsightError } from "./IInsightFacade";
+import { validateNumericComparator } from "./QueryValidation";
 
 export function handleTransformations(filtered: any[], group: string[], apply: any[]): any[] {
 	const groupby = groupBy(filtered, group);
@@ -22,7 +23,8 @@ function groupBy(filtered: any[], GROUP: string[]): Map<string, any[]> {
 				throw new InsightError(`Field ${field} not found in row`);
 			}
 			return String(item[field]);
-		}); // keep full prefixed keys
+		}); 
+        //written by ChatGPT
 		const groupKey = groupValues.join("|"); // unique identifier for this group
 
 		if (!groupMap.has(groupKey)) {
@@ -30,31 +32,29 @@ function groupBy(filtered: any[], GROUP: string[]): Map<string, any[]> {
 		}
 		groupMap.get(groupKey)?.push(item);
 	}
+    // end of written by ChatGPT
 	return groupMap;
 }
 
-function applyRulesToGroup(rows: any[], GROUP: string[], groupKey: string, APPLY: any[]): any {
+function applyRulesToGroup(rows: any[], group: string[], groupKey: string, apply: any[]): any {
 	const groupObj: any = {};
-	GROUP.forEach((key) => {
+	group.forEach((key) => {
 		const split = key.split("_");
 		if (split.length === 2) {
 			const field = split[1]; // shortname
 			groupObj[field] = rows[0][field]; // first row's value for this group key
 		}
 	});
-	for (const applyRule of APPLY) {
-		const applyKey = Object.keys(applyRule)[0];
-		const applyTokenObj = applyRule[applyKey]; // { MAX: "field", MIN: "field", AVG: "field", SUM: "field", COUNT: "field" }
-		const applyToken = Object.keys(applyTokenObj)[0]; // MAX, MIN, AVG, SUM, COUNT
-		const applyField = applyTokenObj[applyToken];
-		// if (!(applyField in rows[0])) {
-		//     throw new InsightError(`Field ${applyField} not found in roww`);
-		// }
+	for (const applyRule of apply) {
+		const key = Object.keys(applyRule)[0];
+		const tokenObj = applyRule[key]; // { MAX: "field", MIN: "field", AVG: "field", SUM: "field", COUNT: "field" }
+		const token = Object.keys(tokenObj)[0]; // MAX, MIN, AVG, SUM, COUNT
+		const applyField = tokenObj[token];
 		const field = applyField.split("_")[1];
 		if (!(field in rows[0])) {
 			throw new InsightError(`Field ${field} not found in row`);
 		}
-		groupObj[applyKey] = applyAggregation(applyToken, rows, field);
+		groupObj[key] = applyAggregation(token, rows, field);
 	}
 	return groupObj;
 }
@@ -93,16 +93,18 @@ function calculateCount(rows: any[], key: string): number {
 }
 
 function calculateSum(rows: any[], key: string): number {
+    validateNumericComparator("SUM", key, rows);
 	let sum = 0;
 
 	for (const row of rows) {
-		sum += row[key]; // field is a number -> might need to implement a check here !!!
+		sum += row[key]; 
 	}
 
 	return Number(sum.toFixed(2));
 }
 
 function calculateAvg(rows: any[], key: string): number {
+    validateNumericComparator("AVG", key, rows);
 	if (rows.length === 0) throw new InsightError("No rows to calculate AVG");
 
 	let sum = new Decimal(0);
@@ -118,6 +120,7 @@ function calculateAvg(rows: any[], key: string): number {
 }
 
 function calculateMax(rows: any[], key: string): number {
+    validateNumericComparator("MAX", key, rows);
 	if (rows.length === 0) throw new InsightError("No rows to calculate MAX");
 	let resultSoFar = rows[0][key];
 	for (const row of rows) {
@@ -129,6 +132,7 @@ function calculateMax(rows: any[], key: string): number {
 }
 
 function calculateMin(rows: any[], key: string): number {
+    validateNumericComparator("MIN", key, rows);
 	if (rows.length === 0) throw new InsightError("No rows to calculate MIN");
 	let minValue = rows[0][key];
 	for (const row of rows) {

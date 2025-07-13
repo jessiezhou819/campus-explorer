@@ -13,6 +13,7 @@ import { Room, Section } from "./Interface";
 import { getAllDatasetIds, handleWhere, handleOptions } from "./QueryHandling";
 import { handleRooms, handleSections, loadZipFromBase64, validateId } from "./DataProcessing";
 import { handleTransformations } from "./QueryAggregation";
+import { performQueryValidator } from "./QueryValidation";
 
 /**
  * This is the main programmatic entry point for the project.
@@ -48,7 +49,7 @@ export default class InsightFacade implements IInsightFacade {
 					this.datasetMap.set(datasetId, ds); // Restore metadata
 					this.datasetDataMap.set(datasetId, data); // Restore dataset rows
 				} else {
-					// Optional: warn or clean up if data file is missing
+					// optional: warn or clean up if data file is missing
 				}
 			});
 			await Promise.all(dataReadPromises);
@@ -105,20 +106,9 @@ export default class InsightFacade implements IInsightFacade {
 
 	public async performQuery(query: any): Promise<InsightResult[]> {
 		await this.ensureInitialized();
-		if (!query || typeof query !== "object") {
-			throw new InsightError("Query must be an object");
-		}
-		if (!("WHERE" in query) || !("OPTIONS" in query) || !("COLUMNS" in query.OPTIONS)) {
-			throw new InsightError("Missing WHERE or OPTIONS");
-		}
-		if (!Array.isArray(query.OPTIONS.COLUMNS) || query.OPTIONS.COLUMNS.length === 0) {
-			throw new InsightError("COLUMNS invalid format");
-		}
-		const ids = getAllDatasetIds(query);
-		if (ids.size !== 1) {
-			throw new InsightError("too many datasets in query");
-		}
+		performQueryValidator(query);
 
+		const ids = getAllDatasetIds(query);
 		const datasetId = [...ids][0];
 		const datasetRows = this.datasetDataMap.get(datasetId);
 		if (!datasetRows) throw new InsightError(`Dataset ${datasetId} not loaded`);

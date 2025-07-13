@@ -12,39 +12,64 @@ import {
 export function getAllDatasetIds(query: Query): Set<string> {
 	const ids = new Set<string>();
 
-	const getKey = (key: string): string => {
+	const getKey = (key: string): void => {
 		if (typeof key === "string" && key.includes("_")) {
-			ids.add(key.split("_")[0]);
+			const datasetId = key.split("_")[0];
+			ids.add(datasetId);
 		}
-		return key;
 	};
 
+	processWhereIds(query.WHERE, getKey);
+	processOptionsIds(query.OPTIONS, getKey);
+	processTransformationsIds((query as any).TRANSFORMATIONS, getKey);
+
+	return ids;
+}
+
+function processWhereIds(where: any, getKey: (key: string) => void): void {
 	const checkWhere = (filter: any): void => {
 		if (!filter || typeof filter !== "object" || filter === null) return;
 		const [type] = Object.keys(filter);
 		const value = filter[type];
+
 		if (["AND", "OR"].includes(type)) {
 			logicValidator(value);
-			value.forEach(checkWhere); // recursively check nested condition
+			value.forEach(checkWhere);
 		} else if (type === "NOT") {
 			negationValidator(value);
 			checkWhere(value);
 		} else if (value && typeof value === "object") {
-			validateComparators(type, value, []); // validate comparators
-			getKey(Object.keys(value)[0]); // check for keys in comparators
+			validateComparators(type, value, []);
+			getKey(Object.keys(value)[0]);
 		}
 	};
-
-	checkWhere(query.WHERE);
-
-	query.OPTIONS?.COLUMNS?.forEach(getKey);
-
-	const order = query.OPTIONS?.ORDER;
-	if (typeof order === "string") getKey(order);
-
-	return ids;
-	// add in check for transformations !!!
+	checkWhere(where);
 }
+
+function processOptionsIds(options: Options | undefined, getKey: (key: string) => void): void {
+	options?.COLUMNS?.forEach(getKey);
+
+	const order = options?.ORDER as string | { keys: string[]; dir?: string } | undefined;
+	if (typeof order === "string") {
+		getKey(order);
+	} else if (order && Array.isArray(order.keys)) {
+		order.keys.forEach(getKey);
+	}
+}
+
+function processTransformationsIds(transformations: { GROUP: string[]; APPLY: any[] } | 
+	undefined, getKey: (key: string) => void): void {
+	if (transformations) {
+		transformations.GROUP.forEach(getKey);
+
+		transformations.APPLY.forEach((applyRule: any) => {
+			const applyTokenObj = Object.values(applyRule)[0] as Record<string, string>;
+			const applyField = Object.values(applyTokenObj)[0];
+			getKey(applyField);
+		});
+	}
+}
+
 
 export function handleWhere(where: any, data: Section[]): any[] {
 	if (!Array.isArray(data)) {
@@ -197,32 +222,6 @@ export function handleOptions(options: Options, data: any[], applyKeys: Set<stri
 	}
 	return result;
 }
-
-// export function handleOptions(options: Options, data: any[]): InsightResult[] {
-// 	const columns = options.COLUMNS;
-// 	if (!Array.isArray(data)) {
-// 		throw new InsightError("Data must be an array");
-// 	}
-// 	for (const col of columns) {
-// 		if (typeof col !== "string" || !isValidColumn(col)) {
-// 			throw new InsightError(`Invalid column name: ${col}`);
-// 		}
-// 	}
-// 	let result = data.map((row) =>
-// 		Object.fromEntries(
-// 			columns.map((col: any) => {
-// 				return [col, row[col]];
-// 			})
-// 		)
-// 	);
-// 	optionsValidator(options, columns);
-
-// 	if (options.ORDER) {
-// 		result = sortResults(result, options.ORDER);
-// 	}
-
-// 	return result;
-// }
 
 export function sortResults(data: InsightResult[], order: any): InsightResult[] {
 	if (typeof order === "string") {

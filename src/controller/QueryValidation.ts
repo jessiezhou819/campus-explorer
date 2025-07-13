@@ -1,6 +1,7 @@
 import { InsightError } from "./IInsightFacade";
+import { getAllDatasetIds } from "./QueryHandling";
 
-function validateNumericComparator(type: string, suffix: string, value: any): void {
+export function validateNumericComparator(type: string, suffix: string, value: any): void {
 	const numericSuffixes = [
 	"avg", "pass", "fail", "audit", "year", // Sections fields
 	"lat", "lon", "seats"                   // Rooms fields
@@ -13,15 +14,27 @@ function validateNumericComparator(type: string, suffix: string, value: any): vo
 	}
 }
 
+export function performQueryValidator(query: any): void {
+	if (!query || typeof query !== "object") {
+		throw new InsightError("Query must be an object");
+	}
+	if (!("WHERE" in query) || !("OPTIONS" in query) || !("COLUMNS" in query.OPTIONS)) {
+		throw new InsightError("Missing WHERE or OPTIONS");
+	}
+	if (!Array.isArray(query.OPTIONS.COLUMNS) || query.OPTIONS.COLUMNS.length === 0) {
+		throw new InsightError("COLUMNS invalid format");
+	}
+	const ids = getAllDatasetIds(query);
+	if (ids.size !== 1) {
+		throw new InsightError("too many datasets in query");
+	}
+}
+
 //(written using ChatGPT)
 export function validateWildcardPattern(pattern: string): void {
 	if (/\*(?!$)/.test(pattern.slice(1, -1))) {
 		throw new InsightError("wildcard '*' is only allowed at the beginning or end");
 	}
-	// const matches = [...pattern.matchAll(/\*/g)];
-	// if (matches.length > 2 || (matches.length === 2 && !(pattern.startsWith("*") && pattern.endsWith("*")))) {
-	// 	throw new InsightError("invalid use of multiple wildcards");
-	// }
 }
 //(written using ChatGPT)
 
@@ -63,9 +76,6 @@ export function validateComparators(type: string, comparator: any, data: any[]):
 	if (comparator === null || typeof comparator !== "object" || Array.isArray(comparator)) {
 		throw new InsightError(`${type} must be a non null object`);
 	}
-	// if (!type || typeof type !== "string") { // "IS" ID
-	// 	throw new InsightError("Type must be a non null string");
-	// }
 	const keys = Object.keys(comparator);
 	if (keys.length !== 1) {
 		throw new InsightError(`Invalid comparator format: expected one key, got ${keys.length}`);
