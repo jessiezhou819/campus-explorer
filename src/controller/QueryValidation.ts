@@ -151,7 +151,7 @@ export function optionsValidator(options: any, columns: any): void {
 			}
 		} else if (typeof options.ORDER === "object") {
 			// here
-			if (!Array.isArray(options.ORDER.keys)) {
+			if (!Array.isArray(options.ORDER.keys) || options.ORDER.keys.length === 0) {
 				throw new InsightError("ORDER.keys must be an array");
 			}
 			for (const key of options.ORDER.keys) {
@@ -160,5 +160,15 @@ export function optionsValidator(options: any, columns: any): void {
 				}
 			}
 		}
+	}
+}
+
+export function transformationValidator(transformation: any): void {
+	if (typeof transformation !== "object" || transformation === null) {
+		throw new InsightError("TRANSFORMATIONS must be a non-null object");
+	}
+	const transformationKeys = Object.keys(transformation);
+	for (const key of transformationKeys) {
+		if (key !== "GROUP" && key !== "APPLY") throw new InsightError(`Invalid key in TRANSFORMATIONS: ${key}`);
 	}
 }

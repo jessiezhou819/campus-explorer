@@ -50,6 +50,9 @@ function applyRulesToGroup(rows: any[], group: string[], groupKey: string, apply
 		const key = Object.keys(applyRule)[0];
 		if (key in groupObj) throw new InsightError(`Duplicate apply key: ${key}`);
 		const tokenObj = applyRule[key]; // { MAX: "field", MIN: "field", AVG: "field", SUM: "field", COUNT: "field" }
+		if (!tokenObj || typeof tokenObj !== "object" || Array.isArray(tokenObj)) {
+			throw new InsightError(`Invalid field for applyRule`);
+		}
 		const token = Object.keys(tokenObj)[0]; // MAX, MIN, AVG, SUM, COUNT
 		const applyField = tokenObj[token];
 		const field = applyField.split("_")[1];

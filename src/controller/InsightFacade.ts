@@ -13,7 +13,7 @@ import { Room, Section } from "./Interface";
 import { getAllDatasetIds, handleWhere, handleOptions } from "./QueryHandling";
 import { handleRooms, handleSections, loadZipFromBase64, validateId } from "./DataProcessing";
 import { handleTransformations } from "./QueryAggregation";
-import { performQueryValidator } from "./QueryValidation";
+import { performQueryValidator, transformationValidator } from "./QueryValidation";
 
 /**
  * This is the main programmatic entry point for the project.
@@ -116,25 +116,23 @@ export default class InsightFacade implements IInsightFacade {
 		let filtered = handleWhere(query.WHERE, datasetRows);
 		if (!Array.isArray(filtered)) throw new InsightError("handleWhere() did not return an array");
 
-		const applyKeys: string[] = [];
+		const applyKeys: string[] = []; // array of columns if transformation is present
 		const transformation = "TRANSFORMATIONS" in query;
 
 		if (transformation) {
-			const transformationKeys = Object.keys(query.TRANSFORMATIONS);
-			for (const key of transformationKeys) {
-				if (key !== "GROUP" && key !== "APPLY") throw new InsightError(`Invalid key in TRANSFORMATIONS: ${key}`);
-			}
-
+			transformationValidator(query.TRANSFORMATIONS);
 			const { GROUP, APPLY } = query.TRANSFORMATIONS;
 			if (!Array.isArray(GROUP) || !Array.isArray(APPLY)) throw new InsightError("GROUP and APPLY must both be arrays");
-			applyKeys.push(...GROUP);
+			applyKeys.push(...GROUP); // keys included in GROUP
 
 			for (const applyRule of APPLY) {
+				if (!applyRule || typeof applyRule !== "object" || Array.isArray(applyRule))
+					throw new InsightError("Each APPLY rule must be a non-null object");
 				const keys = Object.keys(applyRule);
-				if (keys.length !== 1) {
-					throw new InsightError("Each APPLY rule must have exactly one key");
-				}
-				applyKeys.push(keys[0]);
+				if (keys.length !== 1) throw new InsightError("Each APPLY rule must have exactly one key");
+				const key = keys[0];
+				if (!key || key.trim() === "" || key.includes("_")) throw new InsightError("Invalid apply key");
+				applyKeys.push(keys[0]); // customized keys in APPLY
 			}
 
 			const results = handleTransformations(filtered, GROUP, APPLY);

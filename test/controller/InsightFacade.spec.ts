@@ -620,6 +620,7 @@ describe("InsightFacade", function () {
 		it("[rooms_invalid/dupApplyKey.json] 2", checkQuery);
 		it("[rooms_invalid/emptyGroup.json] 3", checkQuery);
 		it("[rooms_invalid/transExtraKey.json] 4", checkQuery);
+		it("[rooms_invalid/emptyCol.json] 5", checkQuery);
 		it("[rooms_valid/basicCount.json] basic count", checkQuery);
 		it("[rooms_valid/basicMin.json] basic count", checkQuery);
 		it("[rooms_valid/basicSum.json] basic count", checkQuery);
