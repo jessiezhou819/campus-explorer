@@ -23,8 +23,8 @@ function groupBy(filtered: any[], GROUP: string[]): Map<string, any[]> {
 				throw new InsightError(`Field ${field} not found in row`);
 			}
 			return String(item[field]);
-		}); 
-        //written by ChatGPT
+		});
+		//written by ChatGPT
 		const groupKey = groupValues.join("|"); // unique identifier for this group
 
 		if (!groupMap.has(groupKey)) {
@@ -32,7 +32,7 @@ function groupBy(filtered: any[], GROUP: string[]): Map<string, any[]> {
 		}
 		groupMap.get(groupKey)?.push(item);
 	}
-    // end of written by ChatGPT
+	// end of written by ChatGPT
 	return groupMap;
 }
 
@@ -60,7 +60,6 @@ function applyRulesToGroup(rows: any[], group: string[], groupKey: string, apply
 }
 
 function applyAggregation(token: string, rows: any[], key: string): any {
-
 	switch (token) {
 		case "MAX":
 			return calculateMax(rows, key);
@@ -93,18 +92,18 @@ function calculateCount(rows: any[], key: string): number {
 }
 
 function calculateSum(rows: any[], key: string): number {
-    validateNumericComparator("SUM", key, 1);
+	validateNumericComparator("SUM", key, 1);
 	let sum = 0;
 
 	for (const row of rows) {
-		sum += row[key]; 
+		sum += row[key];
 	}
 
 	return Number(sum.toFixed(2));
 }
 
 function calculateAvg(rows: any[], key: string): number {
-    validateNumericComparator("AVG", key, 1);
+	validateNumericComparator("AVG", key, 1);
 	if (rows.length === 0) throw new InsightError("No rows to calculate AVG");
 
 	let sum = new Decimal(0);
@@ -120,7 +119,7 @@ function calculateAvg(rows: any[], key: string): number {
 }
 
 function calculateMax(rows: any[], key: string): number {
-    validateNumericComparator("MAX", key, 1);
+	validateNumericComparator("MAX", key, 1);
 	if (rows.length === 0) throw new InsightError("No rows to calculate MAX");
 	let resultSoFar = rows[0][key];
 	for (const row of rows) {
@@ -132,7 +131,7 @@ function calculateMax(rows: any[], key: string): number {
 }
 
 function calculateMin(rows: any[], key: string): number {
-    validateNumericComparator("MIN", key, 1);
+	validateNumericComparator("MIN", key, 1);
 	if (rows.length === 0) throw new InsightError("No rows to calculate MIN");
 	let minValue = rows[0][key];
 	for (const row of rows) {
