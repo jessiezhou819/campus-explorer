@@ -574,6 +574,6 @@ describe("InsightFacade", function () {
 
 		// C2
 		it("[rooms_valid/rooms.json] Rooms dataset", checkQuery);
-		it.only("[valid/orderByTwo.json] orderbytwo", checkQuery);
+		it("[valid/orderByTwo.json] orderbytwo", checkQuery);
 	});
 });

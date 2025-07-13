@@ -169,7 +169,7 @@ export function removeDups(arrays: any[][]): any[] {
 	return result;
 }
 
-export function handleOptions(options: Options, data: any[]): InsightResult[] {
+export function handleOptions(options: Options, data: any[], applyKeys: Set<string>): InsightResult[] {
 	const columns = options.COLUMNS;
 	if (!Array.isArray(data)) {
 		throw new InsightError("Data must be an array");
@@ -178,11 +178,14 @@ export function handleOptions(options: Options, data: any[]): InsightResult[] {
 		if (typeof col !== "string" || !isValidColumn(col)) {
 			throw new InsightError(`Invalid column name: ${col}`);
 		}
+		if (!col.includes("_") && !applyKeys.has(col)) {
+			throw new InsightError(`Column ${col} not found in apply rules`);
+		}
 	}
 	let result = data.map((row) =>
 		Object.fromEntries(
 			columns.map((col: any) => {
-				const field = col.split("_")[1];
+				const field = col.includes("_") ? col.split("_")[1] : col;
 				return [col, row[field]];
 			})
 		)
@@ -192,7 +195,6 @@ export function handleOptions(options: Options, data: any[]): InsightResult[] {
 	if (options.ORDER) {
 		result = sortResults(result, options.ORDER);
 	}
-
 	return result;
 }
 
@@ -245,9 +247,9 @@ export function sortResults(data: InsightResult[], order: any): InsightResult[] 
 			}
 			return 0; // all keys equal
 		});
-		} else {
+	} else {
 		throw new InsightError("Invalid ORDER");
-		}
+	}
 }
 
 export function simpleSortResults(data: InsightResult[], order: any): InsightResult[] {
