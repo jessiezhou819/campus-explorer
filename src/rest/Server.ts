@@ -39,7 +39,7 @@ export default class Server {
 			Log.info("Server::start() - start");
 			if (this.server !== undefined) {
 				Log.error("Server::start() - server already listening");
-				reject(); 
+				reject();
 			} else {
 				this.server = this.express
 					.listen(this.port, () => {
@@ -117,7 +117,8 @@ export default class Server {
 			const result = await this.insightFacade.removeDataset(id);
 			res.status(StatusCodes.OK).json({ result });
 		} catch (err) {
-			if (err instanceof NotFoundError) { // i think this is the right error type to check
+			if (err instanceof NotFoundError) {
+				// i think this is the right error type to check
 				res.status(StatusCodes.NOT_FOUND).json({ error: err.message });
 			} else {
 				res.status(StatusCodes.BAD_REQUEST).json({ error: err instanceof Error ? err.message : String(err) });
