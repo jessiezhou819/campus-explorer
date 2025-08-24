@@ -1,0 +1,46 @@
+.map-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100vw;
+	height: 100vh;
+}
+
+.mapboxgl-popup {
+	background: none;
+	box-shadow: none;
+}
+
+/* Tooltip box */
+.mapboxgl-popup-content {
+	background-color: rgba(33, 37, 41, 0.92); /* deep slate gray, semi-transparent */
+	color: #e0eaf3; /* soft off-white text */
+	padding: 8px 12px;
+	border-radius: 6px;
+	font-size: 13px;
+	font-family: "Segoe UI", sans-serif;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+	border: 1px solid #7EC8F9; /* might change to ashy purple up2u */
+}
+
+/* Tooltip triangle */
+.mapboxgl-popup-tip {
+	border-top-color: rgba(33, 37, 41, 0.92) !important;
+}
+
+@keyframes fadeInZoom {
+	0% {
+		opacity: 0;
+		transform: scale(0.95);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+.tooltip-content {
+	animation: fadeInZoom 0.2s ease-out forwards;
+}

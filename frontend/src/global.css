@@ -1,0 +1,47 @@
+/* components/Sidebar.css */
+.sidebar-overlay {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	width: 350px;
+	max-height: 100vh;
+	padding: 30px;
+	border-radius: 12px;
+	background-color: rgba(0, 0, 0, 0.75); /* translucent black */
+	backdrop-filter: blur(4px);
+	color: white;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+	overflow-y: auto;
+	z-index: 10; /* ensure it's above the map */
+}
+
+.search-input {
+	width: 90%;
+	padding: 8px 12px;
+	border: none;
+	border-radius: 6px;
+	font-size: 1rem;
+	margin-bottom: 12px;
+	background: rgba(255, 255, 255, 0.1);
+	color: white;
+}
+
+.building-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.building-list li {
+	padding: 8px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	font-size: 0.95rem;
+}
+
+.custom-tabs .ant-tabs-nav .ant-tabs-tab {
+	color: white;
+	font-size: 1rem;
+	/* padding: 10px; */
+	padding-left: 40px; /* 👈 Add or adjust this */
+	padding-right: 40px; /* 👈 Add or adjust this */
+}
