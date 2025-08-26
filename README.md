@@ -52,7 +52,7 @@
 
 ## Overview
 
-campus-explorer is an integrated developer toolset that simplifies campus data management, visualization, and querying. It combines a robust backend infrastructure with an interactive frontend, enabling seamless geographic visualization and data interaction within a cohesive architecture.
+Campus Explorer is a web application designed to make campus data management, visualization, and querying simple and intuitive. It combines a robust backend with an interactive frontend, allowing seamless geographic visualization and data interaction within a cohesive architecture.
 
 **Why campus-explorer?**
 
